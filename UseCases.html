@@ -144,7 +144,8 @@ a:not([href]) {
     
   <section>
     <h2>Design Breakpoints</h2>
-    <p>Developers currently match specific <a href="http://www.w3.org/TR/css3-mediaqueries/">CSS Media Queries</a> &quot;<dfn>breakpoints</dfn>&quot; for images to the breakpoints that they have defined in the CSS of their responsive designs. Being able to match the breakpoints ensures that images are operating under the same rules that define the layout of a design. It also helps developers verify their approach by ensuring that the same viewport measurement tests are being used in both HTML and CSS.</p>
+    <p>In Web development, a <dfn>breakpoint</dfn> is one of a series of <a href="http://www.w3.org/TR/css3-mediaqueries/">CSS Media Queries</a> that update the styles of a page based on matching some media features. A single breakpoint represents a logical rule (or set of rules) determining the point at which the contents of a media query are applied to a page&rsquo;s layout.</p>
+    <p>Developers currently match specific <a>breakpoints</a> for images to the breakpoints that they have defined in the CSS of their responsive designs. Being able to match the breakpoints ensures that images are operating under the same rules that define the layout of a design. It also helps developers verify their approach by ensuring that the same viewport measurement tests are being used in both HTML and CSS.</p>
     <p> If a breakpoint in the design is specified in [[CSS21]] as:</p>
     <p><code>@media screen and (max-width: 41em) {}</code></p>
     <p>Then web developers would like to be able to define a similar breakpoint for images at a max-width of 41em and not have to translate that measurement into another unit like pixels even if it is possible to calculate that measurement:</p>
