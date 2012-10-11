@@ -180,8 +180,8 @@ a:not([href]) {
   
 <section>  
     <h2>Dynamically acquired images data </h2>
-    <p>There are cases where the  image data may be dynamically generated (e.g., using canvas element and related APIs) or may be acquired from the device itself (e.g., from the camera). In such cases, a practical means to interface programmatically with an image or a set of images is often necessary. </p>
-  </section>
+    <p>There are cases where the  image data may be dynamically generated (e.g., using <code>canvas</code> element and related APIs) or may be acquired from the device itself (e.g., from the camera). In such cases, a practical means to interface programmatically with an image or a set of images is often necessary.</p>
+</section>
 </section>
 
 <section id="requirements">
@@ -199,7 +199,18 @@ a:not([href]) {
     <p>The <a>solution</a> MUST adhere to akin solutions already in [[HTML5]], such as those used by <code>audio</code> and <code>video</code> elements.</p></li>
   <li><p>The <a>solution</a> MUST NOT require any server-side processing. </p></li>
   <li>
-    <p>The <a>solution</a> MUST provide developers with a means to programmatically interface with the displayed image, as well as access relevant attributes and methods that make solution easy to work with. In addition, the solution MUST provide means to hook into relevant events (e.g., loading, errors, etc.).</p>
+    <p>The <a>solution</a> MUST provide developers with a means to programmatically interface with the displayed image, as well as access relevant attributes and methods that make solution easy to work with. In addition, the solution MUST provide means to hook into relevant events (e.g., loading, errors, etc.). In any case, an API SHOULD provide a means to:</p>
+    <ul>
+      <li>
+        <p> Determine the current source of the image.</p>
+      </li>
+      <li>
+        <p>Determine what environmental condition caused the current source to be selected (reflected as, for example, a CSS Media Query). </p>
+      </li>
+      <li>
+        <p>Add, remove, and update image sources.</p>
+      </li>
+    </ul>
   </li>
   <li>
     <p>The <a>solution</a> MUST afford developers the ability to explicitly define different image versions as opposed to simply different resolutions of the same image. </p>
