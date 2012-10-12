@@ -100,18 +100,18 @@ a:not([href]) {
 
 <section id="sotd">
   <p>This document reflects the efforts of members from the <a href="http://www.w3.org/community/respimg/">Responsive Images Community Group</a> (RICG)  to present a case to standardization of responsive images to the <a href="http://w3c.org/">W3C</a> and <a href="http://whatwg.org">WHATWG</a> (see <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=17061">bug 17061</a>). The use cases and requirements were gathered by  consultation with <a href="http://w3c.org/">W3C</a> and <a href="http://whatwg.org">WHATWG</a> participants, community group members, and the general public. The RICG's goal for this document is to make sure that developer's requirements for responsive images have been formally captured. </p>
-  <p>The RICG expects that a technical specification can be created to formally address each of the requirements (i.e., the <dfn>solution</dfn>). To date, two such specifications are currently underway: </p>
+  <p>The RICG expects that a technical specification can be created to formally address each of the <a>requirements</a> (i.e., the <dfn>solution</dfn>). To date, two such specifications are currently under development: </p>
   <ul>
     <li><cite><a href="http://dvcs.w3.org/hg/html-proposals/raw-file/tip/responsive-images/responsive-images.html">The picture element: An HTML extension for responsive images</a></cite>. </li>
     <li><cite><a href="http://dev.w3.org/html5/srcset/">The srcset attribute: An HTML extension for adaptive images</a></cite>.</li>
   </ul>
-  <p>Proposed solutions are not mutually exclusive. They may work together to address the complete set of use cases.</p>
+  <p>Proposed solutions are not mutually exclusive. They may work together to address the complete set of <a>use cases</a> and <a>requirements</a>.</p>
 </section>
 <section id="problems">
   <h1>Problems with current techniques</h1>
   <p>There are a number of problems with the <a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/">techniques</a> currently being relied on by web developers: </p>
   <dl>
-    <dt>Reliance on  semantically neutral elements: </dt>
+    <dt>Reliance on  semantically neutral elements and CSS backgrounds: </dt>
     <dd>
       <p> Large images incur unnecessary download and processing time, slowing the experience for users. To solve this problem, web developers  provide multiple sources of the same image at different resolutions and then pick the correct size image based on the viewport size. This is commonly done for CSS background images in responsive designs, but web developers lack the markup to do so for images in HTML without hacking around a solution. This means that developers end up relying on <code>div</code> or other container elements to achieve the desired design instead of a more appropriate element such as <code>img</code>.</p>
     </dd>
@@ -189,7 +189,7 @@ a:not([href]) {
 
 <section id="requirements">
 <h1>Requirements</h1>
-<p>The  <a>use cases</a> give rise to the following requirements:</p>
+<p>The  <a>use cases</a> give rise to the following <dfn>requirements</dfn>:</p>
 <ul>
   <li>
     <p>The <a>solution</a> MUST afford developers the ability to match image sources with particular media features and/or media types - and have the user agent update the source of an image as the media features and media types of the browser environment change dynamically over time. </p>
@@ -228,7 +228,7 @@ a:not([href]) {
     <p>The <a>solution</a> MUST function in such a way that is is responsive to environmental changes in relative units (e.g., when the user increases the base font size of the browser by pressing <kbd>ctrl+</kbd> or <kbd>ctrl-</kbd>).</p>
   </li>
   <li>
-    <p>To provide compatibility with legacy user agents, it MUST be possible for developers to &quot;<a href="http://remysharp.com/2010/10/08/what-is-a-polyfill/">polyfill</a>&quot; the <a>solution</a>.</p>
+    <p>To provide compatibility with legacy user agents, it SHOULD be possible for developers to <a href="http://remysharp.com/2010/10/08/what-is-a-polyfill/">polyfill</a> the <a>solution</a>.</p>
   </li>
 </ul>
 </section>
