@@ -128,7 +128,7 @@ a:not([href]) {
   
     <p>The following <dfn>use cases</dfn> provide represent the techniques currently used by Web developers to achieve both repulsive designs with responsive images. </p>
   <section>
-    <h2>Art Direction</h2>
+    <h2>Art direction</h2>
     <p> To communicate effectively across the range of screen resolutions and device pixel ratios available on devices today, web developers often need to provide different versions of the same image. Developers do this because if an image is too small on a screen the meaning of that image cannot be properly communicated to a user - conversely, if more space is available, a developer may want to show a different image that depicts more information. Another reason developers do this is to avoid images becoming blurry when scaled too much by the browser.</p>
     <p>For example, in the following figure it is difficult to discern the man's facial expressions on the image on the left when compared to the image on the middle. The image on the far right show the effects of scaling the image too much, which also affects the image's ability to communicate effectively:</p>
 <figure>
@@ -151,7 +151,7 @@ a:not([href]) {
 </section>
     
   <section>
-    <h2>Design Breakpoints</h2>
+    <h2>Design breakpoints</h2>
     <p>In Web development, a <dfn>breakpoint</dfn> is one of a series of <a href="http://www.w3.org/TR/css3-mediaqueries/">CSS Media Queries</a> that update the styles of a page based on matching some media features. A single breakpoint represents a logical rule (or set of rules) determining the point at which the contents of a media query are applied to a page&rsquo;s layout.</p>
     <p>Developers currently match specific <a>breakpoints</a> for images to the breakpoints that they have defined in the CSS of their responsive designs. Being able to match the breakpoints ensures that images are operating under the same rules that define the layout of a design. It also helps developers verify their approach by ensuring that the same viewport measurement tests are being used in both HTML and CSS.</p>
     <p> If a breakpoint in the design is specified in [[CSS21]] as:</p>
@@ -165,7 +165,7 @@ a:not([href]) {
   </section>
  
   <section>
-    <h2> Media Types</h2>
+    <h2> Media types</h2>
     <p>Printed web documents generally have pixelated images due to printers having a higher DPI than most images currently served on the web. According to <cite>Wikipedia's</cite> article on "<a href="http://en.wikipedia.org/wiki/Dots_per_inch">Dots per inch</a>": </p>
     <blockquote>
       <p>&quot;An inkjet printer sprays ink through tiny nozzles, and is typically capable of 300-600 DPI. A laser printer applies toner through a controlled electrostatic charge, and may be in the range of 600 to 1,800 DPI.&quot;</p>
@@ -185,7 +185,7 @@ a:not([href]) {
     <p>In such cases, providing both a range of images to match the available dimensions, as well as a fallback for legacy user agents, is desirable. Current <a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/">techniques</a> are problematic in that they rely on scripting and the <code>noscript</code> element to work.</p>
   </section>
   <section>
-    <h2>Relative Units</h2>
+    <h2>Relative units</h2>
     <p>A common practice in creating flexible layouts is to specify the size values in media queries as relative units: <code>em</code>, <code>rem</code>, <code>vw</code>/<code>vh</code> etc. See, for example, Lyza Gardner's article <a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/">The EMs have it: Proportional Media Queries FTW!</a>. This approach is most commonly seen using <code>em</code>s in order to reflow layouts based on users’ zoom preferences, or to resize elements through JavaScript by dynamically altering a font-size value. </p>
     <p>In flexible layout designs, when a user zooms into an design, images get proportionally scaled and can become blurry or pixelated potentially affecting the image's ability to communicate as the developer intended (or simply looks ugly, which is also unacceptable). Swapping to a more suitable image is used to overcome this problem. </p>
     
@@ -244,7 +244,7 @@ a:not([href]) {
 </section>
 
 <section>
-  <h1>Open Issues</h1>
+  <h1>Open issues</h1>
   <p>We are tracking <dfn>open issues</dfn> on Github. <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues">Please help close them</a>! </p>
   <div id="open-issues-xhr"></div>
 </section>
