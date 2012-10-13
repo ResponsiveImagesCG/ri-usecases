@@ -253,33 +253,7 @@ a:not([href]) {
   <h1>Acknowledgements</h1>
   <p>We would like to thank the following people for reviewing the specification: Mike Taylor, Doug Shults. </p>
 </section>
-<script>
-function processResponse(obj) {
-	"use strict"; 
-    var issue, issues = obj.data,
-        issues_html = '<li>No issues are open. Yay!</li>';
-    if (issues.errors) {
-        console.warn("There was a problem getting the issues from github: " + issues.message, issues.errors)
-        return;
-    }
-    if (issues && issues.length > 0) {
-        for (var i = 0, issues_html = ''; i < issues.length; i++) {
-            var issue = issues[i],
-                labelcount = issue['labels'].length,
-                assigned = issue['assignee'] ? "<b class='meta'><span>Assigned:</span> <a href='" + issue['assignee'].url + "'>" + issue['assignee'].login + "</a></b>" : '',
-                labels = [];
-            if (labelcount !== 0) {
-                for (var j = 0; j < labelcount; j++) {
-                    labels.push("[ <b style='color: #" + issue['labels'][j].color + "'>" + issue['labels'][j].name + "</b> ]");
-                }
-            }
-            issues_html += '<li><a href="' + issue['html_url'] + '">Issue ' + issue['number'] + '</a> - ' + issue['title'] + assigned + (labelcount ? "<b class='meta'><span>Labels:</span> " + labels.join(" ") + "</b>" : '') + '</li>';
-        }
-    }
-    issues_html = '<ul>' + issues_html + '</ul>';
-    document.getElementById('open-issues-xhr').innerHTML = issues_html;
-}
-</script> 
+<script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js"></script> 
 <script src="https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse"></script>
 </body>
 </html>
