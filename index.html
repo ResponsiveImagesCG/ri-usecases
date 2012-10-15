@@ -195,6 +195,13 @@ a:not([href]) {
     <h2>Dynamically acquired images data </h2>
     <p>There are cases where the  image data may be dynamically generated (e.g., using <code>canvas</code> element and related APIs) or may be acquired from the device itself (e.g., from the camera). In such cases, a practical means to interface programmatically with an image or a set of images is often necessary. Without having a suitable API, it will be difficult for developers to manipulate the sources of images. </p>
 </section>
+
+  <section>
+    <h2>Image formats</h2>
+    <p>Some images are best suited to a specific file type, for reasons such as file size optimization, alpha transparency, scalability, animation, etc. For example, a photo usually requires good color depth, but does not require alpha transparency or animation; JPEG or WebP are well-suited to these needs and offer good optimization between image quality and file size. Icons are often simpler in terms of colour depth, but may require alpha transparency; the PNG format is better-suited to these needs.</p>
+    <p>In a responsive design, images need to be displayed at different sizes. When possible, a vector format such as SVG might be most appropriate. There have also been proposals for new responsive image formats (see, for example, <a href="http://www.netmagazine.com/opinions/need-responsive-image-format">Christopher Schmitt's .net article</a>).</p>
+    <p>Although a web developer may want to use a specific image format, new or otherwise, the browser may not always support it. Currently developers must often abandon the best image format in favor of one that has good support.</p>
+  </section>
 </section>
 
 <section id="requirements">
@@ -236,6 +243,9 @@ a:not([href]) {
   </li>
   <li>
     <p>The <a>solution</a> MUST function in such a way that is is responsive to environmental changes in relative units (e.g., when the user increases the base font size of the browser by pressing <kbd>ctrl+</kbd> or <kbd>ctrl-</kbd>).</p>
+  </li>
+  <li>
+    <p>The <a>solution</a> SHOULD allow developers to specify images in different formats, preferentially ranked, with the browser using the highest-ranked format that it supports.</p>
   </li>
   <li>
     <p>To provide compatibility with legacy user agents, it SHOULD be possible for developers to <a href="http://remysharp.com/2010/10/08/what-is-a-polyfill/">polyfill</a> the <a>solution</a>.</p>
