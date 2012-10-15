@@ -113,12 +113,12 @@ a:not([href]) {
   <dl>
     <dt>Reliance on  semantically neutral elements and CSS backgrounds: </dt>
     <dd>
-      <p> Large images incur unnecessary download and processing time, slowing the experience for users. To solve this problem, web developers  provide multiple sources of the same image at different resolutions and then pick the correct size image based on the viewport size. This is commonly done for CSS background images in responsive designs, but web developers lack the markup to do so for images in HTML without hacking together a solution. This means that developers  have resorted to using <code>div</code> and other container elements to achieve the desired functionality. </p>
+      <p> Large images incur unnecessary download and processing time, slowing the experience for users. To solve this problem, web developers  provide multiple sources of the same image at different resolutions and then pick the correct size image based on the viewport size. This is commonly done for CSS background images in responsive designs, but web developers lack the markup to do so for images in HTML without hacking together a solution. This means that developers have resorted to using <code>div</code> and other container elements to achieve the desired functionality. </p>
       <p>In other words, developers are being forced to work around, or completely ignore, authoring requirements of [[!HTML5]].</p>
     </dd>
     <dt>Reliance on scripts and server side processing: </dt>
     <dd>
-      <p>Current solutions to this &quot;responsive images&quot; problem rely on either JavaScript libraries or server-side solutions - both of which add unnecessary complexity to the development process. </p>
+      <p>The <a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/">techniques</a> rely on either JavaScript or a server-side solution (or both), which adds  complexity and redundant HTTP requests to the development process. </p>
     </dd>
   </dl>
   <p>The RICG believes that standardization of a browser-based solution can overcome these problems. </p>
@@ -127,33 +127,32 @@ a:not([href]) {
 <section id="usecases">
   <h1>Use cases</h1>
   
-    <p>The following <dfn>use cases</dfn> provide represent the techniques currently used by Web developers to achieve both repulsive designs with responsive images. </p>
+    <p>The following <dfn>use cases</dfn> represent situations in which Web developers see a need for a browser-based solution for working with responsive images.</p>
   <section>
     <h2>Art direction</h2>
-    <p> To communicate effectively across the range of screen resolutions and device pixel ratios available on devices today, web developers often need to provide different versions of the same image. Developers do this because if an image is too small on a screen the meaning of that image cannot be properly communicated to a user - conversely, if more space is available, a developer may want to show a different image that depicts more information. Another reason developers do this is to avoid images becoming blurry when scaled too much by the browser.</p>
-    <p>For example, in the following figure it is difficult to discern the man's facial expressions on the image on the left when compared to the image on the middle. The image on the far right show the effects of scaling the image too much, which also affects the image's ability to communicate effectively:</p>
+    <p> Web developers often need to provide different versions of the same image in order to communicate effectively across the wide range of screen resolutions and pixel densities available on today's devices. If the screen is small and the image is scaled down, its details cannot be seen. Conversely, if the screen is large a larger image that depicts more information can be shown.</p>
+    <p>For example, in the left-most image in Figure 1, it is difficult to discern the man's facial expressions, where in the center image his face and gestures are clear. The image on the far right show the poor quality of an over-scaled image.</p>
 <figure>
 <img src="images/obama_small.jpg" alt="Obama talking seriously on the phone" width="240" height="160">
 <img src="images/obama_crop.png" alt="Obama talking seriously on the phone" width="240" height="160">
 <img src="images/obama_scaled.png" alt="Obama talking seriously on the phone" width="240" height="161">
-<figcaption>Three images showing how The figure shows how different zooms and crop convey information about a man talking on the phone.</figcaption>
-</figure>
-    <p>Typically, the desired communicative effect is achieved by changing the crop of an image so it can be targetted at the features of a particular display (or set of displays):</p>
+<figcaption>Three images showing how zoom and crop can enhance or diminish the effectiveness of an image.</figcaption></figure>
+    <p>In a responsive design, it is  typical to change the crop of an image so it can be targeted towards the features of a particular display (or set of displays):</p>
     <ul>
-      <li>a website wants to normally show a large image (e.g. of a figure with a broad background) on displays that are big enough.</li>
-      <li>when shown on a smaller screen, simply shrinking the image may reduce its relevance, usefulness, or legibility, and thus the site may wish to show a different cropping or layout of the same image at the smaller size.</li>
+      <li>On large screens, a large image (e.g. of a figure with a broad background) is shown..</li>
+      <li>On smaller screens, shrinking the image can reduce its relevance, usefulness, and ability to communicate effectively.</li>
     </ul>
     <p>This is illustrated in the figure below. </p>
     <figure>
       <img src="http://cdn.css-tricks.com/wp-content/uploads/2012/05/difimages.jpg">
       <figcaption>Using different images that have been cropped to fit a particular screen's features can help in communicating a message effectively. </figcaption>  
   </figure>
-<p>Another related use case is one where orientation determines the source of the image, the crop, and how text flows around an image based on the size of the viewport. For example, on the Nokia Browser site where it describes the <a href="http://browser.nokia.com/smartphones.html">Meego browser</a>, the Nokia Lumia is shown <a href="http://browser.nokia.com/resources/images/home-feature.png">horizontally on wide screens</a>. As the screen narrows, the Nokia Lumia is then shown <a href="http://browser.nokia.com/resources/images/smartphones/choose-meego@320.png">vertically and cropped</a>. Bryan and Stephanie Rieger, the designers of the site, have talked about how on a wide screen, showing the full phone horizontally showed the browser best, but on small screens, changing the image to vertical made more sense because it allowed the reader to still make out the features of the browser in the image.</p>
+<p>A related use case is when orientation determines the source of the image, the crop, and how text flows around the image based on the size of the viewport. For example, on the Nokia Lumia site where it describes the <a href="http://browser.nokia.com/smartphones.html">Meego browser</a>, the Nokia Lumia  is shown <a href="http://browser.nokia.com/resources/images/home-feature.png">horizontally on wide screens</a>. As the screen narrows, the Nokia Lumia is then shown <a href="http://browser.nokia.com/resources/images/smartphones/choose-meego@320.png">vertically and cropped</a>. Bryan and Stephanie Rieger, the designers of the site, explained that on a wide screen, showing the full phone horizontally showed the browser best; but on small screens, changing the image to vertical made more sense because it allowed the reader to still make out the features of the browser in the image.</p>
 </section>
     
   <section>
     <h2>Design breakpoints</h2>
-    <p>In Web development, a <dfn>breakpoint</dfn> is one of a series of <a href="http://www.w3.org/TR/css3-mediaqueries/">CSS Media Queries</a> that update the styles of a page based on matching some media features. A single breakpoint represents a logical rule (or set of rules) determining the point at which the contents of a media query are applied to a page&rsquo;s layout.</p>
+    <p>In Web development, a <dfn>breakpoint</dfn> is one of a series of CSS Media Queries that update the styles of a page based on logical matching of media features. A single breakpoint represents a rule (or set of rules) that determines the point at which the contents of that media query are applied to a page’s layout.</p>
     <p>Developers currently match specific <a>breakpoints</a> for images to the breakpoints that they have defined in the CSS of their responsive designs. Being able to match the breakpoints ensures that images are operating under the same rules that define the layout of a design. It also helps developers verify their approach by ensuring that the same viewport measurement tests are being used in both HTML and CSS.</p>
     <p> If a breakpoint in the design is specified in [[CSS21]] as:</p>
     <pre class="example"><code>@media screen and (max-width: 41em) {}</code></pre>
