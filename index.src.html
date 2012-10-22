@@ -53,7 +53,7 @@ a:not([href]) {
 
 <header class="head">
   <p><a href="http://www.w3.org/"><img alt="W3C" src="http://www.w3.org/Icons/w3c_home"
-    height="48" width="72" /></a></p>
+    height="48" width="72"></a></p>
   <!--end-logo-->
   <h1 class="head">Use Cases and Requirements for Standardizing Responsive Images</h1>
 
@@ -98,19 +98,26 @@ a:not([href]) {
 <hr />
 
 <section id='abstract'>
+<h2 class="no-num no-toc" id="sotd">Abstract</h2>
   <p>This document captures the use cases and requirements for standardizing a solution for responsive images.</p>
   
   <p style="text-align: center; font-size: 1.5em; border: .2em dotted black; background-color: #E6E6E6; padding: 1em">Hi! If you find any bugs, typos, or issues please <a href=" https://github.com/ResponsiveImagesCG/ri-usecases/issues">file a bug on github</a> or <a href="mailto:public-respimg@w3.org">email us</a>! </p>
 </section>
 
+<section id="tableofcontents">
+<h2 class="no-num no-toc" id="toc">Table of Contents</h2>
+<!--toc-->
+</section>
+
 <section id="introduction">
-  <h1>Introduction</h1>
+  <h2>Introduction</h2>
   <p> In  <span>[HTML5]</span>, a user agent's <dfn>environmental conditions</dfn> are primarily expressed as  CSS <dfn>media features</dfn> (e.g., max-width, orientation, monochrome, etc.) and CSS media types (e.g., print, screen, etc.). A <dfn>responsive image</dfn> is an image that a developer explicit adapts in response to changes to  <span>environmental conditions</span>: adaptations can include, but are not limited to, changing the width, height, or even the source of an image.</p>
   <p>Many media features are dynamic in nature (e.g.,  a browser window is re-sized, a device is rotated from portrait to landscape, and so on), thus a user agent constantly responds to events that cause the properties of media features to change. As a web page's layout adapts to changes in media features and media type,  an image's ability to communicate effectively can be significantly reduced (e.g. images start to show compression artefacts as they are scaled to match the quality of media or some media feature). When this happens, developers rely on <span>responsive images</span> to present images at different resolutions, or even in different formats (e.g., SVG), to make sure their images continue communicating effectively. </p>
   <p>Furthermore, as the number and varieties of high-density screens has increased (both on mobile and desktop devices), web developers have had to create custom techniques  for serving images that best match a browser's <span>environmental conditions</span>. For a list of examples of the range of <dfn>techniques</dfn> in use in 2012, see Chris Coyier's article "<a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/">Which responsive images solution should you use?</a>". These techniques have a number of shortcomings, which are discussed below (and these shortcomings serve as the motivation to reach out to the <a href="http://w3.org">W3C</a> and <a href="http://whatwg.org">WHATWG</a> for standardization). </p>
 </section>
 
 <section id="sotd">
+<h2 class="no-num no-toc" id="sotd">Status of this Document </h2>
   <p>The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a>'s aim  to use this document to capture the use cases and requirements that need to be met in order to add support for <span>responsive images</span> to the Web Platform. The group intends to deliver the document to the <a href="http://www.w3.org/html/wg/">HTML Working Group</a> and <a href="http://whatwg.org">WHATWG</a> for comment (see <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=17061">bug 17061</a>). However, the <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> believes that gathering use cases and requirements is an iterative process and is open to changes and reformulation of requirements as new information becomes available. Therefore, this document takes a &quot;living standard&quot; approach. </p>
   <p> The <span>use cases</span> and <span>requirements</span> were gathered with  consultation with <a href="http://w3c.org/">HTML Working Group</a> and <a href="http://whatwg.org">WHATWG</a> participants, <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> group members, and the general public. The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a>'s goal for this document is to make sure that developer's requirements for responsive images have been formally captured. </p>
   <p>In formulating the requirements, this document tries to be  <em>neutral</em> - it is not predicated on any solution. The document only tries to describe the use cases and what the <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> understands, from practice, would be needed to address the use cases in the form of <span>requirements</span>. The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> expects that a technical specification can be created to formally address each of the <span>requirements</span> (i.e., the <dfn>solution</dfn>). To date, two such specifications are currently under development: </p>
@@ -121,7 +128,7 @@ a:not([href]) {
   <p>Proposed solutions are not mutually exclusive. They may work together to address the complete set of <span>use cases</span> and <span>requirements</span>.</p>
 </section>
 <section id="problems">
-  <h1>Problems with current techniques</h1>
+  <h2>Problems with current techniques</h2>
   <p>There are a number of problems with the <a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/">techniques</a> currently being relied on by web developers: </p>
   <dl>
     <dt>Reliance on  semantically neutral elements and CSS backgrounds: </dt>
@@ -138,7 +145,7 @@ a:not([href]) {
 </section>
 
 <section id="usecases">
-  <h1>Use cases</h1>
+  <h2>Use cases</h2>
   
     <p>The following <dfn>use cases</dfn> represent situations in which Web developers see a need for a browser-based solution for working with responsive images.</p>
   <section>
@@ -215,7 +222,7 @@ a:not([href]) {
 </section>
 
 <section id="requirements">
-<h1>Requirements</h1>
+<h2>Requirements</h2>
 <p>The  <span>use cases</span> give rise to the following <dfn>requirements</dfn>:</p>
 <ol>
   <li>
@@ -263,17 +270,17 @@ a:not([href]) {
 </section>
 
 <section>
-  <h1>Open issues</h1>
+  <h2>Open issues</h2>
   <p>We are tracking <dfn>open issues</dfn> on Github. <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues">Please help close them</a>! </p>
   <div id="open-issues-xhr"></div>
 </section>
 <section>
-<h1>Changes since last publication</h1>
+<h2>Changes since last publication</h2>
 <p>A  <a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/master">complete history of changes</a> is available on Github. </p>
 <p>You can also see <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues?state=closed">all the closed issues</a> relating to this document. </p>
 </section>
 <section>
-  <h1>Acknowledgements</h1>
+  <h2>Acknowledgements</h2>
   <p>We would like to thank the following people for reviewing this document : Mike Taylor, Doug Shults, David Newton, Eileen Webb. </p>
 </section>
 <script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js"></script> 
