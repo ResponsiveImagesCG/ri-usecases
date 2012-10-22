@@ -88,20 +88,20 @@ a:not([href]) {
 
 <section id="introduction">
   <h1>Introduction</h1>
-  <p> In  [[HTML5]], a user agent's <dfn>environmental conditions</dfn> are primarily expressed as  CSS <dfn>media features</dfn> (e.g., max-width, orientation, monochrome, etc.) and CSS media types (e.g., print, screen, etc.). A <dfn>responsive image</dfn> is an image that a developer explicit adapts in response to changes to  <a>environmental conditions</a>: adaptations can include, but are not limited to, changing the width, height, or even the source of an image.</p>
-  <p>Many media features are dynamic in nature (e.g.,  a browser window is re-sized, a device is rotated from portrait to landscape, and so on), thus a user agent constantly responds to events that cause the properties of media features to change. As a web page's layout adapts to changes in media features and media type,  an image's ability to communicate effectively can be significantly reduced (e.g. images start to show compression artefacts as they are scaled to match the quality of media or some media feature). When this happens, developers rely on <a>responsive images</a> to present images at different resolutions, or even in different formats (e.g., SVG), to make sure their images continue communicating effectively. </p>
-  <p>Furthermore, as the number and varieties of high-density screens has increased (both on mobile and desktop devices), web developers have had to create custom techniques  for serving images that best match a browser's <a>environmental conditions</a>. For a list of examples of the range of <dfn>techniques</dfn> in use in 2012, see Chris Coyier's article "<a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/">Which responsive images solution should you use?</a>". These techniques have a number of shortcomings, which are discussed below (and these shortcomings serve as the motivation to reach out to the <a href="http://w3.org">W3C</a> and <a href="http://whatwg.org">WHATWG</a> for standardization). </p>
+  <p> In  <span>[HTML5]</span>, a user agent's <dfn>environmental conditions</dfn> are primarily expressed as  CSS <dfn>media features</dfn> (e.g., max-width, orientation, monochrome, etc.) and CSS media types (e.g., print, screen, etc.). A <dfn>responsive image</dfn> is an image that a developer explicit adapts in response to changes to  <span>environmental conditions</span>: adaptations can include, but are not limited to, changing the width, height, or even the source of an image.</p>
+  <p>Many media features are dynamic in nature (e.g.,  a browser window is re-sized, a device is rotated from portrait to landscape, and so on), thus a user agent constantly responds to events that cause the properties of media features to change. As a web page's layout adapts to changes in media features and media type,  an image's ability to communicate effectively can be significantly reduced (e.g. images start to show compression artefacts as they are scaled to match the quality of media or some media feature). When this happens, developers rely on <span>responsive images</span> to present images at different resolutions, or even in different formats (e.g., SVG), to make sure their images continue communicating effectively. </p>
+  <p>Furthermore, as the number and varieties of high-density screens has increased (both on mobile and desktop devices), web developers have had to create custom techniques  for serving images that best match a browser's <span>environmental conditions</span>. For a list of examples of the range of <dfn>techniques</dfn> in use in 2012, see Chris Coyier's article "<a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/">Which responsive images solution should you use?</a>". These techniques have a number of shortcomings, which are discussed below (and these shortcomings serve as the motivation to reach out to the <a href="http://w3.org">W3C</a> and <a href="http://whatwg.org">WHATWG</a> for standardization). </p>
 </section>
 
 <section id="sotd">
-  <p>The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a>'s aim  to use this document to capture the use cases and requirements that need to be met in order to add support for <a>responsive images</a> to the Web Platform. The group intends to deliver the document to the <a href="http://www.w3.org/html/wg/">HTML Working Group</a> and <a href="http://whatwg.org">WHATWG</a> for comment (see <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=17061">bug 17061</a>). However, the <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> believes that gathering use cases and requirements is an iterative process and is open to changes and reformulation of requirements as new information becomes available. Therefore, this document takes a &quot;living standard&quot; approach. </p>
-  <p> The <a>use cases</a> and <a>requirements</a> were gathered with  consultation with <a href="http://w3c.org/">HTML Working Group</a> and <a href="http://whatwg.org">WHATWG</a> participants, <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> group members, and the general public. The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a>'s goal for this document is to make sure that developer's requirements for responsive images have been formally captured. </p>
-  <p>In formulating the requirements, this document tries to be  <em>neutral</em> - it is not predicated on any solution. The document only tries to describe the use cases and what the <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> understands, from practice, would be needed to address the use cases in the form of <a>requirements</a>. The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> expects that a technical specification can be created to formally address each of the <a>requirements</a> (i.e., the <dfn>solution</dfn>). To date, two such specifications are currently under development: </p>
+  <p>The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a>'s aim  to use this document to capture the use cases and requirements that need to be met in order to add support for <span>responsive images</span> to the Web Platform. The group intends to deliver the document to the <a href="http://www.w3.org/html/wg/">HTML Working Group</a> and <a href="http://whatwg.org">WHATWG</a> for comment (see <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=17061">bug 17061</a>). However, the <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> believes that gathering use cases and requirements is an iterative process and is open to changes and reformulation of requirements as new information becomes available. Therefore, this document takes a &quot;living standard&quot; approach. </p>
+  <p> The <span>use cases</span> and <span>requirements</span> were gathered with  consultation with <a href="http://w3c.org/">HTML Working Group</a> and <a href="http://whatwg.org">WHATWG</a> participants, <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> group members, and the general public. The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a>'s goal for this document is to make sure that developer's requirements for responsive images have been formally captured. </p>
+  <p>In formulating the requirements, this document tries to be  <em>neutral</em> - it is not predicated on any solution. The document only tries to describe the use cases and what the <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> understands, from practice, would be needed to address the use cases in the form of <span>requirements</span>. The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> expects that a technical specification can be created to formally address each of the <span>requirements</span> (i.e., the <dfn>solution</dfn>). To date, two such specifications are currently under development: </p>
   <ul>
     <li><cite><a href="http://dvcs.w3.org/hg/html-proposals/raw-file/tip/responsive-images/responsive-images.html">The picture element: An HTML extension for responsive images</a></cite>. </li>
     <li><cite><a href="http://dev.w3.org/html5/srcset/">The srcset attribute: An HTML extension for adaptive images</a></cite>.</li>
   </ul>
-  <p>Proposed solutions are not mutually exclusive. They may work together to address the complete set of <a>use cases</a> and <a>requirements</a>.</p>
+  <p>Proposed solutions are not mutually exclusive. They may work together to address the complete set of <span>use cases</span> and <span>requirements</span>.</p>
 </section>
 <section id="problems">
   <h1>Problems with current techniques</h1>
@@ -110,7 +110,7 @@ a:not([href]) {
     <dt>Reliance on  semantically neutral elements and CSS backgrounds: </dt>
     <dd>
       <p> Large images incur unnecessary download and processing time, slowing the experience for users. To solve this problem, web developers  provide multiple sources of the same image at different resolutions and then pick the correct size image based on the viewport size. This is commonly done for CSS background images in responsive designs, but web developers lack the markup to do so for images in HTML without hacking together a solution. This means that developers have resorted to using <code>div</code> and other container elements to achieve the desired functionality. </p>
-      <p>In other words, developers are being forced to work around, or completely ignore, authoring requirements of [[!HTML5]].</p>
+      <p>In other words, developers are being forced to work around, or completely ignore, authoring requirements of <span>[HTML5]</span>.</p>
     </dd>
     <dt>Reliance on scripts and server side processing: </dt>
     <dd>
@@ -153,7 +153,7 @@ a:not([href]) {
 @media screen and (max-width: 16em) { ... }
 @media screen and (max-width: 32em) { ... }
 @media screen and (max-width: 41em) { ... }</pre>
-    <p>Developers currently match specific <a>breakpoints</a> for images to the breakpoints that they have defined in the CSS of their responsive designs. Being able to match the breakpoints ensures that images are operating under the same rules that define the layout of a design. It also helps developers verify their approach by ensuring that the same viewport measurement tests are being used in both HTML and CSS.</p>
+    <p>Developers currently match specific <span>breakpoints</span> for images to the breakpoints that they have defined in the CSS of their responsive designs. Being able to match the breakpoints ensures that images are operating under the same rules that define the layout of a design. It also helps developers verify their approach by ensuring that the same viewport measurement tests are being used in both HTML and CSS.</p>
     <p> If a breakpoint in the design is specified in as &quot;<span class="example"><code>max-width: 41em</code></span>&quot;, then web developers would like to be able to define a similar breakpoint for images at a max-width of 41em and not have to translate that measurement into another unit like pixels even if it is possible to calculate that measurement:</p>
     <ul>
       <li>The default font size in most browsers is 16 pixels. So 41em can be calculated to be 41 * 16 = 656 pixels. Calculating this for every breakpoint, while possible, is tedious and potentially error-prone for developers.</li>
@@ -199,19 +199,19 @@ a:not([href]) {
 
 <section id="requirements">
 <h1>Requirements</h1>
-<p>The  <a>use cases</a> give rise to the following <dfn>requirements</dfn>:</p>
+<p>The  <span>use cases</span> give rise to the following <dfn>requirements</dfn>:</p>
 <ol>
   <li>
-    <p>The <a>solution</a> MUST afford developers the ability to match image sources with particular  features of media and/or media types - and have the user agent update the source of an image as the media features and media types of the browser environment change dynamically over time.</p>
+    <p>The <span>solution</span> MUST afford developers the ability to match image sources with particular  features of media and/or media types - and have the user agent update the source of an image as the media features and media types of the browser environment change dynamically over time.</p>
   </li>
   <li>
-    <p>The  <a>solution</a> MUST degrade gracefully on legacy user agents by, for example, relying on [[HTML5]]'s built-in fallback mechanisms. Additionally, the <a>solution</a> SHOULD afford developers the ability to define which version of the image needs to be used as the fallback image.</p></li>
+    <p>The  <span>solution</span> MUST degrade gracefully on legacy user agents by, for example, relying on <span>[HTML5]</span>'s built-in fallback mechanisms. Additionally, the <span>solution</span> SHOULD afford developers the ability to define which version of the image needs to be used as the fallback image.</p></li>
   <li>
-    <p>For accessibility, the <a>solution</a> MUST afford developers with the ability to provide textual alternatives to images.</p></li>
+    <p>For accessibility, the <span>solution</span> MUST afford developers with the ability to provide textual alternatives to images.</p></li>
   <li>
-    <p>The <a>solution</a> MUST NOT require server-side processing or [[HTTP11]] <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html">content negotiation</a>. </p></li>
+    <p>The <span>solution</span> MUST NOT require server-side processing or <span>[HTTP11]</span> <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html">content negotiation</a>. </p></li>
   <li>
-    <p>The <a>solution</a> MUST provide developers with a means to programmatically interface with the displayed image, as well as access relevant attributes and methods that make solution practical to work with (i.e., doesn't require complicated Regex or nested loops to manipulate values). In addition, the solution MUST provide means to hook into relevant events (e.g., loading, errors, etc.). In any case, an API SHOULD provide a means to:</p>
+    <p>The <span>solution</span> MUST provide developers with a means to programmatically interface with the displayed image, as well as access relevant attributes and methods that make solution practical to work with (i.e., doesn't require complicated Regex or nested loops to manipulate values). In addition, the solution MUST provide means to hook into relevant events (e.g., loading, errors, etc.). In any case, an API SHOULD provide a means to:</p>
     <ul>
       <li>
         <p> Determine the current source of the image.</p>
@@ -225,22 +225,22 @@ a:not([href]) {
     </ul>
   </li>
   <li>
-    <p>The <a>solution</a> MUST afford developers the ability to explicitly define different image versions as opposed to simply different resolutions of the same image. </p>
+    <p>The <span>solution</span> MUST afford developers the ability to explicitly define different image versions as opposed to simply different resolutions of the same image. </p>
   </li>
   <li>
-    <p>The <a>solution</a> MUST afford developers  the ability to define fallback image as the smallest image (mobile first) or the largest image (desktop first).</p>
+    <p>The <span>solution</span> MUST afford developers  the ability to define fallback image as the smallest image (mobile first) or the largest image (desktop first).</p>
   </li>
   <li>
-    <p> The <a>solution</a> MUST afford developers  the ability to  define the breakpoints for images as either minimum values (mobile first) or maximum values (desktop first) to match the media queries used in their design.</p>
+    <p> The <span>solution</span> MUST afford developers  the ability to  define the breakpoints for images as either minimum values (mobile first) or maximum values (desktop first) to match the media queries used in their design.</p>
   </li>
   <li>
-    <p>The <a>solution</a> MUST function in such a way that is is responsive to environmental changes in relative units (e.g., when the user increases the base font size of the browser by pressing <kbd>ctrl+</kbd> or <kbd>ctrl-</kbd>).</p>
+    <p>The <span>solution</span> MUST function in such a way that is is responsive to environmental changes in relative units (e.g., when the user increases the base font size of the browser by pressing <kbd>ctrl+</kbd> or <kbd>ctrl-</kbd>).</p>
   </li>
   <li>
-    <p>The <a>solution</a> MAY allow developers to specify images in different formats (or specify the format of a set of image sources).</p>
+    <p>The <span>solution</span> MAY allow developers to specify images in different formats (or specify the format of a set of image sources).</p>
   </li>
   <li>
-    <p>To provide compatibility with legacy user agents, it SHOULD be possible for developers to <a href="http://remysharp.com/2010/10/08/what-is-a-polyfill/">polyfill</a> the <a>solution</a>.</p>
+    <p>To provide compatibility with legacy user agents, it SHOULD be possible for developers to <a href="http://remysharp.com/2010/10/08/what-is-a-polyfill/">polyfill</a> the <span>solution</span>.</p>
   </li>
 </ol>
 </section>
