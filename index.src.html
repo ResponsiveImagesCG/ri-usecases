@@ -57,7 +57,7 @@ a:not([href]) {
   <!--end-logo-->
   <h1 class="head">Use Cases and Requirements for Standardizing Responsive Images</h1>
 
-  <h2 class="no-num no-toc">[LONGSTATUS] (Living Standard) - Last Upadted [DATE] </h2>
+  <h2 class="no-num no-toc">[LONGSTATUS] (Living document) - Last Updated [DATE] </h2>
   
   <dl>
    <!-- 
@@ -105,7 +105,7 @@ a:not([href]) {
 </section>
 
 <section id="tableofcontents">
-<h2 class="no-num no-toc" id="toc">Table of Contents</h2>
+<h2 class="no-num no-toc" id="toc">Table of contents</h2>
 <!--toc-->
 </section>
 
@@ -117,7 +117,7 @@ a:not([href]) {
 </section>
 
 <section id="sotd">
-<h2 class="no-num no-toc" id="sotd">Status of this Document </h2>
+<h2 id="sotd">Status of this document</h2>
   <p>The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a>'s aim  to use this document to capture the use cases and requirements that need to be met in order to add support for <span>responsive images</span> to the Web Platform. The group intends to deliver the document to the <a href="http://www.w3.org/html/wg/">HTML Working Group</a> and <a href="http://whatwg.org">WHATWG</a> for comment (see <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=17061">bug 17061</a>). However, the <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> believes that gathering use cases and requirements is an iterative process and is open to changes and reformulation of requirements as new information becomes available. Therefore, this document takes a &quot;living standard&quot; approach. </p>
   <p> The <span>use cases</span> and <span>requirements</span> were gathered with  consultation with <a href="http://w3c.org/">HTML Working Group</a> and <a href="http://whatwg.org">WHATWG</a> participants, <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> group members, and the general public. The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a>'s goal for this document is to make sure that developer's requirements for responsive images have been formally captured. </p>
   <p>In formulating the requirements, this document tries to be  <em>neutral</em> - it is not predicated on any solution. The document only tries to describe the use cases and what the <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> understands, from practice, would be needed to address the use cases in the form of <span>requirements</span>. The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> expects that a technical specification can be created to formally address each of the <span>requirements</span> (i.e., the <dfn>solution</dfn>). To date, two such specifications are currently under development: </p>
@@ -195,7 +195,7 @@ a:not([href]) {
     <p>Defining higher resolution images for printing would increase the abilities of web developers to define  printed versions of their documents. For example, a photo sharing site could provide a bandwidth-optimized image for display on screen, but a high-resolution image for print. </p>
   </section>
   <section>
-    <h2>Print, monochrome and high-contrast </h2>
+    <h2>Print, monochrome, and high-contrast </h2>
     <p>Displaying a color image on monochrome media (e.g., paper and e-ink displays) can be problematic; different colors with similar luminosity are impossible to distinguish on monochrome media. Currently, server side solutions exist to adapt web content to e-ink displays (e.g. <a href="http://kinstant.com/">kinstant</a>).   However, there is currently no declarative means for developers to change the source of an image for print media. </p>
 <p>Additionally, Microsoft has proposed a <a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh465764.aspx">high-contrast media feature</a>, which would enable developers to know if the user agent is operating in a high-contrast mode.     Knowing if the user agent is operating in high-contrast mode allows  developers to serve  appropriate images, which could potentially assists visually impaired users. To be able to use this feature with images on the Web, developers would currently need to rely on the problematic <a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/">techniques</a> previously discussed. </p>
 </section>
@@ -270,17 +270,17 @@ a:not([href]) {
 </section>
 
 <section>
-  <h2>Open issues</h2>
+  <h2 class="no-num">Open issues</h2>
   <p>We are tracking <dfn>open issues</dfn> on Github. <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues">Please help close them</a>! </p>
   <div id="open-issues-xhr"></div>
 </section>
 <section>
-<h2>Changes since last publication</h2>
+<h2 class="no-num">Changes since last publication</h2>
 <p>A  <a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/master">complete history of changes</a> is available on Github. </p>
 <p>You can also see <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues?state=closed">all the closed issues</a> relating to this document. </p>
 </section>
 <section>
-  <h2>Acknowledgements</h2>
+  <h2 class="no-num">Acknowledgements</h2>
   <p>We would like to thank the following people for reviewing this document : Mike Taylor, Doug Shults, David Newton, Eileen Webb. </p>
 </section>
 <script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js"></script> 
