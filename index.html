@@ -1,27 +1,16 @@
-<!DOCTYPE html><head>
+<!DOCTYPE html>
+<head>
 <title>Use Cases and Requirements for Standardizing Responsive Images</title>
 <meta charset="utf-8">
 <link href="http://www.w3.org/StyleSheets/TR/w3c-unofficial" rel="stylesheet">
 <!--[if lt IE 9]><script src='http://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
 
 <style type="text/css">
-.informative {
-	background-color: rgb(233, 251, 233);
-}
 ol > li {
-	margin-bottom: 1em;
-}
-#conformance dd {
-	margin-bottom: 1em;
+	margin: .5em 0 .5em 0;
 }
 pre {
 	tab-size: 3; /* Reduce indentation. */
-}
-.informative-subhed {
-	font-size: 120%;
-}
-a {
-	color: blue
 }
 a:not([href]) {
 	color: red
@@ -62,8 +51,7 @@ a:not([href]) {
     <dd><a href="irc://irc.w3.org:6665/#respimg">IRC: #respimg on W3C's IRC server</a></dd>
     <dd><a href="https://twitter.com/respimg">Twitter</a></dd>
     <dt>Version history:</dt>
-    <dd><a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages">Github commits</a> (<a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages.atom">RSS</a>)</dd>
-    <dd><a href="https://twitter.com/respimg_commits">Github commits on Twitter</a></dd>
+    <dd><a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages">Github commits</a> (<a href="https://twitter.com/respimg_commits">Twitter</a>) (<a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages.atom">RSS</a>)</dd>
     <dt>Editors:</dt>
     <dd>Marcos Cáceres</dd>
     <dd>Mat Marquis</dd>
@@ -84,26 +72,29 @@ a:not([href]) {
 <section id="tableofcontents">
   <h2 class="no-num no-toc" id="toc">Table of contents</h2>
   
-<!--begin-toc-->
-<ol class="toc">
- <li><a href="#introduction-0"><span class="secno">1 </span>Introduction</a></li>
- <li><a href="#sotd"><span class="secno">2 </span>Status of this document</a></li>
- <li><a href="#problems-with-current-techniques"><span class="secno">3 </span>Problems with current techniques</a></li>
- <li><a href="#use-cases"><span class="secno">4 </span>Use cases</a>
-  <ol>
-   <li><a href="#art-direction"><span class="secno">4.1 </span>Art direction</a></li>
-   <li><a href="#design-breakpoints"><span class="secno">4.2 </span>Design breakpoints</a></li>
-   <li><a href="#media-types"><span class="secno">4.3 </span> Media types</a></li>
-   <li><a href="#print,-monochrome,-and-high-contrast"><span class="secno">4.4 </span>Print, monochrome, and high-contrast </a></li>
-   <li><a href="#relative-units"><span class="secno">4.5 </span>Relative units</a></li>
-   <li><a href="#dynamically-acquired-images-data"><span class="secno">4.6 </span>Dynamically acquired images data </a></li>
-   <li><a href="#image-formats"><span class="secno">4.7 </span>Image formats</a></ol></li>
- <li><a href="#requirements-0"><span class="secno">5 </span>Requirements</a></li>
- <li><a class="no-num" href="#open-issues">Open issues</a></li>
- <li><a class="no-num" href="#changes-since-last-publication">Changes since last publication</a></li>
- <li><a class="no-num" href="#acknowledgements">Acknowledgements</a></li>
- <li><a class="no-num" href="#references">References</a></ol>
-<!--end-toc--> 
+  <!--begin-toc-->
+  <ol class="toc">
+    <li><a href="#introduction-0"><span class="secno">1 </span>Introduction</a></li>
+    <li><a href="#sotd"><span class="secno">2 </span>Status of this document</a></li>
+    <li><a href="#problems-with-current-techniques"><span class="secno">3 </span>Problems with current techniques</a></li>
+    <li><a href="#use-cases"><span class="secno">4 </span>Use cases</a>
+      <ol>
+        <li><a href="#art-direction"><span class="secno">4.1 </span>Art direction</a></li>
+        <li><a href="#design-breakpoints"><span class="secno">4.2 </span>Design breakpoints</a></li>
+        <li><a href="#media-types"><span class="secno">4.3 </span> Media types</a></li>
+        <li><a href="#print,-monochrome,-and-high-contrast"><span class="secno">4.4 </span>Print, monochrome, and high-contrast </a></li>
+        <li><a href="#relative-units"><span class="secno">4.5 </span>Relative units</a></li>
+        <li><a href="#dynamically-acquired-images-data"><span class="secno">4.6 </span>Dynamically acquired images data </a></li>
+        <li><a href="#image-formats"><span class="secno">4.7 </span>Image formats</a>
+      </ol>
+    </li>
+    <li><a href="#requirements-0"><span class="secno">5 </span>Requirements</a></li>
+    <li><a class="no-num" href="#open-issues">Open issues</a></li>
+    <li><a class="no-num" href="#changes-since-last-publication">Changes since last publication</a></li>
+    <li><a class="no-num" href="#acknowledgements">Acknowledgements</a></li>
+    <li><a class="no-num" href="#references">References</a>
+  </ol>
+  <!--end-toc--> 
 </section>
 <section id="introduction">
   <h2 id="introduction-0"><span class="secno">1 </span>Introduction</h2>
@@ -279,5 +270,4 @@ a:not([href]) {
 </section>
 <script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js"></script> 
 <script src="https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse"></script> 
-<script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/ga.js"></script>
-
+<script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/ga.js"></script> 
