@@ -44,7 +44,7 @@ a:not([href]) {
   <a href="http://www.w3.org/"><img alt="W3C" height="48" src="http://www.w3.org/Icons/w3c_home" width="72"></a> </p>
   <!--end-logo-->
   <h1 class="head">Use Cases and Requirements for Standardizing Responsive Images</h1>
-  <h2 class="no-num no-toc" id="living-document-last-updated-24-october-2012">Living document - Last Updated 24 October 2012 </h2>
+  <h2 class="no-num no-toc" id="living-document-last-updated-25-october-2012">Living document - Last Updated 25 October 2012 </h2>
   <dl>
     <dt>Latest  version:</dt>
     <dd><a href="http://usecases.responsiveimages.org">http://usecases.responsiveimages.org</a></dd>
@@ -206,7 +206,7 @@ a:not([href]) {
       <p>For accessibility, the <a href="#solution">solution</a> MUST afford developers with the ability to provide textual alternatives to images.</p>
     </li>
     <li>
-      <p>The <a href="#solution">solution</a> MUST NOT require server-side processing or <span>[HTTP11]</span> <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html">content negotiation</a>. </p>
+      <p>The solution MUST NOT require server-side processing to work. However, if required, server-side adaptation can still be done through <a href="#http">[HTTP]</a> <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html">content negotiation</a> or similar techniques. </p>
     </li>
     <li>
       <p>The <a href="#solution">solution</a> MUST provide developers with a means to programmatically interface with the displayed image, as well as access relevant attributes and methods that make solution practical to work with (i.e., doesn't require complicated Regex or nested loops to manipulate values). In addition, the solution MUST provide means to hook into relevant events (e.g., loading, errors, etc.). In any case, an API SHOULD provide a means to:</p>
