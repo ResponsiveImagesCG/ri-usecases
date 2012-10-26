@@ -86,8 +86,7 @@ a:not([href]) {
  <li><a href="#requirements"><span class="secno">4 </span>Requirements</a></li>
  <li><a class="no-num" href="#open-issues">Open issues</a></li>
  <li><a class="no-num" href="#changes-history">Changes history</a></li>
- <li><a class="no-num" href="#acknowledgements">Acknowledgements</a></li>
- <li><a class="no-num" href="#references">References</a></ol>
+ <li><a class="no-num" href="#acknowledgements">Acknowledgements</a></ol>
 <!--end-toc--> 
 <h2 id="introduction"><span class="secno">1 </span>Introduction</h2>
 <p> In <span><a href="http://www.w3.org/TR/html5/">HTML</a></span>, a user agent's <dfn id="environmental-conditions">environmental conditions</dfn> are primarily expressed as  CSS <dfn id="media-features">media features</dfn> (e.g., max-width, orientation, monochrome, etc.) and CSS media types (e.g., print, screen, etc.). A <dfn id="responsive-image">responsive image</dfn> is an image that a developer explicitly adapts in response to changes to <a href="#environmental-conditions">environmental conditions</a>: adaptations can include, but are not limited to, changing the width, height, or even the source of an image.</p>
@@ -171,10 +170,15 @@ a:not([href]) {
   Two pie charts, one in color and one in black and white, which demonstrate the problem with switching from color to monochrome media. In the black and white graph, it is extremely difficult to know which slice relates to which label (except in the case of "commute", which is a lighter shade).</figcaption>
 </figure>
 <p>Currently, server side solutions exist to adapt web content to e-ink displays (e.g. <a href="http://kinstant.com/">kinstant</a>), but such services only work on text and layout and not on images. As interpreting the meaning of images is a problem of <a href="http://en.wikipedia.org/wiki/Semiotics">semiotics</a>, it is infeasible that this problem can ever be computationally solved. The only feasible solution is  for authors to provide alternative image content that communicates effectively in monochrome media. </p>
-<p>Lastly, through the CSS Media Queries specifications, the CSS Working Group continues to add media features to the Web platform. New media features in  <a href="http://dev.w3.org/csswg/mediaqueries4/">CSS Media Queries level 4</a> include  <a href="http://dev.w3.org/csswg/mediaqueries4/#script">script</a>,  <a href="http://dev.w3.org/csswg/mediaqueries4/#pointer">pointer</a>, <a href="http://dev.w3.org/csswg/mediaqueries4/#hover">hover</a>, and  <a href="http://dev.w3.org/csswg/mediaqueries4/#luminosity">luminosity</a>. The lack of a declarative mechanism to associate image content  with media features means that developers cannot use them without relying on the aforementioned problematic <a href="#techniques">techniques</a>.</p>
+<p>Lastly, through the<a href="http://www.w3.org/TR/css3-mediaqueries/"> CSS Media Queries specifications</a>, the <a href="http://www.w3.org/Style/CSS/">CSS Working Group</a> continues to add media features to the Web platform. New media features in  <a href="http://dev.w3.org/csswg/mediaqueries4/">CSS Media Queries level 4</a> include  <a href="http://dev.w3.org/csswg/mediaqueries4/#script">script</a>,  <a href="http://dev.w3.org/csswg/mediaqueries4/#pointer">pointer</a>, <a href="http://dev.w3.org/csswg/mediaqueries4/#hover">hover</a>, and  <a href="http://dev.w3.org/csswg/mediaqueries4/#luminosity">luminosity</a>. The lack of a declarative mechanism to associate image content  with media features means that developers cannot use them without relying on the aforementioned problematic <a href="#techniques">techniques</a>.</p>
 <h3 id="relative-units"><span class="secno">3.5 </span>Relative units</h3>
 <p>A common practice in creating flexible layouts is to specify the size values in media queries as relative units: <code>em</code>, <code>rem</code>, <code>vw</code>/<code>vh</code> etc. See, for example, Lyza Gardner's article <a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/">The EMs have it: Proportional Media Queries FTW!</a>This approach is most commonly seen using <code>em</code>s in order to reflow layouts based on users’ zoom preferences, or to resize elements through JavaScript by dynamically altering a font-size value. </p>
-<p>In flexible layout designs, when a user zooms into a design, proportionally scaled images can be blurry or pixelated, affecting the image's impact and function. Swapping to a more suitable image is used to overcome this problem.</p>
+<p>In flexible layout designs, when a user zooms into a design, proportionally scaled images can be blurry or pixelated, affecting the image's impact and function (for example, on televisions or when projecting). </p>
+<figure>
+<div><img src="images/em_mq_labelled.png"></div>
+<figcaption>Images become unexatably blury and pixelated as a user changes zoom ratio.</figcaption> 
+</figure>
+<p>Swapping to a more suitable image is used to overcome this problem.</p>
 <h3 id="api-to-manipulate-sources"><span class="secno">3.6 </span>API to manipulate sources</h3>
 <p>There are cases where the image data is dynamically generated (e.g., using <a href="http://www.w3.org/TR/2dcontext/">the <code>canvas</code> element</a> and related APIs) or is acquired from the device itself (e.g., from the camera on a phone or tablet using some form of media capture). Developers need practical means to interface programmatically with the source of an image or a set of images. Without having a suitable API, it will be difficult for developers to manipulate the sources of images. </p>
 <h3 id="image-formats"><span class="secno">3.7 </span>Image formats</h3>
@@ -188,19 +192,19 @@ a:not([href]) {
 <p>The <a href="#use-cases-0">use cases</a> give rise to the following <dfn id="requirements-0">requirements</dfn>:</p>
 <ol>
   <li>
-    <p>The <a href="#solution">solution</a> MUST afford developers the ability to match image sources with particular  features of media and/or media types - and have the user agent update the source of an image as the media features and media types of the browser environment change dynamically over time.</p>
+    <p>The <a href="#solution">solution</a> MUST afford developers the ability to match image sources with particular  media features  and/or media types - and have the user agent update the source of an image as the media features and media types of the browser environment change dynamically over time.</p>
   </li>
   <li>
-    <p>The <a href="#solution">solution</a> MUST degrade gracefully on legacy user agents by, for example, relying on <span>HTML</span>'s built-in fallback mechanisms. Additionally, the <a href="#solution">solution</a> SHOULD afford developers the ability to define which version of the image needs to be used as the fallback image.</p>
+    <p>The <a href="#solution">solution</a> MUST degrade gracefully on legacy user agents by, for example, relying on <span>HTML</span>'s built-in fallback mechanisms and legacy elements.</p>
   </li>
   <li>
     <p>The <a href="#solution">solution</a> MUST afford developers with the ability to include  content  that is accessible to assistive technologies.</p>
   </li>
   <li>
-    <p>The solution MUST NOT require server-side processing to work. However, if required, server-side adaptation can still be done through <a href="#http">[HTTP]</a> <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html">content negotiation</a> or similar techniques. </p>
+    <p>The solution MUST NOT require server-side processing to work. However, if required, server-side adaptation can still occur through <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html">content negotiation</a> or similar techniques (i.e., they are not mutually exclusive). </p>
   </li>
   <li>
-    <p>The <a href="#solution">solution</a> MUST provide developers with a means to programmatically interface with the displayed image, as well as access relevant attributes and methods that make solution practical to work with (i.e., doesn't require complicated Regex or nested loops to manipulate values). In addition, the solution MUST provide means to hook into relevant events (e.g., loading, errors, etc.). In any case, an API SHOULD provide a means to:</p>
+    <p>The <a href="#solution">solution</a> MUST provide developers with a means to programmatically interface with  image resources, as well as access relevant attributes and methods that make the solution practical to work with (i.e., it shouldn't  require complicated Regex or nested loops to manipulate values). In addition, the solution MUST provide means to hook into relevant events (e.g., loading, errors, etc.). In any case, an API SHOULD provide a means to:</p>
     <ul>
       <li>
         <p> Determine the current source of the image.</p>
@@ -214,16 +218,13 @@ a:not([href]) {
     </ul>
   </li>
   <li>
-    <p>The <a href="#solution">solution</a> MUST afford developers the ability to explicitly define different image versions as opposed to simply different resolutions of the same image. </p>
-  </li>
-  <li>
-    <p>The <a href="#solution">solution</a> MUST afford developers  the ability to define fallback image as the smallest image (mobile first) or the largest image (desktop first).</p>
+    <p>The <a href="#solution">solution</a> MUST afford developers the ability to explicitly define different image versions as opposed to only different resolutions of the same image.
   </li>
   <li>
     <p> The <a href="#solution">solution</a> MUST afford developers  the ability to  define the breakpoints for images as either minimum values (mobile first) or maximum values (desktop first) to match the media queries used in their design.</p>
   </li>
   <li>
-    <p>The <a href="#solution">solution</a> MUST function in such a way that is is responsive to environmental changes in relative units (e.g., when the user increases the base font size of the browser by pressing <kbd>ctrl+</kbd> or <kbd>ctrl-</kbd>).</p>
+    <p>The <a href="#solution">solution</a> MUST function in such a way that is  responsive to environmental changes in relative units (e.g., when the user increases the base font size of the browser by pressing <kbd>ctrl+</kbd> or <kbd>ctrl-</kbd>).</p>
   </li>
   <li>
     <p>The <a href="#solution">solution</a> MAY allow developers to specify images in different formats (or specify the format of a set of image sources).</p>
@@ -239,16 +240,9 @@ a:not([href]) {
 <p>A <a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/master">complete history of changes</a> is available on Github. </p>
 <p>You can also see <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues?state=closed">all the closed issues</a> relating to this document. </p>
 <h2 class="no-num" id="acknowledgements">Acknowledgements</h2>
-<p>We would like to thank the following people for reviewing this document : Mike Taylor, Doug Shults, David Newton, Eileen Webb. </p>
-<h2 class="no-num" id="references">References</h2>
-<dl>
-  <dt><dfn id="html">[HTML]</dfn></dt>
-  <dd><a href="http://www.w3.org/TR/html5/#status-of-this-document">HTML5: A vocabulary and associated APIs for HTML and XHTML</a>. (<a href="http://www.w3.org/TR/html5/#status-of-this-document">status</a>).</dd>
-  <dd><a href="http://www.whatwg.org/specs/web-apps/current-work/">HTML - Living Standard</a>.</dd>
-  <dt><dfn id="http">[HTTP]</dfn></dt>
-  <dd><a href="http://www.ietf.org/rfc/rfc2616.txt">Hypertext Transfer Protocol -- HTTP/1.1</a>. </dd>
-</dl>
-<script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js"></script> 
-<script src="https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse"></script> 
-<script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/ga.js"></script>
+<p>We would like to thank the following people for reviewing this document : Mike Taylor, Doug Shults, David Newton, Eileen Webb. 
+  <script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js"></script> 
+  <script src="https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse"></script> 
+  <script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/ga.js"></script>
+</p>
 
