@@ -271,7 +271,6 @@ window.addEventListener("DOMContentLoaded", function requestParticipants(){
 		//participants are in a table on the other website
 		tempElem.innerHTML = xhr.responseText;
 		participants = tempElem.querySelectorAll("td > h3");
-		console.dir(participants)
 		if(participants.length > 0){
  	  		showParticipants(participants)
 		}
