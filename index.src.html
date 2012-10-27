@@ -7,6 +7,23 @@
 <!--[if lt IE 9]><script src='http://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
 
 <style type="text/css">
+figure {
+  display: block;
+  border: thin silver solid;
+  margin: 0.5em;
+  padding: 0.5em;
+  text-align: center;	
+}
+figcaption {
+  font-style: italic;
+  font-size: smaller;
+  text-indent: 0;
+}
+figcaption:before {
+  font-weight: bold;
+  counter-increment: figcaption;     
+  content: "Figure " counter(figcaption) ". "
+}
 ol > li {
 	margin: .5em 0 .5em 0;
 }
@@ -60,10 +77,9 @@ a:not([href]) {
     <dt>Version history:</dt>
     <dd><a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages">Github commits</a> (<a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages.atom">RSS</a>)</dd>
     <dd><a href="https://twitter.com/respimg_commits">Github commits on Twitter</a></dd>
-    <dt>Editors:</dt>
-    <dd>Marcos Cáceres</dd>
-    <dd>Mat Marquis</dd>
-    <dd>Yoav Weiss</dd>
+   <dt>Authors:</dt>
+   <dd>Participants of the  Responsive Images Community Group</dd> 
+   
   </dl>
   <p class="copyright">Copyright &copy; [YEAR] the Contributors to the <cite>Use Cases and Requirements for Standardizing Responsive Images</cite> Specification, published by the <a href="http://www.w3.org/community/respimg/">Responsive Images Community Group</a> under the <a href="https://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/">summary</a> is available.</p>
 </header>
@@ -163,7 +179,7 @@ a:not([href]) {
 <p>In flexible layout designs, when a user zooms into a design, proportionally scaled images can be blurry or pixelated, affecting the image's impact and function (for example, on televisions or when projecting). </p>
 <figure>
 <div><img src="images/em_mq_labelled.png"></div>
-<figcaption>Images become unexatably blury and pixelated as a user changes zoom ratio.</figcaption> 
+<figcaption>Images become unacceptably blury and pixelated as a user changes zoom ratio.</figcaption> 
 </figure>
 <p>Swapping to a more suitable image is used to overcome this problem.</p>
 <h3>API to manipulate sources</h3>
@@ -226,11 +242,51 @@ a:not([href]) {
 <h2 class="no-num">Changes history</h2>
 <p>A <a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/master">complete history of changes</a> is available on Github. </p>
 <p>You can also see <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues?state=closed">all the closed issues</a> relating to this document. </p>
-<h2 class="no-num">Acknowledgements</h2>
-<p>We would like to thank the following people for reviewing this document : Mike Taylor, Doug Shults, David Newton, Eileen Webb. 
+<h2 class="no-num" id="acknowledgements">Acknowledgements</h2>
+<p>This document is composed of contributions from participants of the responsive images community group. It was edited by Marcos Cáceres and Mat Marquis.</p>
+ 
+<p>The editors would like to thank the following people for reviewing this document : Mike Taylor, Doug Shults, David Newton, Eileen Webb. 
+</p>
+
+<p id="participants">A list of <a href="http://www.w3.org/community/respimg/participants">participants</a> is avialble at the W3C Community Group Website.</p>
+
   <script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js"></script> 
   <script src="https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse"></script> 
   <script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/ga.js"></script>
-</p>
-</body>
-</html>
+  
+  <script>
+//This script dynamically loads the participants of the CG and shows them in the spec. 
+window.addEventListener("DOMContentLoaded", function requestParticipants(){
+  var xhr = new XMLHttpRequest(),
+  	  output = document.querySelector("#participants"), 
+      participantsURL = output.querySelector("a").getAttribute("href"),
+	  tempElem = document.createElement("temp"), 
+	  participants;
+  xhr.open("GET", participantsURL,true);
+  xhr.onreadystatechange= processParticipants; 
+  xhr.send(null); 
+  
+  function processParticipants(){
+	 if (xhr.readyState==4) {
+		//participants are in a table on the other website
+		tempElem.innerHTML = xhr.responseText;
+		participants = tempElem.querySelectorAll("td > h3");
+		console.dir(participants)
+		if(participants.length > 0){
+ 	  		showParticipants(participants)
+		}
+ 	}
+  } 
+  
+  function showParticipants(){
+	var names  = [],
+		prefix = "Participants of the Responsive Images Community Group are: ";
+	if(participants.length){
+		for(var i = 0; i < participants.length; i++){
+			names.push(participants.item(i).textContent);
+		}
+		output.innerHTML = prefix + names.join(", ") + "."; 
+	}
+  }
+ }, false); 
+  </script>
