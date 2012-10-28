@@ -1,5 +1,6 @@
 <!DOCTYPE html><head>
 <meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1" name="viewport">
 <title>Use Cases and Requirements for Standardizing Responsive Images</title>
 <link href="http://www.w3.org/StyleSheets/TR/w3c-unofficial" rel="stylesheet">
 <!--[if lt IE 9]><script src='http://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
@@ -63,6 +64,35 @@ a:not([href]) {
 	float: left;
 	width: 5.5em;
 }
+
+#welcome{
+	text-shadow: white 1px 1px;
+	color: #444;
+	background: #ffffff; /* Old browsers */
+
+background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+
+background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+
+background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
+
+background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
+
+background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+
+
+text-align: center; 
+font-size: 1.5em;
+border: thin dotted #333333; 
+background-color: #E6E6E6; 
+padding: 1em
+
+
+}
 </style>
 </head>
 <body>
@@ -90,7 +120,7 @@ a:not([href]) {
 <hr>
 <h2 class="no-num no-toc" id="abstract">Abstract</h2>
 <p>This document captures the use cases and requirements for standardizing a solution for responsive images.</p>
-<p style="text-align: center; font-size: 1.5em; border: .2em dotted black; background-color: #E6E6E6; padding: 1em">Hi! If you find any bugs, typos, or issues please <a href=" https://github.com/ResponsiveImagesCG/ri-usecases/issues">file a bug on github</a> or <a href="mailto:public-respimg@w3.org">email us</a>! </p>
+<p id="welcome">Howdy! Found a bug, typo, or issue? Please <a href=" https://github.com/ResponsiveImagesCG/ri-usecases/issues">file a bug on github</a> or <a href="mailto:public-respimg@w3.org">email us</a>! </p>
 <h2 class="no-num no-toc" id="toc">Table of contents</h2>
 
 <!--begin-toc-->
@@ -157,7 +187,7 @@ a:not([href]) {
 </ul>
 <p>This is illustrated in the figure below. </p>
 <figure>
-  <div><img class="stretchy" height="360" src="http://cdn.css-tricks.com/wp-content/uploads/2012/05/difimages.jpg" style="max-width:922px" width="922"></div>
+  <div><img class="stretchy" height="223" src="images/art_direction.png" style="max-width:705px" width="705"></div>
   <figcaption>
     <p>Using different images that have been cropped to fit a particular screen's features can help in communicating a message effectively. </p>
   </figcaption>
