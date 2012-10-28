@@ -1,9 +1,8 @@
 <!DOCTYPE html><head>
-<title>Use Cases and Requirements for Standardizing Responsive Images</title>
 <meta charset="utf-8">
+<title>Use Cases and Requirements for Standardizing Responsive Images</title>
 <link href="http://www.w3.org/StyleSheets/TR/w3c-unofficial" rel="stylesheet">
 <!--[if lt IE 9]><script src='http://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
-
 <style type="text/css">
 figure {
   display: block;
@@ -59,9 +58,8 @@ a:not([href]) {
 <header class="head">
   <p><a href="http://responsiveimages.org"><img alt="Responsive Images Community Group" src="https://raw.github.com/ResponsiveImagesCG/meta/master/logo/Web/RICG_logo_small.png" style="float:right"></a>
   <a href="http://www.w3.org/"><img alt="W3C" height="48" src="http://www.w3.org/Icons/w3c_home" width="72"></a> </p>
-  <!--end-logo-->
   <h1 class="head">Use Cases and Requirements for Standardizing Responsive Images</h1>
-  <h2 class="no-num no-toc" id="living-document-last-updated-27-october-2012">Living document - Last Updated 27 October 2012 </h2>
+  <h2 class="no-num no-toc" id="living-document-last-updated-27-october-2012">Living document - Last updated 27 October 2012 </h2>
   <dl>
     <dt>Latest  version:</dt>
     <dd><a href="http://usecases.responsiveimages.org">http://usecases.responsiveimages.org</a></dd>
@@ -267,39 +265,4 @@ a:not([href]) {
   <script src="https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse"></script> 
   <script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/ga.js"></script>
   
-  <script>
-//This script dynamically loads the participants of the CG and shows them in the spec. 
-window.addEventListener("DOMContentLoaded", function requestParticipants(){
-  var xhr = new XMLHttpRequest(),
-  	  output = document.querySelector("#participants"), 
-      participantsURL = output.querySelector("a").getAttribute("href"),
-	  tempElem = document.createElement("temp"), 
-	  participants;
-  xhr.open("GET", participantsURL,true);
-  xhr.onreadystatechange= processParticipants; 
-  xhr.send(null); 
-  
-  function processParticipants(){
-	 if (xhr.readyState==4) {
-		//participants are in a table on the other website
-		tempElem.innerHTML = xhr.responseText;
-		participants = tempElem.querySelectorAll("td > h3");
-		console.dir(participants)
-		if(participants.length > 0){
- 	  		showParticipants(participants)
-		}
- 	}
-  } 
-  
-  function showParticipants(){
-	var names  = [],
-		prefix = "Participants of the Responsive Images Community Group are: ";
-	if(participants.length){
-		for(var i = 0; i < participants.length; i++){
-			names.push(participants.item(i).textContent);
-		}
-		output.innerHTML = prefix + names.join(", ") + "."; 
-	}
-  }
- }, false); 
-  </script>
+  <script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/load_cg_participants.js"></script>

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Use Cases and Requirements for Standardizing Responsive Images</title>
 <meta charset="utf-8">
+<title>Use Cases and Requirements for Standardizing Responsive Images</title>
 <link rel="stylesheet" href="http://www.w3.org/StyleSheets/TR/w3c-unofficial">
 <!--[if lt IE 9]><script src='http://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
-
 <style type="text/css">
 figure {
   display: block;
@@ -62,9 +61,8 @@ a:not([href]) {
   <p><a href="http://responsiveimages.org"><img style="float:right" src="https://raw.github.com/ResponsiveImagesCG/meta/master/logo/Web/RICG_logo_small.png" alt="Responsive Images Community Group"></a>
   <a href="http://www.w3.org/"><img alt="W3C" src="http://www.w3.org/Icons/w3c_home" 
     height="48" width="72"></a> </p>
-  <!--end-logo-->
   <h1 class="head">Use Cases and Requirements for Standardizing Responsive Images</h1>
-  <h2 class="no-num no-toc">Living document - Last Updated [DATE] </h2>
+  <h2 class="no-num no-toc">Living document - Last updated [DATE] </h2>
   <dl>
     <dt>Latest  version:</dt>
     <dd><a href=
@@ -83,7 +81,7 @@ a:not([href]) {
   </dl>
   <p class="copyright">Copyright &copy; [YEAR] the Contributors to the <cite>Use Cases and Requirements for Standardizing Responsive Images</cite> Specification, published by the <a href="http://www.w3.org/community/respimg/">Responsive Images Community Group</a> under the <a href="https://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/">summary</a> is available.</p>
 </header>
-<hr />
+<hr>
 <h2 class="no-num no-toc">Abstract</h2>
 <p>This document captures the use cases and requirements for standardizing a solution for responsive images.</p>
 <p style="text-align: center; font-size: 1.5em; border: .2em dotted black; background-color: #E6E6E6; padding: 1em">Hi! If you find any bugs, typos, or issues please <a href=" https://github.com/ResponsiveImagesCG/ri-usecases/issues">file a bug on github</a> or <a href="mailto:public-respimg@w3.org">email us</a>! </p>
@@ -254,38 +252,4 @@ a:not([href]) {
   <script src="https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse"></script> 
   <script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/ga.js"></script>
   
-  <script>
-//This script dynamically loads the participants of the CG and shows them in the spec. 
-window.addEventListener("DOMContentLoaded", function requestParticipants(){
-  var xhr = new XMLHttpRequest(),
-  	  output = document.querySelector("#participants"), 
-      participantsURL = output.querySelector("a").getAttribute("href"),
-	  tempElem = document.createElement("temp"), 
-	  participants;
-  xhr.open("GET", participantsURL,true);
-  xhr.onreadystatechange= processParticipants; 
-  xhr.send(null); 
-  
-  function processParticipants(){
-	 if (xhr.readyState==4) {
-		//participants are in a table on the other website
-		tempElem.innerHTML = xhr.responseText;
-		participants = tempElem.querySelectorAll("td > h3");
-		if(participants.length > 0){
- 	  		showParticipants(participants)
-		}
- 	}
-  } 
-  
-  function showParticipants(){
-	var names  = [],
-		prefix = "Participants of the Responsive Images Community Group are: ";
-	if(participants.length){
-		for(var i = 0; i < participants.length; i++){
-			names.push(participants.item(i).textContent);
-		}
-		output.innerHTML = prefix + names.join(", ") + "."; 
-	}
-  }
- }, false); 
-  </script>
+  <script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/load_cg_participants.js"></script>
