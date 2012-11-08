@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta name="generator" content=
-  "HTML Tidy for HTML5 (experimental) for Mac OS X https://github.com/w3c/tidy-html5/tree/68a9e74">
+  "HTML Tidy for HTML5 (experimental) for Mac OS X https://github.com/w3c/tidy-html5/tree/c63cc39">
   <meta charset="utf-8">
   <meta content="width=device-width,initial-scale=1" name=
   "viewport">
@@ -20,6 +20,18 @@ body {
   }
   header {
         display: block;
+  }
+  header dd {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+  img,
+  video {
+  max-width: 100%;
+  height: auto;
+  }
+  code, pre {
+  white-space: pre-wrap;
   }
   img.stretchy {
         width: 100%;
@@ -119,8 +131,8 @@ body {
     Responsive Images</h1>
 
     <h2 class="no-num no-toc" id=
-    "living-document-last-updated-28-october-2012">Living document
-    - Last updated 28 October 2012</h2>
+    "living-document-last-updated-8-november-2012">Living document
+    - Last updated 8 November 2012</h2>
 
     <dl>
       <dt>Latest version:</dt>
@@ -837,6 +849,8 @@ body {
         <li>
           <p>Add, remove, and update image sources.</p>
         </li>
+
+        <li>Deal with events.</li>
       </ul>
     </li>
 
@@ -853,14 +867,6 @@ body {
       as either minimum values (mobile first) or maximum values
       (desktop first) to match the media queries used in their
       design.</p>
-    </li>
-
-    <li>
-      <p>The <a href="#solution">solution</a> MUST function in such
-      a way that is responsive to environmental changes in relative
-      units (e.g., when the user increases the base font size of
-      the browser by pressing <kbd>ctrl+</kbd> or
-      <kbd>ctrl-</kbd>).</p>
     </li>
 
     <li>
