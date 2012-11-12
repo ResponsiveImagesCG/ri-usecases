@@ -131,8 +131,8 @@ body {
     Responsive Images</h1>
 
     <h2 class="no-num no-toc" id=
-    "living-document-last-updated-8-november-2012">Living document
-    - Last updated 8 November 2012</h2>
+    "living-document-last-updated-12-november-2012">Living document
+    - Last updated 12 November 2012</h2>
 
     <dl>
       <dt>Latest version:</dt>
@@ -208,8 +208,8 @@ body {
 
   <p id="welcome">Howdy! Found a bug, typo, or issue? Please
   <a href=
-  "%20https://github.com/ResponsiveImagesCG/ri-usecases/issues">file
-  a bug on github</a> or <a href=
+  "https://github.com/ResponsiveImagesCG/ri-usecases/issues?state=open">
+  file a bug on github</a> or <a href=
   "mailto:public-respimg@w3.org">email us</a>!</p>
 
   <h2 class="no-num no-toc" id="toc">Table of contents</h2>
@@ -266,6 +266,11 @@ body {
         <li>
           <a href="#image-formats"><span class="secno">4.6</span>
           Image formats</a>
+        </li>
+
+        <li>
+          <a href="#user-control-over-sources"><span class=
+          "secno">4.7</span> User control over sources</a>
         </li>
       </ol>
     </li>
@@ -506,9 +511,8 @@ body {
   <p>This is illustrated in the figure below.</p>
 
   <figure>
-    <div><img class="stretchy" height="223" src=
-    "images/art_direction.png" style="max-width:705px" width=
-    "705"></div>
+    <div><img class="stretchy" height="500" src=
+    "images/devices.png" style="max-width:800px" width="800"></div>
 
     <figcaption>
       <p>Using different images that have been cropped to fit a
@@ -787,6 +791,29 @@ body {
   image format in favor of one that has good user agent
   support.</p>
 
+  <h3 id="user-control-over-sources"><span class="secno">4.7</span>
+  User control over sources</h3>
+
+  <p>In situations where the user knows their bandwidth is limited
+  or expensive (e.g., while roaming), the browser could assist
+  users by:</p>
+
+  <ol>
+    <li>giving users an option to only download images in the
+    quality they desire - or disable images all together, as Google
+    Chrome currently does through site preferences.</li>
+
+    <li>automatically select the most suitalbe image for the
+    browsing environment.</li>
+  </ol>
+
+  <p>There are browsers already catering for these kinds of
+  situations: for example Opera Mini provides users with a choice
+  of image quality (but those images are compressed on the server).
+  Amazon's Silk browser also compresses images "in the cloud"
+  (i.e., through their own proxy servers) before serving those
+  images to a user's device.</p>
+
   <h2 id="requirements"><span class="secno">5</span>
   Requirements</h2>
 
@@ -795,45 +822,46 @@ body {
 
   <ol>
     <li>
-      <p>The <a href="#solution">solution</a> MUST afford
-      developers the ability to match image sources with particular
-      media features and/or media types - and have the user agent
-      update the source of an image as the media features and media
-      types of the browser environment change dynamically.</p>
+      <p>The <a href="#solution">solution</a> <em class=
+      "ct">MUST</em> afford developers the ability to match image
+      sources with particular media features and/or media types -
+      and have the user agent update the source of an image as the
+      media features and media types of the browser environment
+      change dynamically.</p>
     </li>
 
     <li>
-      <p>The <a href="#solution">solution</a> MUST degrade
-      gracefully on legacy user agents by, for example, relying on
-      <span>HTML</span>'s built-in fallback mechanisms and legacy
-      elements.</p>
+      <p>The <a href="#solution">solution</a> <em class=
+      "ct">MUST</em> degrade gracefully on legacy user agents by,
+      for example, relying on <span>HTML</span>'s built-in fallback
+      mechanisms and legacy elements.</p>
     </li>
 
     <li>
-      <p>The <a href="#solution">solution</a> MUST afford
-      developers with the ability to include content that is
-      accessible to assistive technologies.</p>
+      <p>The <a href="#solution">solution</a> <em class=
+      "ct">MUST</em> afford developers with the ability to include
+      content that is accessible to assistive technologies.</p>
     </li>
 
     <li>
-      <p>The solution MUST NOT require server-side processing to
-      work. However, if required, server-side adaptation can still
-      occur through <a href=
+      <p>The solution <em class="ct">MUST NOT</em> require
+      server-side processing to work. However, if required,
+      server-side adaptation can still occur through <a href=
       "http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html">content
       negotiation</a> or similar techniques (i.e., they are not
       mutually exclusive).</p>
     </li>
 
     <li>
-      <p>The <a href="#solution">solution</a> MUST provide
-      developers with a means to programmatically interface with
-      image resources, as well as access relevant attributes and
-      methods that make the solution practical to work with (i.e.,
-      it shouldn't require complicated Regex or nested loops to
-      manipulate values). In addition, the <a href=
-      "#solution">solution</a> MUST provide means to hook into
-      relevant events (e.g., loading, errors, etc.). In any case,
-      an API SHOULD provide a means to:</p>
+      <p>The <a href="#solution">solution</a> <em class=
+      "ct">MUST</em> provide developers with a means to
+      programmatically interface with image resources, as well as
+      access relevant attributes and methods that make the solution
+      practical to work with (i.e., it shouldn't require
+      complicated Regex or nested loops to manipulate values). In
+      addition, the <a href="#solution">solution</a> MUST provide
+      means to hook into relevant events (e.g., loading, errors,
+      etc.). In any case, an API SHOULD provide a means to:</p>
 
       <ul>
         <li>
@@ -855,24 +883,25 @@ body {
     </li>
 
     <li>
-      <p>The <a href="#solution">solution</a> MUST afford
-      developers the ability to explicitly define different image
-      versions as opposed to only different resolutions of the same
-      image.</p>
+      <p>The <a href="#solution">solution</a> <em class=
+      "ct">MUST</em> afford developers the ability to explicitly
+      define different image versions as opposed to only different
+      resolutions of the same image.</p>
     </li>
 
     <li>
-      <p>The <a href="#solution">solution</a> MUST afford
-      developers the ability to define the breakpoints for images
-      as either minimum values (mobile first) or maximum values
-      (desktop first) to match the media queries used in their
-      design.</p>
+      <p>The <a href="#solution">solution</a> <em class=
+      "ct">MUST</em> afford developers the ability to define the
+      breakpoints for images as either minimum values (mobile
+      first) or maximum values (desktop first) to match the media
+      queries used in their design.</p>
     </li>
 
     <li>
-      <p>The <a href="#solution">solution</a> MAY allow developers
-      to specify images in different formats (or specify the format
-      of a set of image sources).</p>
+      <p>The <a href="#solution">solution</a> <em class=
+      "ct">MAY</em> allow developers to specify images in different
+      formats (or specify the format of a set of image
+      sources).</p>
     </li>
 
     <li>
@@ -880,6 +909,18 @@ body {
       SHOULD be possible for developers to <a href=
       "http://remysharp.com/2010/10/08/what-is-a-polyfill/">polyfill</a>
       the <a href="#solution">solution</a>.</p>
+    </li>
+
+    <li>The <a href="#solution">solution</a> <em class=
+    "ct">MUST</em> afford user agents with the ability to provide a
+    user-settable preference for controlling which source of an
+    image they prefer.&nbsp;For example, &nbsp;preference options
+    could include: "always lowest resolution", "always high
+    resolution", "download high resolution as bandwidth permits",
+    and so on. To be clear, use agents are not required to provide
+    such a user-settable preferences, but the <a href="#solution">
+      solution</a> needs to be designed in such a way that it could
+      be done.
     </li>
   </ol>
 
