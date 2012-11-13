@@ -237,46 +237,53 @@ body {
 
       <ol>
         <li>
-          <a href="#art-direction"><span class="secno">4.1</span>
-          Art direction</a>
-        </li>
-
-        <li>
-          <a href="#design-breakpoints"><span class=
-          "secno">4.2</span> Design breakpoints</a>
-        </li>
-
-        <li>
-          <a href=
-          "#matching-media-features-and-media-types"><span class=
-          "secno">4.3</span> Matching media features and media
-          types</a>
-        </li>
-
-        <li>
-          <a href="#relative-units"><span class="secno">4.4</span>
-          Relative units</a>
-        </li>
-
-        <li>
-          <a href="#api-to-manipulate-sources"><span class=
-          "secno">4.5</span> API to manipulate sources</a>
-        </li>
-
-        <li>
-          <a href="#image-formats"><span class="secno">4.6</span>
-          Image formats</a>
-        </li>
-
-        <li>
-          <a href="#user-control-over-sources"><span class=
-          "secno">4.7</span> User control over sources</a>
+          <a href="#resolution-switching"><span class=
+          "secno">4.1</span> Resolution switching</a>
         </li>
       </ol>
     </li>
 
     <li>
-      <a href="#requirements"><span class="secno">5</span>
+      <a href="#art-direction"><span class="secno">5</span> Art
+      direction</a>
+
+      <ol>
+        <li>
+          <a href="#design-breakpoints"><span class=
+          "secno">5.1</span> Design breakpoints</a>
+        </li>
+
+        <li>
+          <a href=
+          "#matching-media-features-and-media-types"><span class=
+          "secno">5.2</span> Matching media features and media
+          types</a>
+        </li>
+
+        <li>
+          <a href="#relative-units"><span class="secno">5.3</span>
+          Relative units</a>
+        </li>
+
+        <li>
+          <a href="#api-to-manipulate-sources"><span class=
+          "secno">5.4</span> API to manipulate sources</a>
+        </li>
+
+        <li>
+          <a href="#image-formats"><span class="secno">5.5</span>
+          Image formats</a>
+        </li>
+
+        <li>
+          <a href="#user-control-over-sources"><span class=
+          "secno">5.6</span> User control over sources</a>
+        </li>
+      </ol>
+    </li>
+
+    <li>
+      <a href="#requirements"><span class="secno">6</span>
       Requirements</a>
     </li>
 
@@ -466,35 +473,28 @@ body {
   situations in which Web developers see a need for a browser-based
   solution for working with responsive images.</p>
 
-  <h3 id="art-direction"><span class="secno">4.1</span> Art
-  direction</h3>
+  <h3 id="resolution-switching"><span class="secno">4.1</span>
+  Resolution switching</h3>
 
   <p>Web developers often need to provide different versions of the
   same image in order to communicate effectively across the wide
   range of screen resolutions and pixel densities available on
   today's devices. If the screen is small and the image is scaled
   down, its details cannot be seen. Conversely, if the screen is
-  large a larger image that depicts more information can be
-  shown.</p>
-
-  <p>For example, in the left-most image in Figure 1, it is
-  difficult to discern the man's facial expressions, where in the
-  center image his face and gestures are clear. The image on the
-  far right show the poor quality of an over-scaled image.</p>
+  large a larger image that depicts more information can be shown.
+  This can also sometimes help save bandwidth, in that only the
+  image best fits the viewport is served to the user.</p>
 
   <figure>
-    <div><img alt="Obama talking seriously on the phone" height=
-    "160" src="images/obama_small.jpg" width="240"> <img alt=
-    "Obama talking seriously on the phone" height="160" src=
-    "images/obama_crop.png" width="240"> <img alt=
-    "Obama talking seriously on the phone" height="161" src=
-    "images/obama_scaled.png" width="240"></div>
+    <div><img src="images/devices.png"></div>
 
     <figcaption>
-      <p>Three images show how zoom and crop can enhance or
-      diminish the effectiveness of an image.</p>
+      <p>Image specifically targeted at each device.</p>
     </figcaption>
   </figure>
+
+  <h2 id="art-direction"><span class="secno">5</span> Art
+  direction</h2>
 
   <p>In a responsive design, it is typical to change the crop of an
   image so it can be targeted towards the features of a particular
@@ -511,8 +511,9 @@ body {
   <p>This is illustrated in the figure below.</p>
 
   <figure>
-    <div><img class="stretchy" height="500" src=
-    "images/devices.png" style="max-width:800px" width="800"></div>
+    <div><img class="stretchy" height="223" src=
+    "images/art_direction.png" style="max-width:705px" width=
+    "705"></div>
 
     <figcaption>
       <p>Using different images that have been cropped to fit a
@@ -576,7 +577,7 @@ body {
     </figcaption>
   </figure>
 
-  <h3 id="design-breakpoints"><span class="secno">4.2</span> Design
+  <h3 id="design-breakpoints"><span class="secno">5.1</span> Design
   breakpoints</h3>
 
   <p>In Web development, a <dfn id="breakpoint">breakpoint</dfn> is
@@ -617,7 +618,7 @@ body {
   potentially error-prone for developers.</p>
 
   <h3 id="matching-media-features-and-media-types"><span class=
-  "secno">4.3</span> Matching media features and media types</h3>
+  "secno">5.2</span> Matching media features and media types</h3>
 
   <p>According to <cite>Wikipedia's</cite> article on "<a href=
   "http://en.wikipedia.org/wiki/Dots_per_inch">dots per
@@ -714,7 +715,7 @@ body {
   relying on the aforementioned problematic <a href=
   "#techniques">techniques</a>.</p>
 
-  <h3 id="relative-units"><span class="secno">4.4</span> Relative
+  <h3 id="relative-units"><span class="secno">5.3</span> Relative
   units</h3>
 
   <p>A common practice in creating flexible layouts is to specify
@@ -740,12 +741,12 @@ body {
     "max-width: 1058px" width="1058"></div>
 
     <figcaption>
-      <p>Images become unacceptably blury and pixelated as a user
+      <p>Images become unacceptably blurry and pixelated as a user
       changes zoom ratio.</p>
     </figcaption>
   </figure>
 
-  <h3 id="api-to-manipulate-sources"><span class="secno">4.5</span>
+  <h3 id="api-to-manipulate-sources"><span class="secno">5.4</span>
   API to manipulate sources</h3>
 
   <p>In some cases the image data is dynamically generated (e.g.,
@@ -758,7 +759,7 @@ body {
   will be difficult for developers to manipulate the sources of
   images.</p>
 
-  <h3 id="image-formats"><span class="secno">4.6</span> Image
+  <h3 id="image-formats"><span class="secno">5.5</span> Image
   formats</h3>
 
   <p>Some images are best suited to a specific file type for
@@ -791,7 +792,7 @@ body {
   image format in favor of one that has good user agent
   support.</p>
 
-  <h3 id="user-control-over-sources"><span class="secno">4.7</span>
+  <h3 id="user-control-over-sources"><span class="secno">5.6</span>
   User control over sources</h3>
 
   <p>In situations where the user knows their bandwidth is limited
@@ -803,7 +804,7 @@ body {
     quality they desire - or disable images all together, as Google
     Chrome currently does through site preferences.</li>
 
-    <li>automatically select the most suitalbe image for the
+    <li>automatically select the most suitable image for the
     browsing environment.</li>
   </ol>
 
@@ -814,7 +815,7 @@ body {
   (i.e., through their own proxy servers) before serving those
   images to a user's device.</p>
 
-  <h2 id="requirements"><span class="secno">5</span>
+  <h2 id="requirements"><span class="secno">6</span>
   Requirements</h2>
 
   <p>The <a href="#use-cases-0">use cases</a> give rise to the
@@ -956,7 +957,7 @@ body {
 
   <p id="participants">A list of <a href=
   "http://www.w3.org/community/respimg/participants">participants</a>
-  is avialble at the W3C Community Group Website.</p><script src=
+  is available at the W3C Community Group Website.</p><script src=
   "https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js">
 </script> <script src=
 "https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse">
