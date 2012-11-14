@@ -172,9 +172,9 @@ padding: 1em
 <h3>Resolution switching</h3>
 <p> Web developers often need to provide different versions of the same image in order to communicate effectively across the wide range of screen resolutions and pixel densities available on today's devices. If the screen is small and the image is scaled down, its details cannot be seen. Conversely, if the screen is large a larger image that depicts more information can be shown. This can also sometimes help save bandwidth, in that only the  image best fits the viewport is served to the user. </p>
 <figure>
-  <div><img src="images/devices.png"/></div>
-  <figcaption>
-    <p>Image specifically targeted at each device.</p>
+  <div><img src="images/devices.png" class="stretchy" width="800" height="500" style="max-width:800px" alt="four devices showing the same image, but those images all have distinct sources and sizes"></div>
+  <figcaption> 
+    <p>Image specifically resized to be targeted at each device. The intention is to save bandwidth and allow the images to download faster on the targetted screen.</p>
   </figcaption>
 </figure>
 <h2>Art direction</h2>
@@ -185,7 +185,7 @@ padding: 1em
 </ul>
 <p>This is illustrated in the figure below. </p>
 <figure>
-  <div><img src="images/art_direction.png" width="705" height="223" style="max-width:705px" class="stretchy"></div>
+  <div><img src="images/art_direction.jpg" width="800" height="520" style="max-width:800px" class="stretchy" alt="four devices showing art directed crops of a dog"></div>
   <figcaption>
     <p>Using different images that have been cropped to fit a particular screen's features can help in communicating a message effectively. </p>
   </figcaption>
