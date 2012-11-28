@@ -254,7 +254,7 @@ padding: 1em
   </figcaption>
 </figure>
 <h3>API to manipulate sources</h3>
-<p>In some cases the image data is dynamically generated (e.g., using <a href="http://www.w3.org/TR/2dcontext/">the <code>canvas</code> element</a> and related APIs) or is acquired from the device itself (e.g., from the camera on a phone or tablet using some form of media capture). Developers need practical means to interface programmatically with the source of an image or a set of images. Without having a suitable API, it will be difficult for developers to manipulate the sources of images. </p>
+<p>In some cases the image data is dynamically generated (e.g., using <a href="http://www.w3.org/TR/2dcontext/">the <code>canvas</code> element</a> and related APIs) or is acquired from the device itself (e.g., from the camera on a phone or tablet using some form of media capture). Developers need practical means to interface programmatically with the source of an image or a set of images. Without having a suitable API, it will be difficult for developers to manipulate the sources of images or to even know what source is currently being displayed. </p>
 <h3>Image formats</h3>
 <p>Some images are best suited to a specific file type for reasons such as file size optimization, alpha transparency, scalability, animation, etc. For example, a photo usually requires good color depth, but does not require alpha transparency or animation; JPEG or WebP are well-suited to these needs and offer good optimization between image quality and file size. Icons are often simpler in terms of color depth, but may require alpha transparency; the PNG format is better-suited to these needs.</p>
 <div class="issue">
@@ -311,7 +311,7 @@ padding: 1em
   <li>
     <p>To provide compatibility with legacy user agents, it SHOULD be possible for developers to <a href="http://remysharp.com/2010/10/08/what-is-a-polyfill/">polyfill</a> the <span>solution</span>.</p>
   </li>
-  <li>The <span>solution</span> <em class="ct">SHOULD</em> afford user agents with the ability to provide a user-settable preference for controlling which source of an image they prefer. For example,  preference options could include: &quot;always  lowest resolution&quot;, &quot;always high resolution&quot;, &quot;download high resolution as bandwidth permits&quot;, and so on. To be clear, use agents are not required to provide such a user-settable preferences, but  the <span>solution</span> needs to be designed in such a way that it could be done.</li>
+  <li>The <span>solution</span> <em class="ct">SHOULD</em> afford user agents with the ability to provide a user-settable preference for controlling which source of an image they prefer. For example,  preference options could include: &quot;always  lowest resolution&quot;, &quot;always high resolution&quot;, &quot;download high resolution as bandwidth permits&quot;, and so on. To be clear, user agents are not required to provide such a user-settable preference, but  the <span>solution</span> needs to be designed in such a way that it could be done.</li>
 </ol>
 <h2 class="no-num">Open issues</h2>
 <p>We are tracking <dfn>open issues</dfn> on Github. <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues">Please help us close them</a>! </p>
