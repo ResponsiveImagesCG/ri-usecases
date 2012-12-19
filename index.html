@@ -10,112 +10,9 @@
 
   <title>Use Cases and Requirements for Standardizing Responsive
   Images</title>
-  <link href="http://www.w3.org/StyleSheets/TR/w3c-unofficial" rel=
-  "stylesheet">
   <!--[if lt IE 9]><script src='http://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
-
-  <style type="text/css">
-body {
-        counter-reset: fcaption;
-  }
-  header {
-        display: block;
-  }
-  header dd {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  }
-  img,
-  video {
-  max-width: 100%;
-  height: auto;
-  }
-  code, pre {
-  white-space: pre-wrap;
-  }
-  img.stretchy {
-        width: 100%;
-        height: auto;
-  }
-  figure {
-        display: block;
-        border: thin silver solid;
-        margin: 0.5em;
-        padding: 0.5em;
-        text-align: center;
-        counter-increment: fcaption;
-  }
-  figcaption {
-        display: block;
-        font-style: italic;
-        font-size: smaller;
-        text-indent: 0;
-  }
-  figcaption p:before {
-        font-weight: bold;
-        content: "Figure " counter(fcaption) ". "
-  }
-  ol > li {
-        margin: .5em 0 .5em 0;
-  }
-  ol > li > ol {
-        list-style-type: none;
-  }
-  pre {
-        tab-size: 3; /* Reduce indentation. */
-  }
-  a:not([href]) {
-        color: red
-  }
-  #open-issues-xhr {
-        font-size: .9em;
-  }
-  #open-issues-xhr li {
-        padding: .25em 0;
-  }
-  #open-issues-xhr .meta {
-        display: block;
-        font: normal .8em/1 sans-serif;
-        padding: .35em 0 0 0;
-  }
-  #open-issues-xhr .meta b {
-        font-weight: normal;
-  }
-  #open-issues-xhr .meta span {
-        display: block;
-        float: left;
-        width: 5.5em;
-  }
-
-  #welcome{
-        text-shadow: white 1px 1px;
-        color: #444;
-        background: #ffffff; /* Old browsers */
-
-  background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
-
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
-
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
-
-  background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
-
-  background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
-
-  background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
-
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
-
-
-  text-align: center; 
-  font-size: 1.5em;
-  border: thin dotted #333333; 
-  background-color: #E6E6E6; 
-  padding: 1em
-
-
-  }
-  </style>
+  <link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel=
+  "stylesheet">
 </head>
 
 <body>
@@ -187,7 +84,7 @@ body {
       <dd>Participants of the Responsive Images Community
       Group</dd>
 
-      <dt>Final Specification Licensing Commitments</dt>
+      <dt>Final Specification Licensing Commitments:</dt>
 
       <dd>
         <a href=
@@ -219,76 +116,134 @@ body {
   file a bug on github</a> or <a href=
   "mailto:public-respimg@w3.org">email us</a>!</p>
 
+  <h2 id="status"><span class="secno">1</span> Status of This
+  Document</h2>
+
+  <p><em>This section describes the status of this document at the
+  time of its publication. Other documents may supersede this
+  document. A list of current W3C publications and the latest
+  revision of this technical report can be found in the <a href=
+  "http://www.w3.org/TR/">W3C technical reports index</a> at
+  http://www.w3.org/TR/.</em></p>
+
+  <p class="warning2"><strong>This document is subject to change
+  without notice.</strong></p>
+
+  <p>This is a First Public Working Draft.</p>
+
+  <p>This document was published by the <a href=
+  "http://www.w3.org/html/wg/">HTML Working Group</a> as a Working
+  Draft. If you are not a HTML working group member and wish to
+  make comments regarding this document please send them to
+  <a href="mailto:public-html-comments@w3.org">public-html-comments@w3.org</a>
+  (<a href=
+  "mailto:public-html-comments-request@w3.org?subject=subscribe">subscribe</a>,
+  <a href=
+  "http://lists.w3.org/Archives/Public/public-html-comments/">archives</a>).
+  If you are a HTML working group member and wish to make comments
+  regarding this document, please send them to <a href=
+  "mailto:public-html@w3.org">public-html@w3.org</a> (<a href=
+  "mailto:public-html-request@w3.org?subject=subscribe">subscribe</a>,
+  <a href=
+  "http://lists.w3.org/Archives/Public/public-html/">archives</a>).
+  All feedback is welcome.</p>
+
+  <p>Publication as a Working Draft does not imply endorsement by
+  the W3C Membership. This is a draft document and may be updated,
+  replaced or obsoleted by other documents at any time. It is
+  inappropriate to cite this document as other than work in
+  progress.</p>
+
+  <p>This document was produced by a group operating under the
+  <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5
+  February 2004 W3C Patent Policy</a>. W3C maintains a <a href=
+  "http://www.w3.org/2004/01/pp-impl/40318/status" rel=
+  "disclosure">public list of any patent disclosures</a> made in
+  connection with the deliverables of the group; that page also
+  includes instructions for disclosing a patent. An individual who
+  has actual knowledge of a patent which the individual believes
+  contains <a href=
+  "http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">
+  Essential Claim(s)</a> must disclose the information in
+  accordance with <a href=
+  "http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">
+  section 6 of the W3C Patent Policy</a>.</p>
+
   <h2 class="no-num no-toc" id="toc">Table of contents</h2>
   <!--begin-toc-->
 
   <ol class="toc">
     <li>
-      <a href="#introduction"><span class="secno">1</span>
+      <a href="#status"><span class="secno">1</span> Status of This
+      Document</a>
+    </li>
+
+    <li>
+      <a href="#introduction"><span class="secno">2</span>
       Introduction</a>
     </li>
 
     <li>
       <a href="#status-of-this-document"><span class=
-      "secno">2</span> Status of this document</a>
+      "secno">3</span> Status of this document</a>
     </li>
 
     <li>
       <a href="#problems-with-current-techniques"><span class=
-      "secno">3</span> Problems with current techniques</a>
+      "secno">4</span> Problems with current techniques</a>
     </li>
 
     <li>
-      <a href="#use-cases"><span class="secno">4</span> Use
+      <a href="#use-cases"><span class="secno">5</span> Use
       cases</a>
 
       <ol>
         <li>
           <a href="#resolution-switching"><span class=
-          "secno">4.1</span> Resolution switching</a>
+          "secno">5.1</span> Resolution switching</a>
         </li>
 
         <li>
-          <a href="#art-direction"><span class="secno">4.2</span>
+          <a href="#art-direction"><span class="secno">5.2</span>
           Art direction</a>
         </li>
 
         <li>
           <a href="#design-breakpoints"><span class=
-          "secno">4.3</span> Design breakpoints</a>
+          "secno">5.3</span> Design breakpoints</a>
         </li>
 
         <li>
           <a href=
           "#matching-media-features-and-media-types"><span class=
-          "secno">4.4</span> Matching media features and media
+          "secno">5.4</span> Matching media features and media
           types</a>
         </li>
 
         <li>
-          <a href="#relative-units"><span class="secno">4.5</span>
+          <a href="#relative-units"><span class="secno">5.5</span>
           Relative units</a>
         </li>
 
         <li>
           <a href="#api-to-manipulate-sources"><span class=
-          "secno">4.6</span> API to manipulate sources</a>
+          "secno">5.6</span> API to manipulate sources</a>
         </li>
 
         <li>
-          <a href="#image-formats"><span class="secno">4.7</span>
+          <a href="#image-formats"><span class="secno">5.7</span>
           Image formats</a>
         </li>
 
         <li>
           <a href="#user-control-over-sources"><span class=
-          "secno">4.8</span> User control over sources</a>
+          "secno">5.8</span> User control over sources</a>
         </li>
       </ol>
     </li>
 
     <li>
-      <a href="#requirements"><span class="secno">5</span>
+      <a href="#requirements"><span class="secno">6</span>
       Requirements</a>
     </li>
 
@@ -306,7 +261,7 @@ body {
     </li>
   </ol><!--end-toc-->
 
-  <h2 id="introduction"><span class="secno">1</span>
+  <h2 id="introduction"><span class="secno">2</span>
   Introduction</h2>
 
   <p>In <span><a href=
@@ -351,7 +306,7 @@ body {
   <a href="http://w3.org">W3C</a> and <a href=
   "http://whatwg.org">WHATWG</a> for standardization).</p>
 
-  <h2 id="status-of-this-document"><span class="secno">2</span>
+  <h2 id="status-of-this-document"><span class="secno">3</span>
   Status of this document</h2>
 
   <p>This specification was published by the <a href=
@@ -425,7 +380,7 @@ body {
   "#requirements-0">requirements</a>.</p>
 
   <h2 id="problems-with-current-techniques"><span class=
-  "secno">3</span> Problems with current techniques</h2>
+  "secno">4</span> Problems with current techniques</h2>
 
   <p>There are a number of problems with the <a href=
   "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
@@ -472,13 +427,13 @@ body {
   standardization of a browser-based solution can overcome these
   problems.</p>
 
-  <h2 id="use-cases"><span class="secno">4</span> Use cases</h2>
+  <h2 id="use-cases"><span class="secno">5</span> Use cases</h2>
 
   <p>The following <dfn id="use-cases-0">use cases</dfn> represent
   situations in which Web developers see a need for a browser-based
   solution for working with responsive images.</p>
 
-  <h3 id="resolution-switching"><span class="secno">4.1</span>
+  <h3 id="resolution-switching"><span class="secno">5.1</span>
   Resolution switching</h3>
 
   <p>Web developers often need to provide different versions of the
@@ -503,7 +458,7 @@ body {
     </figcaption>
   </figure>
 
-  <h3 id="art-direction"><span class="secno">4.2</span> Art
+  <h3 id="art-direction"><span class="secno">5.2</span> Art
   direction</h3>
 
   <p>In a responsive design, it is typical to change the crop of an
@@ -588,7 +543,7 @@ body {
     </figcaption>
   </figure>
 
-  <h3 id="design-breakpoints"><span class="secno">4.3</span> Design
+  <h3 id="design-breakpoints"><span class="secno">5.3</span> Design
   breakpoints</h3>
 
   <p>In Web development, a <dfn id="breakpoint">breakpoint</dfn> is
@@ -629,7 +584,7 @@ body {
   potentially error-prone for developers.</p>
 
   <h3 id="matching-media-features-and-media-types"><span class=
-  "secno">4.4</span> Matching media features and media types</h3>
+  "secno">5.4</span> Matching media features and media types</h3>
 
   <p>According to <cite>Wikipedia's</cite> article on "<a href=
   "http://en.wikipedia.org/wiki/Dots_per_inch">dots per
@@ -726,7 +681,7 @@ body {
   relying on the aforementioned problematic <a href=
   "#techniques">techniques</a>.</p>
 
-  <h3 id="relative-units"><span class="secno">4.5</span> Relative
+  <h3 id="relative-units"><span class="secno">5.5</span> Relative
   units</h3>
 
   <p>A common practice in creating flexible layouts is to specify
@@ -757,7 +712,7 @@ body {
     </figcaption>
   </figure>
 
-  <h3 id="api-to-manipulate-sources"><span class="secno">4.6</span>
+  <h3 id="api-to-manipulate-sources"><span class="secno">5.6</span>
   API to manipulate sources</h3>
 
   <p>In some cases the image data is dynamically generated (e.g.,
@@ -771,7 +726,7 @@ body {
   images or to even know what source is currently being
   displayed.</p>
 
-  <h3 id="image-formats"><span class="secno">4.7</span> Image
+  <h3 id="image-formats"><span class="secno">5.7</span> Image
   formats</h3>
 
   <p>Some images are best suited to a specific file type for
@@ -804,7 +759,7 @@ body {
   image format in favor of one that has good user agent
   support.</p>
 
-  <h3 id="user-control-over-sources"><span class="secno">4.8</span>
+  <h3 id="user-control-over-sources"><span class="secno">5.8</span>
   User control over sources</h3>
 
   <p>In situations where the user knows their bandwidth is limited
@@ -827,7 +782,7 @@ body {
   (i.e., through their own proxy servers) before serving those
   images to a user's device.</p>
 
-  <h2 id="requirements"><span class="secno">5</span>
+  <h2 id="requirements"><span class="secno">6</span>
   Requirements</h2>
 
   <p>The <a href="#use-cases-0">use cases</a> give rise to the
