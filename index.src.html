@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Use Cases and Requirements for Standardizing Responsive Images</title>
-<!--[if lt IE 9]><script src='http://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
+<!--[if lt IE 9]><script class="now3c" src='http://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
 <style type="text/css">
 body {
 	counter-reset: fcaption;
@@ -13,16 +13,15 @@ header {
 	display: block;
 }
 header dd {
-  overflow: hidden;
-  text-overflow: ellipsis;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
-img,
-video {
-  max-width: 100%;
-  height: auto;
+img, video {
+	max-width: 100%;
+	height: auto;
 }
 code, pre {
-  white-space: pre-wrap;
+	white-space: pre-wrap;
 }
 img.stretchy {
 	width: 100%;
@@ -77,82 +76,135 @@ a:not([href]) {
 	float: left;
 	width: 5.5em;
 }
-
-#welcome{
+.stability {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto 0 auto;
+	width: 50%;
+	background: maroon;
+	color: yellow;
+	-webkit-border-radius: 1em 1em 0 0;
+	-moz-border-radius: 1em 1em 0 0;
+	border-radius: 1em 1em 0 0;
+	-moz-box-shadow: 0 0 1em #500;
+	-webkit-box-shadow: 0 0 1em #500;
+	box-shadow: 0 0 1em red;
+	padding: 0.5em 1em;
+	text-align: center;
+}
+.stability strong {
+	display: block;
+}
+.stability input {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	margin: 0;
+	border: 0;
+	padding: 0.25em 0.5em;
+	background: transparent;
+	color: black;
+	position: absolute;
+	top: -0.5em;
+	right: 0;
+	font: 1.25em sans-serif;
+	text-align: center;
+}
+.stability input:hover {
+	color: white;
+	text-shadow: 0 0 2px black;
+}
+.stability input:active {
+	padding: 0.3em 0.45em 0.2em 0.55em;
+}
+.stability :link, .stability :visited,  .stability :link:hover, .stability :visited:hover {
+	background: transparent;
+	color: white;
+}
+#welcome {
 	text-shadow: white 1px 1px;
 	color: #444;
 	background: #ffffff; /* Old browsers */
-
-background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
-
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
-
-background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
-
-background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
-
-background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
-
-background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
-
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
-
-
-text-align: center; 
-font-size: 1.5em;
-border: thin dotted #333333; 
-background-color: #E6E6E6; 
-padding: 1em
-
-
+	background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(47%, #f6f6f6), color-stop(100%, #ededed)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 ); /* IE6-9 */
+	text-align: center;
+	font-size: 1.5em;
+	border: thin dotted #333333;
+	background-color: #E6E6E6;
+	padding: 1em
 }
 </style>
-<link rel="stylesheet" href="http://www.w3.org/StyleSheets/TR/W3C-WD">
+  <link href="http://www.w3.org/StyleSheets/TR/w3c-unofficial" rel=
+  "stylesheet" class="ricg">
+<link class="w3c" rel="stylesheet" href
+="http://www.w3.org/StyleSheets/TR/W3C-WD">
 </head>
 <body>
-<header><div class="head">
-  <h1><a href="http://responsiveimages.org"><img style="float:right" src="https://raw.github.com/ResponsiveImagesCG/meta/master/logo/Web/RICG_logo_small.png" alt="Responsive Images Community Group"></a> <a href="http://www.w3.org/"><img alt="W3C" src="http://www.w3.org/Icons/w3c_home" 
-    height="48" width="72"></a></h1>
-  <h1 class="head">Use Cases and Requirements for Standardizing Responsive Images</h1>
-  <h2 class="no-num no-toc">Living document - Last updated [DATE] </h2>
-  <dl>
-    <dt>Latest  version:</dt>
-    <dd><a href=
+<header>
+  <div class="head">
+    <p><a href="http://responsiveimages.org"><img style="float:right" src="https://raw.github.com/ResponsiveImagesCG/meta/master/logo/Web/RICG_logo_small.png" alt="Responsive Images Community Group"></a> <a href="http://www.w3.org/"><img alt="W3C" src="http://www.w3.org/Icons/w3c_home" 
+    height="48" width="72"></a> </p>
+    <h1 class="head">Use Cases and Requirements for Standardizing Responsive Images</h1>
+    <h2 class="no-num no-toc ricg">Living document - Last updated [DATE] </h2>
+    <h2 class="no-num no-toc w3c">W3C Working Draft [DATE]</h2>
+    <dl>
+      <dt>This Version:</dt>
+      <dd class="ricg"><a href=
       "http://usecases.responsiveimages.org">http://usecases.responsiveimages.org</a></dd>
-    <dt>Participate:</dt>
-    <dd><a href="http://w3c.responsiveimages.org">Join the Responsive Images Community Group</a></dd>
-    <dd><a href="http://list.responsiveimages.org">Public mailing list</a></dd>
-    <dd><a href="irc://irc.w3.org:6665/#respimg">IRC: #respimg on W3C's IRC server</a></dd>
-    <dd><a href="https://twitter.com/respimg">Twitter</a></dd>
-    <dd><a href="https://github.com/ResponsiveImagesCG">Github repository</a> - our specs are open source!</dd>
-    <dt>Version history:</dt>
-    <dd><a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages">Github commits</a> (<a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages.atom">RSS</a>)</dd>
-    <dd><a href="https://twitter.com/respimg_commits">Github commits on Twitter</a></dd>
-    <dt>Authors:</dt>
-    <dd>Participants of the  Responsive Images Community Group</dd>
-    <dt>Final Specification Licensing Commitments:</dt>
-    <dd><a href="http://www.w3.org/community/respimg/spec/26/commitments">http://www.w3.org/community/respimg/spec/26/commitments</a></dd>
-  </dl>
-  <p class="copyright">Copyright &copy; [YEAR] the Contributors to the <cite>Use Cases and Requirements for Standardizing Responsive Images</cite> Specification, published by the <a href="http://www.w3.org/community/respimg/">Responsive Images Community Group</a> under the <a href="https://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/">summary</a> is available.</p>
-</div></header>
+      <dd class="w3c"><a href="[VERSION]">[VERSION]</a></dd>
+      <dt>Latest W3C Published Version:</dt>
+      <dd><a href="http://www.w3.org/TR/picture/">http://www.w3.org/TR/picture/</a></dd>
+      <dt class="w3c">Latest Editor's draft:</dt>
+      <dd><a href=
+      "http://usecases.responsiveimages.org">http://usecases.responsiveimages.org</a></dd>
+      <dt>Participate:</dt>
+      <dd><a href="http://w3c.responsiveimages.org">Join the Responsive Images Community Group</a></dd>
+      <dd><a href="http://list.responsiveimages.org">Public mailing list</a></dd>
+      <dd><a href="irc://irc.w3.org:6665/#respimg">IRC: #respimg on W3C's IRC server</a></dd>
+      <dd><a href="https://twitter.com/respimg">Twitter</a></dd>
+      <dd><a href="https://github.com/ResponsiveImagesCG">Github repository</a> - our specs are open source!</dd>
+      <dt>Version history:</dt>
+      <dd><a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages">Github commits</a> (<a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages.atom">RSS</a>)</dd>
+      <dd><a href="https://twitter.com/respimg_commits">Github commits on Twitter</a></dd>
+      <dt>Authors:</dt>
+      <dd><span>Participants</span> of the  Responsive Images Community Group</dd>
+      <dt>Final Specification Licensing Commitments:</dt>
+      <dd><a href="http://www.w3.org/community/respimg/spec/26/commitments">http://www.w3.org/community/respimg/spec/26/commitments</a></dd>
+    </dl>
+    <p class="copyright">Copyright &copy; [YEAR] the Contributors to the <cite>Use Cases and Requirements for Standardizing Responsive Images</cite> Specification, published by the <a href="http://www.w3.org/community/respimg/">Responsive Images Community Group</a> under the <a href="https://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/">summary</a> is available.</p>
+  </div>
+</header>
 <hr>
 <h2 class="no-num no-toc">Abstract</h2>
 <p>This document captures the use cases and requirements for standardizing a solution for responsive images.</p>
-<p id="welcome">Howdy! Found a bug, typo, or issue? Please <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues?state=open">file a bug on github</a> or <a href="mailto:public-respimg@w3.org">email us</a>! </p>
+<p id="welcome" class="now3c">Found a bug, typo, or issue? Please <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues?state=open">file a bug on github</a> or <a href="mailto:public-respimg@w3.org">email us</a>! </p>
 <h2 id="status">Status of This Document</h2>
-
-  <p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current W3C publications and the latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/">W3C technical reports index</a> at http://www.w3.org/TR/.</em></p>
-
-  <p class="warning2"><strong>This document is subject to change without notice.</strong></p>
-
-  <p>This is a First Public Working Draft.</p>
-
-  <p>This document was published by the <A href="http://www.w3.org/html/wg/">HTML Working Group</A> as a Working Draft. If you are not a HTML working group member and wish to make comments regarding this document please send them to <A href="mailto:public-html-comments@w3.org">public-html-comments@w3.org</A> (<A href="mailto:public-html-comments-request@w3.org?subject=subscribe">subscribe</A>, <A href="http://lists.w3.org/Archives/Public/public-html-comments/">archives</A>). If you are a HTML working group member and wish to make comments regarding this document, please send them to <A href="mailto:public-html@w3.org">public-html@w3.org</A> (<A href="mailto:public-html-request@w3.org?subject=subscribe">subscribe</A>, <A href="http://lists.w3.org/Archives/Public/public-html/">archives</A>). All feedback is welcome.</p>
-
-  <p>Publication as a Working Draft does not imply endorsement by the W3C Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.</p>
-
-  <p>This document was produced by a group operating under the <A href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</A>. W3C maintains a <A href="http://www.w3.org/2004/01/pp-impl/40318/status" rel="disclosure">public list of any patent disclosures</A> made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains <A href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</A> must disclose the information in accordance with <A href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the W3C Patent Policy</A>.</p>
-
+<p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current W3C publications and the latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/">W3C technical reports index</a> at http://www.w3.org/TR/.</em></p>
+<p class="stability" id="wip"><strong>This is a work in
+  progress!</strong> For the latest updates from the HTML WG, possibly
+  including important bug fixes, please look at the <a href="http://usecases.responsiveimages.org">editor's draft</a> instead.
+  <input onclick="closeWarning(this.parentNode)" type="button" value="X">
+</p>
+<script>
+   function closeWarning(element) {
+     element.parentNode.removeChild(element);
+     var date = new Date();
+     date.setDate(date.getDate()+4);
+     document.cookie = 'hide-obsolescence-warning=1; expires=' + date.toGMTString();
+   }
+   if (getCookie('hide-obsolescence-warning') == '1')
+     setTimeout(function () { document.getElementById('wip').parentNode.removeChild(document.getElementById('wip')); }, 2000);
+  </script>
+<p>This is a First Public Working Draft.</p>
+<p>This document was published by the <A href="http://www.w3.org/html/wg/">HTML Working Group</A> as a Working Draft. If you are not a HTML working group member and wish to make comments regarding this document please send them to <A href="mailto:public-html-comments@w3.org">public-html-comments@w3.org</A> (<A href="mailto:public-html-comments-request@w3.org?subject=subscribe">subscribe</A>, <A href="http://lists.w3.org/Archives/Public/public-html-comments/">archives</A>). If you are a HTML working group member and wish to make comments regarding this document, please send them to <A href="mailto:public-html@w3.org">public-html@w3.org</A> (<A href="mailto:public-html-request@w3.org?subject=subscribe">subscribe</A>, <A href="http://lists.w3.org/Archives/Public/public-html/">archives</A>). All feedback is welcome.</p>
+<p>Publication as a Working Draft does not imply endorsement by the W3C Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.</p>
+<p>This document was produced by a group operating under the <A href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</A>. W3C maintains a <A href="http://www.w3.org/2004/01/pp-impl/40318/status" rel="disclosure">public list of any patent disclosures</A> made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains <A href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</A> must disclose the information in accordance with <A href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the W3C Patent Policy</A>.</p>
 <h2 class="no-num no-toc" id="toc">Table of contents</h2>
 <!--toc-->
 <h2>Introduction</h2>
@@ -160,8 +212,12 @@ padding: 1em
 <p>Many <a href="http://www.w3.org/TR/css3-mediaqueries/#media1">media features</a> are dynamic in nature (e.g.,  a browser window is re-sized, a device is rotated from portrait to landscape, and so on), thus a user agent constantly responds to events that change the properties of media features. As a web page's layout adapts to changes in media features and media type,  an image's ability to communicate effectively can be significantly reduced (e.g., images start to show compression artefacts as they are scaled to match the quality of media or some media feature). When this happens, developers rely on <span>responsive images</span> to present images at different resolutions, or even in different formats (e.g., swapping to SVG), to make sure their images continue communicating effectively. </p>
 <p>Furthermore, as the number and varieties of high-density screens has increased (both on mobile and desktop devices), web developers have had to create custom techniques  for serving images that best match a browser's <span>environmental conditions</span>. For a list of examples of the range of <dfn>techniques</dfn> in use in 2012, see Chris Coyier's article "<a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/">Which responsive images solution should you use?</a>". These techniques have a number of shortcomings, which are discussed below (and these shortcomings serve as the motivation to reach out to the <a href="http://w3.org">W3C</a> and <a href="http://whatwg.org">WHATWG</a> for standardization). </p>
 <h2>Status of this document</h2>
-<p>This specification was published by the <a href="http://www.w3.org/community/respimg/">Responsive Images Community Group</a>. It is not a W3C Standard nor is it on the W3C Standards Track. Please note that under the <a href="http://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a> there is a limited opt-out and other conditions apply. Learn more about <a href="http://www.w3.org/community/">W3C Community and Business Groups</a>.</p>
-<p>The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a>'s aims  to use this document to capture the use cases and requirements that need to be met in order to add support for <span>responsive images</span> to the Web Platform. The group intends to deliver the document to the <a href="http://www.w3.org/html/wg/">HTML Working Group</a> and <a href="http://whatwg.org">WHATWG</a> for comment (see <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=17061">bug 17061</a>). However, the <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> believes that gathering use cases and requirements is an iterative process and is open to changes and reformulation of requirements as new information becomes available. Therefore, this document takes a &quot;living standard&quot; approach. </p>
+<p>This document was published by the <A href="http://www.w3.org/html/wg/">HTML Working Group</A> as a Working Draft. This document is not intended for the recommendation track - it will eventually become a Working Group Note. If you are not a HTML working group member and wish to make comments regarding this document please send them to <A href="mailto:public-html-comments@w3.org">public-html-comments@w3.org</A> (<A href="mailto:public-html-comments-request@w3.org?subject=subscribe">subscribe</A>, <A href="http://lists.w3.org/Archives/Public/public-html-comments/">archives</A>). If you are a HTML working group member and wish to make comments regarding this document, please send them to <A href="mailto:public-html@w3.org">public-html@w3.org</A> (<A href="mailto:public-html-request@w3.org?subject=subscribe">subscribe</A>, <A href="http://lists.w3.org/Archives/Public/public-html/">archives</A>). All feedback is welcome.</p>
+
+<p>Publication as a Working Draft does not imply endorsement by the W3C Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.</p>
+
+  <p>This document was produced by a group operating under the <A href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</A>. W3C maintains a <A href="http://www.w3.org/2004/01/pp-impl/40318/status" rel="disclosure">public list of any patent disclosures</A> made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains <A href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</A> must disclose the information in accordance with <A href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the W3C Patent Policy</A>.</p>
+<p>This document was developed in collaboration with the Responsive Images Community Group (see <a href="http://www.w3.org/community/respimg/spec/26/commitments">licensing commitments</a>). <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a>'s aims  to use this document to capture the use cases and requirements that need to be met in order to add support for <span>responsive images</span> to the Web Platform. The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> believes that gathering use cases and requirements is an iterative process and is open to changes and reformulation of requirements as new information becomes available. Therefore, this document is a &quot;<a href="http://usecases.responsiveimages.org">living standard</a>&quot;. </p>
 <p> The <span>use cases</span> and <span>requirements</span> were gathered with  consultation with <a href="http://w3c.org/">HTML Working Group</a> and <a href="http://whatwg.org">WHATWG</a> participants, <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> group members, and the general public. The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a>'s goal for this document is to make sure that developer's requirements for responsive images have been formally captured. </p>
 <p>In formulating the requirements, this document tries to be <em>neutral</em> - it is not predicated on any solution. The document only tries to describe the use cases and what the <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> understands, from practice, would be needed to address the use cases in the form of <span>requirements</span>. The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> expects that a technical specification can be created to formally address each of the <span>requirements</span> (i.e., the <dfn>solution</dfn>). To date, two such specifications are currently under development: </p>
 <ul>
@@ -189,7 +245,7 @@ padding: 1em
 <p> Web developers often need to provide different versions of the same image in order to communicate effectively across the wide range of screen resolutions and pixel densities available on today's devices. If the screen is small and the image is scaled down, its details cannot be seen. Conversely, if the screen is large a larger image that depicts more information can be shown. This can also sometimes help save bandwidth, in that only the  image best fits the viewport is served to the user. </p>
 <figure>
   <div><img src="images/devices.png" class="stretchy" width="800" height="500" style="max-width:800px" alt="four devices showing the same image, but those images all have distinct sources and sizes"></div>
-  <figcaption> 
+  <figcaption>
     <p>Image specifically resized to be targeted at each device. The intention is to save bandwidth and allow the images to download faster on the targetted screen.</p>
   </figcaption>
 </figure>
@@ -331,15 +387,17 @@ padding: 1em
 </ol>
 <h2 class="no-num">Open issues</h2>
 <p>We are tracking <dfn>open issues</dfn> on Github. <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues">Please help us close them</a>! </p>
-<div id="open-issues-xhr"></div>
 <h2 class="no-num">Changes history</h2>
 <p>A <a href="https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages">complete history of changes</a> is available on Github. </p>
 <p>You can also see <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues?state=closed">all the closed issues</a> relating to this document. </p>
 <h2 class="no-num" id="acknowledgements">Acknowledgements</h2>
 <p>This document is composed of contributions from participants of the responsive images community group. It was edited by Marcos Cáceres and Mat Marquis, with text contributions by David Newton. </p>
 <p>The editors would like to thank the following people for reviewing this document: Mike Taylor, Doug Shults, David Newton, Barbara Barbosa Neves, and Eileen Webb. </p>
+<p class="w3c">
+  <dfn>Participants</dfn>
+of the Responsive Images Community Group are: George Adamson, Marie Alhomme, John Allan, Joshua Allen, Angely Alvarez, Aaryn Anderson, Philip Andrews, Phil Archer, Justin Avery, Michael Balensiefer, Toni Barrett, Bruno Barros, Paul Barton, Adrian Bateman, Jesse Renée Beach, Robin Berjon, Seth Bertalotto, Nicolaas Bijvoet, Andreas Bovens, J. Albert Bowden, Adam Bradley, Rodrigo Brancher, Gordon Brander, Paul Bridgestock, Aaron Brosey, Cory Brown, mairead buchan, Kris Bulman, Ariel Burone, Mathias Bynens, Marcos Caceres, Rusty Calder, Ben Callahan, Loïc Calvy, Chuck Carpenter, Brandon Carroll, Frederico Cerdeira, David Clements, Geri Coady, Anne-Gaelle Colom, Cyril Concolato, Pete Correia, Andy Crum, Jason Daihl, Francois Daoust, Kevin Davies, Robert Dawson, Ryan DeBeasi, Anna Debenham, Darryl deHaan, David Demaree, George DeMet, Ian Devlin, peter droogmans, Marlene Frykman, Dennis Gaebel, Nicolas Gallagher, Miguel Garcia, Rafael Garcia Lepper, Larry Garfield, Peter Gasston, David Goss, Chris Grant, Petra Gregorova, Jason Grigsby, Antoine Guergnon, Jeff Guntle, Aaron Gustafson, Jason Haag, Patrick Haney, Anselm Hannemann, chris hardy, Vincent Hardy, Dominique Hazaël-Massieux, Chris Hilditch, Nathan Hinshaw, Sean Hintz, John Holt Ripley, Shane Hudson, Tomomi Imura, Philip Ingrey, Brett Jankord, Scott Jehl, Dave Johnson, Nathanael Jones, Michael Jovel, Chao Ju, Tim Kadlec, Frédéric Kayser, Jin Kim, Andreas Klein, Peter Klein, John Kleinschmidt, Daniel Konopacki, Zoran Kurtin, Gerardo Lagger, Adam Lake, Chris Lamothe, Tom Lane, Matthieu Larcher, Bruce Lawson, Zach Leatherman, Silas Lepcha, Kornel Lesinski, Chris Lilley, grappler login, Tania Lopes, André Luís, Jacine Luisi, David Maciejewski, Kevin Mack, Ethan Malasky, Josh Marinacci, Eduardo Marques, Mathew Marquis, Daniel Martínez, Tom Maslen, Jacob Mather, Chris McAndrew, Denys Mishunov, Sabine Moebs, Ian Moffitt, Orestis Molopodis, jason morita, David Moulton, Brian Muenzenmeyer, Emi Myoudou, Irakli Nadareishvili, Christian Neuberger Jr, David Newton, Todd Nienkerk, Kothary Nishant, Ashley Nolan, Kenneth Nordahl, Lewis Nyman, Alejandro Oviedo, David Owens, Fernando Pasik, Andrew Pez Pengelly, Hassadee Pimsuwan, Manik Rathee, François REMY, Nestor Rojas, Adrian Roselli, Chris Ruppel, Oguzcan Sahin, Viljami Salminen, Luca Salvini, Luke Sands, aron santa, Jad Sarout, Brandon Satrom, Christoph Saxe, Doug Schepers, Jason Schmidt, Christopher Schmitt, Joe Schmitt, Boaz Sender, Tomoyuki Shimizu, Ariel Shkedi, Jen Simmons, Katerina Skotalova, Michael[tm] Smith, Ignacio Soriano Cano, Aaron Stanush, Jared Stilwell, Matt Stow, Kevin Suttle, Satoru Takagi, Philipp Tautz, James Tudsbury, Jacob van Zijp, Jitendra Vyas, Yoav Weiss, George White, Matt Wilcox, Richard Wild, John Albin Wilkins, Owen Winkler, Jeremy Worboys, Mike Wu, Carlos Zepeda, and jintian zheng.</p>
 <p id="participants">A list of <a href="http://www.w3.org/community/respimg/participants">participants</a> is available at the W3C Community Group Website.</p>
-<script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js"></script> 
-<script src="https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse"></script> 
-<script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/ga.js"></script> 
-<script src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/load_cg_participants.js"></script> 
+<script class="ricg" src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js"></script> 
+<script class="ricg" src="https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse"></script> 
+<script class="ricg" src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/ga.js"></script> 
+<script class="ricg" src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/load_cg_participants.js"></script> 
