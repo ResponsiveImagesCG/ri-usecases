@@ -116,7 +116,7 @@ a:not([href]) {
 .stability input:active {
 	padding: 0.3em 0.45em 0.2em 0.55em;
 }
-.stability :link, .stability :visited,  .stability :link:hover, .stability :visited:hover {
+.stability :link, .stability :visited, .stability :link:hover, .stability :visited:hover {
 	background: transparent;
 	color: white;
 }
@@ -130,7 +130,7 @@ a:not([href]) {
 	background: -o-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* IE10+ */
 	background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* W3C */
-/* IE6-9 */
+	/* IE6-9 */
 	text-align: center;
 	font-size: 1.5em;
 	border: thin dotted #333333;
@@ -140,9 +140,11 @@ a:not([href]) {
 </style>
 <link class="ricg" href="http://www.w3.org/StyleSheets/TR/w3c-unofficial.css" rel="stylesheet">
 <style type="text/css">
-.w3c1 {		border: 1px solid blue; 
+.w3c1 {
+	border: 1px solid blue;
 }
-.w3c1 {		border: 1px solid blue; 
+.w3c1 {
+	border: 1px solid blue;
 }
 </style>
 </head>
@@ -153,12 +155,12 @@ a:not([href]) {
     <h1 class="head">Use Cases and Requirements for Standardizing Responsive Images</h1>
     <h2 class="no-num no-toc ricg" id="living-document-last-updated-28-december-2012">Living document - Last updated 28 December 2012 </h2>
     <dl>
-    <dt>This Version:</dt>
-    <dd class="ricg"><a href="http://usecases.responsiveimages.org/">http://usecases.responsiveimages.org/</a></dd>
-    <dt class="ricg">Latest W3C Published Version:</dt>
-    <dd><a href="http://www.w3.org/TR/respimg-usecases/">http://www.w3.org/TR/respimg-usecases/</a></dd>
-    <dd><a href="http://usecases.responsiveimages.org">http://usecases.responsiveimages.org</a></dd>
-    <dt>Participate:</dt>
+      <dt>This Version:</dt>
+      <dd class="ricg"><a href="http://usecases.responsiveimages.org/">http://usecases.responsiveimages.org/</a></dd>
+      <dt class="ricg">Latest W3C Published Version:</dt>
+      <dd><a href="http://www.w3.org/TR/respimg-usecases/">http://www.w3.org/TR/respimg-usecases/</a></dd>
+      <dd><a href="http://usecases.responsiveimages.org">http://usecases.responsiveimages.org</a></dd>
+      <dt>Participate:</dt>
       <dd><a href="http://w3c.responsiveimages.org">Join the Responsive Images Community Group</a></dd>
       <dd><a href="http://list.responsiveimages.org">Public mailing list</a></dd>
       <dd><a href="irc://irc.w3.org:6665/#respimg">IRC: #respimg on W3C's IRC server</a></dd>
@@ -170,22 +172,19 @@ a:not([href]) {
       <dt>Authors:</dt>
       <dd><span>Participants</span> of the  Responsive Images Community Group</dd>
       <dt>Editors:</dt>
-      <dd>Marcos Cáceres </dd>
-      <dd>Mat Marquis</dd>
-      <dd>Yoav Weiss</dd> 
+      <dd><a href="http://marcosc.com">Marcos Cáceres</a>, <a href="http://datadriven.com.au">Data.Driven</a></dd>
+      <dd><a href="http://matmarquis.com/">Mat Marquis</a></dd>
+      <dd><a href="http://blog.yoav.ws/">Yoav Weiss</a></dd>
       <dt>RICG Final Specification Licensing Commitments:</dt>
       <dd><a href="http://www.w3.org/community/respimg/spec/26/commitments">http://www.w3.org/community/respimg/spec/26/commitments</a></dd>
     </dl>
-  <p class="copyright ricg">Copyright © 2012 the Contributors to the <cite>Use Cases and Requirements for Standardizing Responsive Images</cite> Specification, published by the <a href="http://www.w3.org/community/respimg/">Responsive Images Community Group</a> under the <a href="https://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/">summary</a> is available.</p>
+    <p class="copyright ricg">Copyright © 2012 the Contributors to the <cite>Use Cases and Requirements for Standardizing Responsive Images</cite> Specification, published by the <a href="http://www.w3.org/community/respimg/">Responsive Images Community Group</a> under the <a href="https://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/">summary</a> is available.</p>
   </div>
-<hr>
+  <hr>
 </header>
-
-
 <h2 class="no-num no-toc" id="abstract">Abstract</h2>
 <p>This document captures the use cases and requirements for standardizing a solution for responsive images. The <a href="#use-cases-0">use cases</a> and <a href="#requirements-0">requirements</a> were gathered with  consultation with <a href="http://w3c.org/">HTML Working Group</a> and <a href="http://whatwg.org">WHATWG</a> participants, <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> group members, and the general public. </p>
 <p class="now3c" id="welcome">Found a bug, typo, or issue? Please <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues?state=open">file a bug on github</a> or <a href="mailto:public-respimg@w3.org">email us</a>! </p>
-
 <h2 class="no-num no-toc" id="status">Status of This Document</h2>
 <p class="ricg"><a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a>'s uses this document to capture the <a href="#use-cases-0">use cases</a> and <a href="#requirements-0">requirements</a> that need to be met in order to add support for <span>responsive images</span> to the Web Platform. The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> believes that gathering use cases and requirements is an iterative process and is open to changes and reformulation of requirements as new information becomes available. Therefore, this document is a "living standard".</p>
 <h2 class="no-num no-toc" id="table-of-contents">Table of contents</h2>
