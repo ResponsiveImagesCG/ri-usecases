@@ -367,13 +367,13 @@ span {
     <p>The <span>solution</span> <em class="ct">MUST</em> afford developers with the ability to include  content  that is accessible to assistive technologies.</p>
   </li>
   <li>
-    <p>The solution <em class="ct">MUST NOT</em> require server-side processing to work. However, if required, server-side adaptation can still occur through <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html">content negotiation</a> or similar techniques (i.e., they are not mutually exclusive). </p>
+    <p>The <span>solution</span> <em class="ct">MUST NOT</em> require server-side processing to work. However, if required, server-side adaptation can still occur through <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html">content negotiation</a> or similar techniques (i.e., they are not mutually exclusive). </p>
   </li>
   <li>
-    <p>The <span>solution</span> <em class="ct">MUST</em> provide developers with a means to programmatically interface with  image resources, as well as access relevant attributes and methods that make the solution practical to work with (i.e., it shouldn't  require complicated Regex or nested loops to manipulate values). In addition, the <span>solution</span> MUST provide means to hook into relevant events (e.g., loading, errors, etc.). In any case, an API SHOULD provide a means to:</p>
+     <p>The <span>solution</span> <em class="ct">MUST</em> provide developers with a means to programmatically interface with  image resources, as well as access relevant attributes and methods that make the solution practical to work with (i.e., it shouldn't  require complicated Regex or nested loops to manipulate values). In addition, the <a href="#solution">solution</a> MUST provide means to hook into relevant events resulting from changes in state (<a href="http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-none">unavailable</a>, <a href="http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-inc">partially available</a>, <a href="http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-all">completely available</a>, <a href="http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-error">broken</a>). In any case, an API SHOULD provide a means to:</p>
     <ul>
       <li>
-        <p> Determine the current source of the image.</p>
+        <p>Determine the current source of the image.</p>
       </li>
       <li>
         <p>Determine what environmental condition caused the current source to be selected (reflected as, for example, a CSS Media Query). </p>
@@ -381,7 +381,7 @@ span {
       <li>
         <p>Add, remove, and update image sources.</p>
       </li>
-      <li>Deal with events. </li>
+      <li>Deal with events.</li>
     </ul>
   </li>
   <li>
@@ -405,7 +405,7 @@ span {
 <p>You can also see <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues?state=closed">all the closed issues</a> relating to this document. </p>
 <h2 class="no-num" id="acknowledgements">Acknowledgements</h2>
 <p>This document is composed of contributions from participants of the responsive images community group. </p>
-<p>The editors would like to thank the following people for reviewing this document: Mike Taylor, Doug Shults, David Newton, Barbara Barbosa Neves, and Eileen Webb. </p>
+<p>The editors would like to thank the following people for reviewing this document: Mike Taylor, Doug Shults, David Newton, Barbara Barbosa Neves,  Eileen Webb, and Anselm Hannemann. </p>
 <p class="w3c"><dfn>Participants</dfn> of the <a href="http://w3c.responsiveimages.org">Responsive Images Community Group</a> at the time of publication were: George Adamson, Marie Alhomme, John Allan, Joshua Allen, Angely Alvarez, Aaryn Anderson, Philip Andrews, Phil Archer, Justin Avery, Michael Balensiefer, Toni Barrett, Bruno Barros, Paul Barton, Adrian Bateman, Jesse Renée Beach, Robin Berjon, Seth Bertalotto, Nicolaas Bijvoet, Andreas Bovens, J. Albert Bowden, Adam Bradley, Rodrigo Brancher, Gordon Brander, Paul Bridgestock, Aaron Brosey, Cory Brown, mairead buchan, Kris Bulman, Ariel Burone, Mathias Bynens, Marcos Caceres, Rusty Calder, Ben Callahan, Loïc Calvy, Chuck Carpenter, Brandon Carroll, Frederico Cerdeira, David Clements, Geri Coady, Anne-Gaelle Colom, Cyril Concolato, Pete Correia, Andy Crum, Jason Daihl, Francois Daoust, Kevin Davies, Robert Dawson, Ryan DeBeasi, Anna Debenham, Darryl deHaan, David Demaree, George DeMet, Ian Devlin, peter droogmans, Marlene Frykman, Dennis Gaebel, Nicolas Gallagher, Miguel Garcia, Rafael Garcia Lepper, Larry Garfield, Peter Gasston, David Goss, Chris Grant, Petra Gregorova, Jason Grigsby, Antoine Guergnon, Jeff Guntle, Aaron Gustafson, Jason Haag, Patrick Haney, Anselm Hannemann, chris hardy, Vincent Hardy, Dominique Hazaël-Massieux, Chris Hilditch, Nathan Hinshaw, Sean Hintz, John Holt Ripley, Shane Hudson, Tomomi Imura, Philip Ingrey, Brett Jankord, Scott Jehl, Dave Johnson, Nathanael Jones, Michael Jovel, Chao Ju, Tim Kadlec, Frédéric Kayser, Jin Kim, Andreas Klein, Peter Klein, John Kleinschmidt, Daniel Konopacki, Zoran Kurtin, Gerardo Lagger, Adam Lake, Chris Lamothe, Tom Lane, Matthieu Larcher, Bruce Lawson, Zach Leatherman, Silas Lepcha, Kornel Lesinski, Chris Lilley, grappler login, Tania Lopes, André Luís, Jacine Luisi, David Maciejewski, Kevin Mack, Ethan Malasky, Josh Marinacci, Eduardo Marques, Mathew Marquis, Daniel Martínez, Tom Maslen, Jacob Mather, Chris McAndrew, Denys Mishunov, Sabine Moebs, Ian Moffitt, Orestis Molopodis, jason morita, David Moulton, Brian Muenzenmeyer, Emi Myoudou, Irakli Nadareishvili, Christian Neuberger Jr, David Newton, Todd Nienkerk, Kothary Nishant, Ashley Nolan, Kenneth Nordahl, Lewis Nyman, Alejandro Oviedo, David Owens, Fernando Pasik, Andrew Pez Pengelly, Hassadee Pimsuwan, Manik Rathee, François REMY, Nestor Rojas, Adrian Roselli, Chris Ruppel, Oguzcan Sahin, Viljami Salminen, Luca Salvini, Luke Sands, aron santa, Jad Sarout, Brandon Satrom, Christoph Saxe, Doug Schepers, Jason Schmidt, Christopher Schmitt, Joe Schmitt, Boaz Sender, Tomoyuki Shimizu, Ariel Shkedi, Jen Simmons, Katerina Skotalova, Michael[tm] Smith, Ignacio Soriano Cano, Aaron Stanush, Jared Stilwell, Matt Stow, Kevin Suttle, Satoru Takagi, Philipp Tautz, James Tudsbury, Jacob van Zijp, Jitendra Vyas, Yoav Weiss, George White, Matt Wilcox, Richard Wild, John Albin Wilkins, Owen Winkler, Jeremy Worboys, Mike Wu, Carlos Zepeda, and jintian zheng.</p>
 <p id="participants">A <a href="http://www.w3.org/community/respimg/participants">complete list of participants</a> of the Responsive Images Community Group is available at the W3C Community Group Website.</p>
 <script class="ricg" src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js"></script> 
