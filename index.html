@@ -343,10 +343,10 @@ a:not([href]) {
     <p>The solution <em class="ct">MUST NOT</em> require server-side processing to work. However, if required, server-side adaptation can still occur through <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html">content negotiation</a> or similar techniques (i.e., they are not mutually exclusive). </p>
   </li>
   <li>
-    <p>The <a href="#solution">solution</a> <em class="ct">MUST</em> provide developers with a means to programmatically interface with  image resources, as well as access relevant attributes and methods that make the solution practical to work with (i.e., it shouldn't  require complicated Regex or nested loops to manipulate values). In addition, the <a href="#solution">solution</a> MUST provide means to hook into relevant events (e.g., loading, errors, etc.). In any case, an API SHOULD provide a means to:</p>
+    <p>The <a href="#solution">solution</a> <em class="ct">MUST</em> provide developers with a means to programmatically interface with  image resources, as well as access relevant attributes and methods that make the solution practical to work with (i.e., it shouldn't  require complicated Regex or nested loops to manipulate values). In addition, the <a href="#solution">solution</a> MUST provide means to hook into relevant events (<a href="http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-none">unavailable</a>, <a href="http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-inc">partially available</a>, <a href="http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-all">completely available</a>, <a href="http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-error">broken</a>). In any case, an API SHOULD provide a means to:</p>
     <ul>
       <li>
-        <p> Determine the current source of the image.</p>
+        <p>Determine the current source of the image.</p>
       </li>
       <li>
         <p>Determine what environmental condition caused the current source to be selected (reflected as, for example, a CSS Media Query). </p>
@@ -354,7 +354,7 @@ a:not([href]) {
       <li>
         <p>Add, remove, and update image sources.</p>
       </li>
-      <li>Deal with events. </li>
+      <li>Deal with events.</li>
     </ul>
   </li>
   <li>
@@ -378,7 +378,7 @@ a:not([href]) {
 <p>You can also see <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues?state=closed">all the closed issues</a> relating to this document. </p>
 <h2 class="no-num" id="acknowledgements">Acknowledgements</h2>
 <p>This document is composed of contributions from participants of the responsive images community group. </p>
-<p>The editors would like to thank the following people for reviewing this document: Mike Taylor, Doug Shults, David Newton, Barbara Barbosa Neves, and Eileen Webb. </p>
+<p>The editors would like to thank the following people for reviewing this document: Mike Taylor, Doug Shults, David Newton, Barbara Barbosa Neves, Eileen Webb, ans Anselm Hannemann. </p>
 <p id="participants">A <a href="http://www.w3.org/community/respimg/participants">complete list of participants</a> of the Responsive Images Community Group is available at the W3C Community Group Website.</p>
 <script class="ricg" src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js"></script> 
 <script class="ricg" src="https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse"></script> 
