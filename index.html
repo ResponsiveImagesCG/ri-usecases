@@ -145,7 +145,7 @@ a:not([href]) {
   <div class="head">
     <p><a href="http://responsiveimages.org"><img alt="Responsive Images Community Group" src="https://raw.github.com/ResponsiveImagesCG/meta/master/logo/Web/RICG_logo_small.png" style="float:right"></a> <a href="http://www.w3.org/"><img alt="W3C" height="48" src="http://www.w3.org/Icons/w3c_home" width="72"></a> </p>
     <h1 class="head">Use Cases and Requirements for Standardizing Responsive Images</h1>
-    <h2 class="no-num no-toc ricg" id="living-document-last-updated-7-january-2013">Living document - Last updated 7 January 2013 </h2>
+    <h2 class="no-num no-toc ricg" id="living-document-last-updated-16-january-2013">Living document - Last updated 16 January 2013 </h2>
     <dl>
       <dt>This Version:</dt>
       <dd class="ricg"><a href="http://usecases.responsiveimages.org/">http://usecases.responsiveimages.org/</a></dd>
@@ -206,10 +206,14 @@ a:not([href]) {
 <p>Furthermore, as the number and varieties of high-density screens has increased (both on mobile and desktop devices), web developers have had to create custom techniques  for serving images that best match a browser's <a href="#environmental-conditions">environmental conditions</a>. For a list of examples of the range of <dfn id="techniques">techniques</dfn> in use in 2012, see Chris Coyier's article "<a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/">Which responsive images solution should you use?</a>". These techniques have a number of shortcomings, which are discussed below (and these shortcomings serve as the motivation to reach out to the <a href="http://w3.org">W3C</a> and <a href="http://whatwg.org">WHATWG</a> for standardization).</p>
 <p>In formulating the requirements, this document tries to be <em>neutral</em> - it is not predicated on any solution. The document only tries to describe the use cases and what the <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> understands, from practice, would be needed to address the use cases in the form of <a href="#requirements-0">requirements</a>. The <a href="http://www.w3.org/community/respimg/"><abbr title="Responsive Images Community Group">RICG</abbr></a> expects that a technical specification can be created to formally address each of the <a href="#requirements-0">requirements</a> (i.e., the <dfn id="solution">solution</dfn>). To date, two such specifications are currently under development: </p>
 <ul>
-  <li><cite><a href="http://dvcs.w3.org/hg/html-proposals/raw-file/tip/responsive-images/responsive-images.html">The picture element: An HTML extension for responsive images</a></cite>. </li>
+  <li><cite><a href="http://picture.responsiveimages.org">The picture element: An HTML extension for responsive images</a></cite>. </li>
   <li><cite><a href="http://dev.w3.org/html5/srcset/">The srcset attribute: An HTML extension for adaptive images</a></cite>.</li>
 </ul>
-<p>Proposed solutions are not mutually exclusive. They may work together to address the complete set of <a href="#use-cases-0">use cases</a> and <a href="#requirements-0">requirements</a>.</p>
+<p>On the one hand, <a href="http://dev.w3.org/html5/srcset/">the `srcset` attribute</a> allows authors to define various image resources and “hints” that assist a user agent to determine the most appropriate image source to display. Given a set of image resources, the user agent has the option of either following or overriding the author’s declarations to optimize the user experience based on criteria such as <a href="http://usecases.responsiveimages.org/#resolution-switching">display density</a>, connection type, <a href="http://usecases.responsiveimages.org/#user-control-over-sources">user preferences</a>, and so on.</p>
+
+On the other hand, <a href="http://picture.responsiveimages.org">the `picture` element</a> defines conditions under which the browser should follow the author's intentions when selecting which resource to display. This includes image source sizes designed to align with layouts variations specified in CSS media queries ( see: <a href="http://usecases.responsiveimages.org/#design-breakpoints">design breakpoints</a>, <a href="http://usecases.responsiveimages.org/#matching-media-features-and-media-types">media features and types</a> and <a href="http://usecases.responsiveimages.org/#relative-units">relative units</a> ) or content variations for increased clarity and focus based on the <a href="http://usecases.responsiveimages.org/#art-direction">client’s display size</a>.
+
+<p>The two proposed solutions are not mutually exclusive: together they address the  set of <cite><a href="http://usecases.responsiveimages.org">Use Cases and Requirements for Responsive Images</a></cite>.</p>
 <h2 id="problems-with-current-techniques"><span class="secno">2 </span>Problems with current techniques</h2>
 <p>There are a number of problems with the <a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/">techniques</a> currently being relied on by web developers: </p>
 <dl>
