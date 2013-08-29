@@ -351,12 +351,19 @@ distorted when faced with a untypical default font-size.
 <p>In a responsive design, images need to be displayed at different sizes. When possible, a vector format such as SVG might be most appropriate. There have also been proposals for new responsive image formats (see, for example, <a href="http://www.netmagazine.com/opinions/need-responsive-image-format">Christopher Schmitt's .net article</a>).</p>
 <p>Although a web developer may want to use a specific image format, new or otherwise, the browser may not always support it. Currently, developers are forced to  abandon the most suitable image format in favor of one that has good user agent support.</p>
 <h3>User control over sources</h3>
-<p>In situations where the user knows  their bandwidth is limited or expensive (e.g., while roaming), the browser could assist users by:</p>
+<p>In situations where the user knows their bandwidth is limited or expensive (e.g., while roaming), the browser could assist users by:</p>
 <ol>
   <li>giving users an option to only download images in the quality they desire - or disable images all together, as Google Chrome currently does through site preferences. </li>
   <li>automatically select the most suitable image for the browsing environment. </li>
 </ol>
 <p>There are browsers already catering for these kinds of situations: for example Opera Mini provides users with a choice of image quality (but those images are compressed on the server). Amazon's Silk browser also compresses images "in the cloud" (i.e., through their own proxy servers) before serving those images to a user's device.</p>
+<h3>Performance oriented</h3>
+<p>One of the main needs from a responsive images solution is speed, and specifically it needs to result in faster page loads than the
+current JavaScript based solutions are providing.</p>
+<p>One of the key aspects of resource download in the browser is the browser's ability to kick-off the resource download as soon as the tag
+containing the resource is read (but possibly before it is parsed, since the parser may be blocked).</p>
+<p>A responsive images solution need to maintain that aspect of image loading, in order to avoid introducing delays to the page load, which
+are counter-productive to one of the main goals of responsive images.</p>
 <h2>Requirements</h2>
 <p>The <span>use cases</span> give rise to the following <dfn>requirements</dfn>:</p>
 <ol>
