@@ -257,13 +257,32 @@ On the other hand, <a href="http://picture.responsiveimages.org">the `picture` e
 <h2>Use cases</h2>
 <p>The following <dfn>use cases</dfn> represent situations in which Web developers see a need for a browser-based solution for working with responsive images.</p>
 <h3>Resolution switching</h3>
-<p> Web developers often need to provide different versions of the same image in order to communicate effectively across the wide range of screen resolutions and pixel densities available on today's devices. If the screen is small and the image is scaled down, its details cannot be seen. Conversely, if the screen is large a larger image that depicts more information can be shown. This can also sometimes help save bandwidth, in that only the  image best fits the viewport is served to the user. </p>
-<figure>
-  <div><img src="images/devices.png" class="stretchy" width="800" height="500" style="max-width:800px" alt="four devices showing the same image, but those images all have distinct sources and sizes"></div>
-  <figcaption>
-    <p>Image specifically resized to be targeted at each device. The intention is to save bandwidth and allow the images to download faster on the targeted screen.</p>
-  </figcaption>
-</figure>
+<p> 
+Image dimensions in responsive layouts tend to vary according to the viewport size, often resulting in large images sent to browsers with narrow
+viewports, only to be downsized there</p>
+<p>
+There is a need to enable browsers to request image resources that are as close as possible to these images display dimensions. That is in
+order to avoid delaying the page load, wasting bandwidth, draining the user's battery and incurring costs on his data plan, by sending him
+image data that he will not benefit from.
+</p>
+<p>
+The use case can be divided into two sub-categories:
+<ul>
+    <li>Device pixel ratio based resolution switching - Different screen densities require different image resolutions in order to display
+    the same image dimensions in a crisp, artifact-free way</li>
+    <li>Viewport dimensions based resolution switching - Different viewport sizes result in different image dimensions </li>
+</ul>
+<div class="note">
+  <div class="note-title">
+    <span>Note</span>
+  </div>
+  <div class="">
+    <p>
+        The reason display dimensions are not considered for the resolution switching use-case is that these are not known to the browser
+        until relatively late in the page load life cycle, and relying on them is likely to introduce a delay to the page's load time.
+    </p>
+  </div>
+</div>
 <h3>Art direction</h3>
 <p>In a responsive design, it is typical to change an image so it can 
   be targeted towards the features of a particular display (or set of displays). Sometimes this means cropping an image. Other times, it can mean a new form of an 
