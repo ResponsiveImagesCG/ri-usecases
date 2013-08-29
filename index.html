@@ -1,0 +1,459 @@
+<!DOCTYPE html><html><head>
+<meta charset=utf-8>
+<meta content="width=device-width,initial-scale=1" name=viewport>
+<title>Use Cases and Requirements for Standardizing Responsive Images</title>
+<!--[if lt IE 9]><script class="now3c" src='http://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
+<style type=text/css>
+body {
+	counter-reset: fcaption;
+}
+header {
+	display: block;
+}
+header dd {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+img, video {
+	max-width: 100%;
+	height: auto;
+}
+code, pre {
+	white-space: pre-wrap;
+}
+img.stretchy {
+	width: 100%;
+	height: auto;
+}
+figure {
+	display: block;
+	border: thin silver solid;
+	margin: 0.5em;
+	padding: 0.5em;
+	text-align: center;
+	counter-increment: fcaption;
+}
+figcaption {
+	display: block;
+	font-style: italic;
+	font-size: smaller;
+	text-indent: 0;
+}
+figcaption p:before {
+	font-weight: bold;
+	content: "Figure " counter(fcaption) ". "
+}
+ol > li {
+	margin: .5em 0 .5em 0;
+}
+ol > li > ol {
+	list-style-type: none;
+}
+pre {
+	tab-size: 3; /* Reduce indentation. */
+}
+a:not([href]) {
+	color: red
+}
+#open-issues-xhr {
+	font-size: .9em;
+}
+#open-issues-xhr li {
+	padding: .25em 0;
+}
+#open-issues-xhr .meta {
+	display: block;
+	font: normal .8em/1 sans-serif;
+	padding: .35em 0 0 0;
+}
+#open-issues-xhr .meta b {
+	font-weight: normal;
+}
+#open-issues-xhr .meta span {
+	display: block;
+	float: left;
+	width: 5.5em;
+}
+.stability {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto 0 auto;
+	width: 50%;
+	background: maroon;
+	color: yellow;
+	-webkit-border-radius: 1em 1em 0 0;
+	-moz-border-radius: 1em 1em 0 0;
+	border-radius: 1em 1em 0 0;
+	-moz-box-shadow: 0 0 1em #500;
+	-webkit-box-shadow: 0 0 1em #500;
+	box-shadow: 0 0 1em red;
+	padding: 0.5em 1em;
+	text-align: center;
+}
+.stability strong {
+	display: block;
+}
+.stability input {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	margin: 0;
+	border: 0;
+	padding: 0.25em 0.5em;
+	background: transparent;
+	color: black;
+	position: absolute;
+	top: -0.5em;
+	right: 0;
+	font: 1.25em sans-serif;
+	text-align: center;
+}
+.stability input:hover {
+	color: white;
+	text-shadow: 0 0 2px black;
+}
+.stability input:active {
+	padding: 0.3em 0.45em 0.2em 0.55em;
+}
+.stability :link, .stability :visited, .stability :link:hover, .stability :visited:hover {
+	background: transparent;
+	color: white;
+}
+#welcome {
+	text-shadow: white 1px 1px;
+	color: #444;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(47%, #f6f6f6), color-stop(100%, #ededed)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* W3C */
+	/* IE6-9 */
+	text-align: center;
+	font-size: 1.5em;
+	border: thin dotted #333333;
+	background-color: #E6E6E6;
+	padding: 1em
+}
+</style>
+<style class="w3c ricg">
+.w3c {
+	border: 1px solid blue;
+}
+.ricg {
+	border: 1px solid red;
+}
+span {
+	border: 1px dotted green;
+}
+</style>
+<link href=http://www.w3.org/StyleSheets/TR/W3C-[STATUS] class=w3c rel=stylesheet>
+<link href=http://www.w3.org/StyleSheets/TR/w3c-unofficial.css class=ricg rel=stylesheet>
+</head>
+<body>
+<header>
+  <div class=head>
+    <p><a href=http://responsiveimages.org><img src=https://raw.github.com/ResponsiveImagesCG/meta/master/logo/Web/RICG_logo_small.png alt="Responsive Images Community Group" style=float:right></a> <a href=http://www.w3.org/><img width=72 alt=W3C height=48 src=http://www.w3.org/Icons/w3c_home></a> </p>
+    <h1 class=head>Use Cases and Requirements for Standardizing Responsive Images</h1>
+    <h2 class="no-num no-toc ricg" id=living-document-last-updated-29-august-2013>Living document - Last updated 29 August 2013 </h2>
+    <h2 class="no-num no-toc w3c" id=w3c-working-draft-29-august-2013>W3C Working Draft 29 August 2013</h2>
+    <dl>
+      <dt>This Version:</dt>
+      <dd class=ricg><a href=http://usecases.responsiveimages.org/>http://usecases.responsiveimages.org/</a></dd>
+      <dd class=w3c><a href=[VERSION]>[VERSION]</a></dd>
+      <dt class=w3c>Latest version:</dt>
+      <dt class=ricg>Latest W3C Published Version:</dt>
+      <dd><a href=http://www.w3.org/TR/[SHORTNAME]/>http://www.w3.org/TR/[SHORTNAME]/</a></dd>
+      <dt class=w3c>Previous version:</dt>
+      <dd class=w3c>None.</dd>
+      <dt class=w3c>Latest Editor's draft:</dt>
+      <dd><a href=http://usecases.responsiveimages.org>http://usecases.responsiveimages.org</a></dd>
+      <dt>Participate:</dt>
+      <dd><a href=http://w3c.responsiveimages.org>Join the Responsive Images Community Group</a></dd>
+      <dd><a href=http://list.responsiveimages.org>Public mailing list</a></dd>
+      <dd><a href=irc://irc.w3.org:6665/#respimg>IRC: #respimg on W3C's IRC server</a></dd>
+      <dd><a href=https://twitter.com/respimg>Twitter</a></dd>
+      <dd><a href=https://github.com/ResponsiveImagesCG>Github repository</a> - our specs are open source!</dd>
+      <dt>Version history:</dt>
+      <dd><a href=https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages>Github commits</a> (<a href=https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages.atom>RSS</a>)</dd>
+      <dd><a href=https://twitter.com/respimg_commits>Github commits on Twitter</a></dd>
+      <dt>Authors:</dt>
+      <dd><a href=#participants-0>Participants</a> of the  Responsive Images Community Group</dd>
+      <dt>Editors:</dt>
+      <dd><a href=http://marcosc.com>Marcos Cáceres</a>, <a href=http://datadriven.com.au>Data.Driven</a></dd>
+      <dd><a href=http://matmarquis.com/>Mat Marquis</a></dd>
+      <dd><a href=http://blog.yoav.ws/>Yoav Weiss</a></dd>
+      <dt>RICG Final Specification Licensing Commitments:</dt>
+      <dd><a href=http://www.w3.org/community/respimg/spec/26/commitments>http://www.w3.org/community/respimg/spec/26/commitments</a></dd>
+    </dl>
+    <p class="copyright w3c"><a href=http://www.w3.org/Consortium/Legal/ipr-notice#Copyright>Copyright</a> © 2013 <a href=http://www.w3.org/><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href=http://www.csail.mit.edu/><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href=http://www.ercim.eu/><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href=http://www.keio.ac.jp/>Keio</a>), All Rights Reserved. W3C <a href=http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer>liability</a>, <a href=http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks>trademark</a> and <a href=http://www.w3.org/Consortium/Legal/copyright-documents>document use</a> rules apply.</p>
+    <p class="copyright ricg">Copyright © 2013 the Contributors to the <cite>Use Cases and Requirements for Standardizing Responsive Images</cite> Specification, published by the <a href=http://www.w3.org/community/respimg/>Responsive Images Community Group</a> under the <a href=https://www.w3.org/community/about/agreements/cla/>W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href=http://www.w3.org/community/about/agreements/cla-deed/>summary</a> is available.</p>
+  </div>
+  <hr>
+</header>
+<h2 class="no-num no-toc" id=abstract>Abstract</h2>
+<p>This document captures the use cases and requirements for standardizing a solution for responsive images. The <a href=#use-cases-0>use cases</a> and <a href=#requirements-0>requirements</a> were gathered with  consultation with <a href=http://w3c.org/>HTML Working Group</a> and <a href=http://whatwg.org>WHATWG</a> participants, <a href=http://www.w3.org/community/respimg/><abbr title="Responsive Images Community Group">RICG</abbr></a> group members, and the general public. </p>
+<p class=now3c id=welcome>Found a bug, typo, or issue? Please <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues?state=open">file a bug on github</a> or <a href=mailto:public-respimg@w3.org>email us</a>! </p>
+<h2 class="no-num no-toc" id=status>Status of This Document</h2>
+<div class=w3c>
+  <p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current W3C publications and the latest revision of this technical report can be found in the <a href=http://www.w3.org/TR/>W3C technical reports index</a> at http://www.w3.org/TR/.</em></p>
+  <p id=wip class=stability><strong>This is a work in
+    progress!</strong> For the latest updates from the HTML WG, possibly
+    including important bug fixes, please look at the <a href=http://usecases.responsiveimages.org>editor's draft</a> instead. If you find any bugs, typos, or issues please <a href=https://github.com/ResponsiveImagesCG/picture-element/issues>file a bug</a> on Github!
+    <input type=button onclick=closeWarning(this.parentNode) value=X>
+  </p>
+  <script>
+   function closeWarning(element) {
+     element.parentNode.removeChild(element);
+     var date = new Date();
+     date.setDate(date.getDate()+4);
+     document.cookie = 'hide-obsolescence-warning=1; expires=' + date.toGMTString();
+   }
+   if (getCookie('hide-obsolescence-warning') == '1')
+     setTimeout(function () { document.getElementById('wip').parentNode.removeChild(document.getElementById('wip')); }, 2000);
+  </script>
+  <p>This is a First Public Working Draft. </p>
+  <p>This document was published by the <a href=http://www.w3.org/html/wg/>HTML Working Group</a> as a Working Draft, but was developed in collaboration with the <a href=http://www.w3.org/community/respimg/>Responsive Images Community Group</a> (see <a href=http://www.w3.org/community/respimg/spec/26/commitments>licensing commitments</a>). If you are not a HTML working group member and wish to make comments regarding this document please send them to <a href=mailto:public-html-comments@w3.org>public-html-comments@w3.org</a> (<a href="mailto:public-html-comments-request@w3.org?subject=subscribe">subscribe</a>, <a href=http://lists.w3.org/Archives/Public/public-html-comments/>archives</a>). If you are a HTML working group member and wish to make comments regarding this document, please send them to <a href=mailto:public-html@w3.org>public-html@w3.org</a> (<a href="mailto:public-html-request@w3.org?subject=subscribe">subscribe</a>, <a href=http://lists.w3.org/Archives/Public/public-html/>archives</a>). All feedback is welcome.</p>
+  <p>Publication as a Working Draft does not imply endorsement by the W3C Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.</p>
+  <p>This document was produced by a group operating under the <a href=http://www.w3.org/Consortium/Patent-Policy-20040205/>5 February 2004 W3C Patent Policy</a>. This document is informative only: that is, the document is not inteded for the W3C's Recommendation Track; it is destined to become a <a href=http://www.w3.org/2005/10/Process-20051014/tr.html#WGNote>Working Group Note</a>. W3C maintains a <a href=http://www.w3.org/2004/01/pp-impl/40318/status rel=disclosure>public list of any patent disclosures</a> made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains <a href=http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential>Essential Claim(s)</a> must disclose the information in accordance with <a href=http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure>section 6 of the W3C Patent Policy</a>.</p>
+</div>
+<p class=ricg><a href=http://www.w3.org/community/respimg/><abbr title="Responsive Images Community Group">RICG</abbr></a>'s uses this document to capture the <a href=#use-cases-0>use cases</a> and <a href=#requirements-0>requirements</a> that need to be met in order to add support for <span>responsive images</span> to the Web Platform. The <a href=http://www.w3.org/community/respimg/><abbr title="Responsive Images Community Group">RICG</abbr></a> believes that gathering use cases and requirements is an iterative process and is open to changes and reformulation of requirements as new information becomes available. Therefore, this document is a "living standard".</p>
+<h2 class="no-num no-toc" id=table-of-contents>Table of contents</h2>
+
+<!--begin-toc-->
+<ol class=toc>
+ <li><a href=#introduction><span class=secno>1 </span>Introduction</a></li>
+ <li><a href=#problems-with-current-techniques><span class=secno>2 </span>Problems with current techniques</a></li>
+ <li><a href=#use-cases><span class=secno>3 </span>Use cases</a>
+  <ol>
+   <li><a href=#resolution-switching><span class=secno>3.1 </span>Resolution switching</a></li>
+   <li><a href=#art-direction><span class=secno>3.2 </span>Art direction</a></li>
+   <li><a href=#design-breakpoints><span class=secno>3.3 </span>Design breakpoints</a></li>
+   <li><a href=#matching-media-features-and-media-types><span class=secno>3.4 </span> Matching media features and media types</a></li>
+   <li><a href=#relative-units><span class=secno>3.5 </span>Relative units</a></li>
+   <li><a href=#api-to-manipulate-sources><span class=secno>3.6 </span>API to manipulate sources</a></li>
+   <li><a href=#image-formats><span class=secno>3.7 </span>Image formats</a></li>
+   <li><a href=#user-control-over-sources><span class=secno>3.8 </span>User control over sources</a></li>
+   <li><a href=#performance-oriented><span class=secno>3.9 </span>Performance oriented</a></li></ol></li>
+ <li><a href=#requirements><span class=secno>4 </span>Requirements</a></li>
+ <li><a href=#open-issues class=no-num>Open issues</a></li>
+ <li><a href=#changes-history class=no-num>Changes history</a></li>
+ <li><a href=#acknowledgements class=no-num>Acknowledgements</a></li></ol>
+<!--end-toc-->
+<h2 id=introduction><span class=secno>1 </span>Introduction</h2>
+<p> In <span><a href=http://www.w3.org/TR/html5/>HTML</a></span>, a user agent's <dfn id=environmental-conditions>environmental conditions</dfn> are primarily expressed as  CSS <dfn id=media-features>media features</dfn> (e.g., max-width, orientation, monochrome, etc.) and CSS media types (e.g., print, screen, etc.). A <dfn id=responsive-image>responsive image</dfn> is an image that a developer explicitly adapts in response to different <a href=#environmental-conditions>environmental conditions</a>: adaptations can include, but are not limited to, changing the width, height, or even the source of an image.</p>
+<p>Many <a href=http://www.w3.org/TR/css3-mediaqueries/#media1>media features</a> are dynamic in nature (e.g.,  a browser window is re-sized, a device is rotated from portrait to landscape, and so on), thus a user agent constantly responds to events that change the properties of media features. As a web page's layout adapts to changes in media features and media type,  an image's ability to communicate effectively can be significantly reduced (e.g., images start to show compression artefacts as they are scaled to match the quality of media or some media feature). When this happens, developers rely on <span>responsive images</span> to present images at different resolutions, or even in different formats (e.g., swapping to SVG), to make sure their images continue communicating effectively. </p>
+<p>Furthermore, as the number and varieties of high-density screens has increased (both on mobile and desktop devices), web developers have had to create custom techniques  for serving images that best match a browser's <a href=#environmental-conditions>environmental conditions</a>. For a list of examples of the range of <dfn id=techniques>techniques</dfn> in use in 2012, see Chris Coyier's article "<a href=http://css-tricks.com/which-responsive-images-solution-should-you-use/>Which responsive images solution should you use?</a>". These techniques have a number of shortcomings, which are discussed below (and these shortcomings serve as the motivation to reach out to the <a href=http://w3.org>W3C</a> and <a href=http://whatwg.org>WHATWG</a> for standardization).</p>
+<p>In formulating the requirements, this document tries to be <em>neutral</em> - it is not predicated on any solution. The document only tries to describe the use cases and what the <a href=http://www.w3.org/community/respimg/><abbr title="Responsive Images Community Group">RICG</abbr></a> understands, from practice, would be needed to address the use cases in the form of <a href=#requirements-0>requirements</a>. The <a href=http://www.w3.org/community/respimg/><abbr title="Responsive Images Community Group">RICG</abbr></a> expects that a technical specification can be created to formally address each of the <a href=#requirements-0>requirements</a> (i.e., the <dfn id=solution>solution</dfn>). To date, two such specifications are currently under development: </p>
+<ul>
+  <li><cite><a href=http://picture.responsiveimages.org>The picture element: An HTML extension for responsive images</a></cite>. </li>
+  <li><cite><a href=http://dev.w3.org/html5/srcset/>The srcset attribute: An HTML extension for adaptive images</a></cite>.</li>
+</ul>
+<p>On the one hand, <a href=http://dev.w3.org/html5/srcset/>the `srcset` attribute</a> allows authors to define various image resources and “hints” that assist a user agent to determine the most appropriate image source to display. Given a set of image resources, the user agent has the option of either following or overriding the author’s declarations to optimize the user experience based on criteria such as <a href=http://usecases.responsiveimages.org/#resolution-switching>display density</a>, connection type, <a href=http://usecases.responsiveimages.org/#user-control-over-sources>user preferences</a>, and so on.</p>
+
+On the other hand, <a href=http://picture.responsiveimages.org>the `picture` element</a> defines conditions under which the browser should follow the author's intentions when selecting which resource to display. This includes image source sizes designed to align with layouts variations specified in CSS media queries ( see: <a href=http://usecases.responsiveimages.org/#design-breakpoints>design breakpoints</a>, <a href=http://usecases.responsiveimages.org/#matching-media-features-and-media-types>media features and types</a> and <a href=http://usecases.responsiveimages.org/#relative-units>relative units</a> ) or content variations for increased clarity and focus based on the <a href=http://usecases.responsiveimages.org/#art-direction>client’s display size</a>.
+
+<p>The two proposed solutions are not mutually exclusive: together they address the  set of <cite><a href=http://usecases.responsiveimages.org>Use Cases and Requirements for Responsive Images</a></cite>.</p>
+<h2 id=problems-with-current-techniques><span class=secno>2 </span>Problems with current techniques</h2>
+<p>There are a number of problems with the <a href=http://css-tricks.com/which-responsive-images-solution-should-you-use/>techniques</a> currently being relied on by web developers: </p>
+<dl>
+  <dt>Reliance on  semantically neutral elements and CSS backgrounds: </dt>
+  <dd>
+    <p> Large images incur unnecessary download and processing time, slowing the experience for users. To solve this problem, web developers  provide multiple sources of the same image at different resolutions and then pick the image of the correct size  based on the viewport size. This is commonly done for CSS background images in responsive designs, but web developers lack the markup to do so for images in <a href=http://www.w3.org/TR/html5/>HTML</a> without hacking together a solution. This means that developers have resorted to using <code>div</code> and other container elements to achieve the desired functionality. </p>
+    <p>In other words, developers are being forced to work around, or completely ignore, authoring requirements of <span><a href=http://www.w3.org/TR/html5/>HTML</a></span>.</p>
+  </dd>
+  <dt>Reliance on scripts and server side processing: </dt>
+  <dd>
+    <p>The <a href=http://css-tricks.com/which-responsive-images-solution-should-you-use/>techniques</a> rely on either JavaScript or a server-side solution (or both), which adds  complexity and redundant HTTP requests to the development process. Furthermore, the script-based solutions will be unavailable to users who have turned off JavaScript.</p>
+  </dd>
+</dl>
+<p>The <abbr title="Responsive Images Community Group">RICG</abbr> believes  standardization of a browser-based solution can overcome these problems. </p>
+<h2 id=use-cases><span class=secno>3 </span>Use cases</h2>
+<p>The following <dfn id=use-cases-0>use cases</dfn> represent situations in which Web developers see a need for a browser-based solution for working with responsive images.</p>
+<h3 id=resolution-switching><span class=secno>3.1 </span>Resolution switching</h3>
+<p> 
+Image dimensions in responsive layouts tend to vary according to the viewport size, often resulting in large images sent to browsers with narrow
+viewports, only to be downsized there</p>
+<p>
+There is a need to enable browsers to request image resources that are as close as possible to these images display dimensions. That is in
+order to avoid delaying the page load, wasting bandwidth, draining the user's battery and incurring costs on his data plan, by sending him
+image data that he will not benefit from.
+</p>
+<p>
+The use case can be divided into two sub-categories:
+</p><ul>
+    <li>Device pixel ratio based resolution switching - Different screen densities require different image resolutions in order to display
+    the same image dimensions in a crisp, artifact-free way</li>
+    <li>Viewport dimensions based resolution switching - Different viewport sizes result in different image dimensions </li>
+</ul>
+<div class=note>
+  <div class=note-title>
+    <span>Note</span>
+  </div>
+  <div class="">
+    <p>
+        The reason display dimensions are not considered for the resolution switching use-case is that these are not known to the browser
+        until relatively late in the page load life cycle, and relying on them is likely to introduce a delay to the page's load time.
+    </p>
+  </div>
+</div>
+<h3 id=art-direction><span class=secno>3.2 </span>Art direction</h3>
+<p>In a responsive design, it is typical to change an image so it can 
+  be targeted towards the features of a particular display (or set of displays). Sometimes this means cropping an image. Other times, it can mean a new form of an 
+  image that may have different proportions or may be changed in other ways to match changes in the layout. This means, for example: </p>
+<ul>
+  <li>On large screens, a large image  is shown (e.g.,  an object or person with a broad background).</li>
+  <li>On smaller screens, shrinking the image can reduce its relevance, usefulness, and legibility.</li>
+</ul>
+<p>This is illustrated in the figure below. </p>
+<figure>
+  <div><img src=images/art_direction.jpg alt="four devices showing art directed crops of a dog" height=520 style=max-width:800px class=stretchy width=800></div>
+  <figcaption>
+    <p>Using different images that have been cropped to fit a particular screen's features can help in communicating a message effectively. </p>
+  </figcaption>
+</figure>
+<p>A related use case is when orientation determines:</p>
+<ul>
+  <li> the source of the image,</li>
+  <li> the crop,</li>
+  <li> and how text flows around the image based on the size of the viewport. </li>
+</ul>
+<p>For example, on the Nokia Lumia site where it describes the <a href=http://browser.nokia.com/smartphones.html>Meego browser</a>, the Nokia Lumia  is shown horizontally on wide screens. As the screen narrows, the Nokia Lumia is then shown vertically and cropped. Bryan and Stephanie Rieger, the designers of the site, explained that on a wide screen, showing the full phone horizontally showed the browser best; but on small screens, changing the image to vertical made more sense because it allowed the reader to still make out the features of the browser in the image.</p>
+<figure>
+  <video width=652 onclick=if(/Android/.test(navigator.userAgent))this.play(); height=389 poster=videos/screenrmx1.jpg controls="">
+    <source type=video/mp4 src=videos/screenrmx1.m4v>
+    <source type=video/webm src=videos/screenrmx1.webm>
+    <source type=video/ogg src=videos/screenrmx1.ogv>
+    <source src=videos/screenrmx1.mp4>
+    <object data=videos/flashfox.swf width=652 style=position:relative; height=389 type=application/x-shockwave-flash>
+      <param name=movie value=videos/flashfox.swf>
+      <param name=allowFullScreen value=true>
+      <param name=flashVars value="autoplay=false&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=videos/screenrmx1.jpg&amp;src=screenrmx1.m4v">
+      <embed src=videos/flashfox.swf pluginspage=http://www.adobe.com/go/getflashplayer_en height=389 wmode=transparent style=position:relative; flashvars="autoplay=false&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=videos/screenrmx1.jpg&amp;src=screenrmx1.m4v" type=application/x-shockwave-flash width=652 allowfullscreen=true> 
+      <img src=videos/screenrmx1.jpg alt="Responsive images on Meego website" height=389 style=position:absolute;left:0; width=652 title="Video playback is not supported by your browser">
+    </object>
+  </video>
+  <figcaption>
+    <p>Video showing how responsive images are used on Nokia's Meego Website.</p>
+  </figcaption>
+</figure>
+<h3 id=design-breakpoints><span class=secno>3.3 </span>Design breakpoints</h3>
+<p>In Web development, a <dfn id=breakpoint>breakpoint</dfn> is one of a series of CSS Media Queries that updates the styles of a page based on logical matching of media features. A single breakpoint represents a rule (or set of rules) that determines the point at which the contents of that media query are applied to a page’s layout. For example:</p>
+<pre class=example>@media screen and (max-width: 16em) { ... }
+@media screen and (max-width: 32em) { ... }
+@media screen and (max-width: 41em) { ... }</pre>
+<p>Developers currently match specific <span>breakpoints</span> for images to the breakpoints that they have defined in the <a href=http://www.w3.org/Style/CSS/Overview.en.html>CSS</a> of their responsive designs. Being able to match the breakpoints ensures that images are operating under the same rules that define the layout of a design. It also helps developers verify their approach by ensuring that the same viewport measurement tests are being used in both <a href=http://www.w3.org/TR/html5/>HTML</a> and <a href=http://www.w3.org/Style/CSS/Overview.en.html>CSS</a>.  If the developer cannot specify breakpoints for images in the same manner that they are defined for the design, developers will need to convert the breakpoints back to the values specified in the layout in order to verify that they match. This increases authoring time and the likelihood of errors on the part of developers.</p>
+<p> For example, if a <a href=#breakpoint>breakpoint</a> is specified  as "<span class=example><code>max-width: 41em</code></span>", then web developers would like to define a similar breakpoint for images at a <code>max-width</code> of <code>41em</code>. Otherwise they are forced to transform measurements into another unit like pixels, which is tedious and potentially error-prone for developers.</p>
+<h3 id=matching-media-features-and-media-types><span class=secno>3.4 </span> Matching media features and media types</h3>
+<p> According to <cite>Wikipedia's</cite> article on "<a href=http://en.wikipedia.org/wiki/Dots_per_inch>dots per inch</a>": </p>
+<blockquote>
+  <p>"An inkjet printer … is typically capable of 300-600 DPI. A laser printer … [prints] in the range of 600 to 1,800 DPI."</p>
+</blockquote>
+<p>As printers generally have the ability to pack more points per inch than a device's screen, printers have to compensate for the lack of pixel data by applying <a href=http://en.wikipedia.org/wiki/Reprographic title=Reprographic>reprographic</a> techniques, such as <a href=http://en.wikipedia.org/wiki/Halftone>half toning</a>, to simulate <a href=http://en.wikipedia.org/wiki/Continuous_tone title="Continuous tone">continuous tone</a> in imagery. As illustrated below, applying such techniques can cause images to look blurry and low-quality when compared to text. </p>
+<figure> <img width=403 alt="image comparison between screen and print" height=107 src=images/printed_image.jpg>
+  <figcaption>
+    <p>Example of a  48px by 48px image and text printed at 1,200 DPI. Because of the lack of image data, the printer compensates by using the <a href=http://en.wikipedia.org/wiki/Halftone>halftone</a> <a href=http://en.wikipedia.org/wiki/Reprographic title=Reprographic>reprographic</a> technique. Note that the text stays crisp and is printed at the full 1,200 DPI. </p>
+  </figcaption>
+</figure>
+<p>Allowing developers to reference images at different resolutions could allow user agents to choose an image that best matches the capabilities of the printer. For example, a photo sharing site could provide a bandwidth-optimized image for display on screen, but a high-resolution image for print. The same technique could also be used for e-book formats, such as <a href=http://idpf.org/epub>EPUB</a>.</p>
+<p>However, displaying a color image on monochrome media (e.g., paper and e-ink displays) can be problematic: different colors with similar luminosity are impossible to distinguish on monochrome media. This problem is illustrated in the figure below, where it becomes nearly impossible to associate slices of a pie chart with corresponding labels. </p>
+<figure>
+  <div><img src=images/color_and_bw_graph.png alt="a color and a black and white graph" height=211 style="max-width: 560px" class=stretchy width=560></div>
+  <figcaption>
+    <p>Two pie charts, one in color and one in black and white, which demonstrate the problem with switching from color to monochrome media. In the black and white graph, it is extremely difficult to know which slice relates to which label (except in the case of "commute", which is a lighter shade).</p>
+  </figcaption>
+</figure>
+<p>Currently, server side solutions exist to adapt web content to e-ink displays (e.g., <a href=http://kinstant.com/>kinstant</a>), but such services only work on text and layout and not on images. As interpreting the meaning of images is a problem of <a href=http://en.wikipedia.org/wiki/Semiotics>semiotics</a>, it is infeasible that this problem can ever be computationally solved. The only feasible solution is  for authors to provide alternative image content that communicates effectively in monochrome media. </p>
+<p>Lastly, through the<a href=http://www.w3.org/TR/css3-mediaqueries/> CSS Media Queries specifications</a>, the <a href=http://www.w3.org/Style/CSS/>CSS Working Group</a> continues to add media features to the Web platform. New media features in <a href=http://dev.w3.org/csswg/mediaqueries4/>CSS Media Queries level 4</a> include <a href=http://dev.w3.org/csswg/mediaqueries4/#script>script</a>, <a href=http://dev.w3.org/csswg/mediaqueries4/#pointer>pointer</a>, <a href=http://dev.w3.org/csswg/mediaqueries4/#hover>hover</a>, and  <a href=http://dev.w3.org/csswg/mediaqueries4/#luminosity>luminosity</a>. The lack of a declarative mechanism to associate image content  with media features means that developers cannot use them without relying on the aforementioned problematic <a href=#techniques>techniques</a>.</p>
+<h3 id=relative-units><span class=secno>3.5 </span>Relative units</h3>
+<p>A common practice in creating flexible layouts is to specify the size values in media queries as relative units: <code>em</code>, <code>rem</code>, <code>vw</code>/<code>vh</code> etc. 
+See, for example, Lyza Gardner's article <a href=http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/><cite>The EMs have it: Proportional Media Queries FTW!</cite></a> . 
+This approach commonly uses <code>em</code>s in order to reflow layouts based on users’ default font size preferences, and to avoid cases
+where the layout breaks for users or devices who set a default font-size that is other than the usual 16px. </p>
+<p>In flexible layout designs with <code>em</code> based media queries, if art-directed images are not specified in relative units, they can either break the layout or become
+distorted when faced with a untypical default font-size. 
+</p>
+<h3 id=api-to-manipulate-sources><span class=secno>3.6 </span>API to manipulate sources</h3>
+<p>In some cases the image data is dynamically generated (e.g., using <a href=http://www.w3.org/TR/2dcontext/>the <code>canvas</code> element</a> and related APIs) or is acquired from the device itself (e.g., from the camera on a phone or tablet using some form of media capture). Developers need practical means to interface programmatically with the source of an image or a set of images. Without having a suitable API, it will be difficult for developers to manipulate the sources of images or to even know what source is currently being displayed. </p>
+<h3 id=image-formats><span class=secno>3.7 </span>Image formats</h3>
+<p>Some images are best suited to a specific file type for reasons such as file size optimization, alpha transparency, scalability, animation, etc. For example, a photo usually requires good color depth, but does not require alpha transparency or animation; JPEG or WebP are well-suited to these needs and offer good optimization between image quality and file size. Icons are often simpler in terms of color depth, but may require alpha transparency; the PNG and WebP format is better-suited to these needs.</p>
+<div class=issue>
+  <p>Sharing URLs for formats that are not interoperable across browsers is a problem in the wild. See <a href=https://github.com/ResponsiveImagesCG/ri-usecases/issues/11>issue 11</a>.</p>
+</div>
+<p>In a responsive design, images need to be displayed at different sizes. When possible, a vector format such as SVG might be most appropriate. There have also been proposals for new responsive image formats (see, for example, <a href=http://www.netmagazine.com/opinions/need-responsive-image-format>Christopher Schmitt's .net article</a>).</p>
+<p>Although a web developer may want to use a specific image format, new or otherwise, the browser may not always support it. Currently, developers are forced to  abandon the most suitable image format in favor of one that has good user agent support.</p>
+<h3 id=user-control-over-sources><span class=secno>3.8 </span>User control over sources</h3>
+<p>In situations where the user knows their bandwidth is limited or expensive (e.g., while roaming), the browser could assist users by:</p>
+<ol>
+  <li>giving users an option to only download images in the quality they desire - or disable images all together, as Google Chrome currently does through site preferences. </li>
+  <li>automatically select the most suitable image for the browsing environment. </li>
+</ol>
+<p>There are browsers already catering for these kinds of situations: for example Opera Mini provides users with a choice of image quality (but those images are compressed on the server). Amazon's Silk browser also compresses images "in the cloud" (i.e., through their own proxy servers) before serving those images to a user's device.</p>
+<h3 id=performance-oriented><span class=secno>3.9 </span>Performance oriented</h3>
+<p>One of the main needs from a responsive images solution is speed, and specifically it needs to result in faster page loads than the
+current JavaScript based solutions are providing.</p>
+<p>One of the key aspects of resource download in the browser is the browser's ability to kick-off the resource download as soon as the tag
+containing the resource is read (but possibly before it is parsed, since the parser may be blocked).</p>
+<p>A responsive images solution need to maintain that aspect of image loading, in order to avoid introducing delays to the page load, which
+are counter-productive to one of the main goals of responsive images.</p>
+<h2 id=requirements><span class=secno>4 </span>Requirements</h2>
+<p>The <a href=#use-cases-0>use cases</a> give rise to the following <dfn id=requirements-0>requirements</dfn>:</p>
+<ol>
+  <li>
+    <p>The <a href=#solution>solution</a> <em class=ct>MUST</em> afford developers the ability to match image sources with particular  media features  and/or media types - and have the user agent update the source of an image as the media features and media types of the browser environment change dynamically.</p>
+  </li>
+  <li>
+    <p>The <a href=#solution>solution</a> <em class=ct>MUST</em> degrade gracefully on legacy user agents by, for example, relying on <span>HTML</span>'s built-in fallback mechanisms and legacy elements.</p>
+  </li>
+  <li>
+    <p>The <a href=#solution>solution</a> <em class=ct>MUST</em> afford developers with the ability to include  content  that is accessible to assistive technologies.</p>
+  </li>
+  <li>
+    <p>The <a href=#solution>solution</a> <em class=ct>MUST NOT</em> require server-side processing to work. However, if required, server-side adaptation can still occur through <a href=http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html>content negotiation</a> or similar techniques (i.e., they are not mutually exclusive). </p>
+  </li>
+  <li>
+     <p>The <a href=#solution>solution</a> <em class=ct>MUST</em> provide developers with a means to programmatically interface with  image resources, as well as access relevant attributes and methods that make the solution practical to work with (i.e., it shouldn't  require complicated Regex or nested loops to manipulate values). In addition, the <a href=#solution>solution</a> MUST provide means to hook into relevant events resulting from changes in state (<a href=http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-none>unavailable</a>, <a href=http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-inc>partially available</a>, <a href=http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-all>completely available</a>, <a href=http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-error>broken</a>). In any case, an API SHOULD provide a means to:</p>
+    <ul>
+      <li>
+        <p>Determine the current source of the image.</p>
+      </li>
+      <li>
+        <p>Determine what environmental condition caused the current source to be selected (reflected as, for example, a CSS Media Query). </p>
+      </li>
+      <li>
+        <p>Add, remove, and update image sources.</p>
+      </li>
+      <li>Deal with events.</li>
+    </ul>
+  </li>
+  <li>
+    <p>The <a href=#solution>solution</a> <em class=ct>MUST</em> afford developers the ability to explicitly define different image versions as opposed to only different resolutions of the same image. </p>
+  </li>
+  <li>
+    <p> The <a href=#solution>solution</a> <em class=ct>MUST</em> afford developers  the ability to  define the breakpoints for images as either minimum values (mobile first) or maximum values (desktop first) to match the media queries used in their design.</p>
+  </li>
+  <li>
+    <p>The <a href=#solution>solution</a> <em class=ct>SHOULD</em> allow developers to specify images in different formats (or specify the format of a set of image sources).</p>
+  </li>
+  <li>
+    <p>To provide compatibility with legacy user agents, it SHOULD be possible for developers to <a href=http://remysharp.com/2010/10/08/what-is-a-polyfill/>polyfill</a> the <a href=#solution>solution</a>.</p>
+  </li>
+  <li>The <a href=#solution>solution</a> <em class=ct>SHOULD</em> afford user agents with the ability to provide a user-settable preference for controlling which source of an image they prefer. For example,  preference options could include: "always  lowest resolution", "always high resolution", "download high resolution as bandwidth permits", and so on. To be clear, user agents are not required to provide such a user-settable preference, but  the <a href=#solution>solution</a> needs to be designed in such a way that it could be done.</li>
+</ol>
+<h2 class=no-num id=open-issues>Open issues</h2>
+<p>We are tracking <dfn id=open-issues-0>open issues</dfn> on Github. <a href=https://github.com/ResponsiveImagesCG/ri-usecases/issues>Please help us close them</a>! </p>
+<h2 class=no-num id=changes-history>Changes history</h2>
+<p>A <a href=https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages>complete history of changes</a> is available on Github. </p>
+<p>You can also see <a href="https://github.com/ResponsiveImagesCG/ri-usecases/issues?state=closed">all the closed issues</a> relating to this document. </p>
+<h2 class=no-num id=acknowledgements>Acknowledgements</h2>
+<p>This document is composed of contributions from participants of the responsive images community group. </p>
+<p>The editors would like to thank the following people for reviewing this document: Mike Taylor, Doug Shults, David Newton, Barbara Barbosa Neves,  Eileen Webb, and Anselm Hannemann. </p>
+<p class=w3c><dfn id=participants-0>Participants</dfn> of the <a href=http://w3c.responsiveimages.org>Responsive Images Community Group</a> at the time of publication were: George Adamson, Marie Alhomme, John Allan, Joshua Allen, Angely Alvarez, Aaryn Anderson, Philip Andrews, Phil Archer, Justin Avery, Michael Balensiefer, Toni Barrett, Bruno Barros, Paul Barton, Adrian Bateman, Jesse Renée Beach, Robin Berjon, Seth Bertalotto, Nicolaas Bijvoet, Andreas Bovens, J. Albert Bowden, Adam Bradley, Rodrigo Brancher, Gordon Brander, Paul Bridgestock, Aaron Brosey, Cory Brown, mairead buchan, Kris Bulman, Ariel Burone, Mathias Bynens, Marcos Caceres, Rusty Calder, Ben Callahan, Loïc Calvy, Chuck Carpenter, Brandon Carroll, Frederico Cerdeira, David Clements, Geri Coady, Anne-Gaelle Colom, Cyril Concolato, Pete Correia, Andy Crum, Jason Daihl, Francois Daoust, Kevin Davies, Robert Dawson, Ryan DeBeasi, Anna Debenham, Darryl deHaan, David Demaree, George DeMet, Ian Devlin, peter droogmans, Marlene Frykman, Dennis Gaebel, Nicolas Gallagher, Miguel Garcia, Rafael Garcia Lepper, Larry Garfield, Peter Gasston, David Goss, Chris Grant, Petra Gregorova, Jason Grigsby, Antoine Guergnon, Jeff Guntle, Aaron Gustafson, Jason Haag, Patrick Haney, Anselm Hannemann, chris hardy, Vincent Hardy, Dominique Hazaël-Massieux, Chris Hilditch, Nathan Hinshaw, Sean Hintz, John Holt Ripley, Shane Hudson, Tomomi Imura, Philip Ingrey, Brett Jankord, Scott Jehl, Dave Johnson, Nathanael Jones, Michael Jovel, Chao Ju, Tim Kadlec, Frédéric Kayser, Jin Kim, Andreas Klein, Peter Klein, John Kleinschmidt, Daniel Konopacki, Zoran Kurtin, Gerardo Lagger, Adam Lake, Chris Lamothe, Tom Lane, Matthieu Larcher, Bruce Lawson, Zach Leatherman, Silas Lepcha, Kornel Lesinski, Chris Lilley, grappler login, Tania Lopes, André Luís, Jacine Luisi, David Maciejewski, Kevin Mack, Ethan Malasky, Josh Marinacci, Eduardo Marques, Mathew Marquis, Daniel Martínez, Tom Maslen, Jacob Mather, Chris McAndrew, Denys Mishunov, Sabine Moebs, Ian Moffitt, Orestis Molopodis, jason morita, David Moulton, Brian Muenzenmeyer, Emi Myoudou, Irakli Nadareishvili, Christian Neuberger Jr, David Newton, Todd Nienkerk, Kothary Nishant, Ashley Nolan, Kenneth Nordahl, Lewis Nyman, Alejandro Oviedo, David Owens, Fernando Pasik, Andrew Pez Pengelly, Hassadee Pimsuwan, Manik Rathee, François REMY, Nestor Rojas, Adrian Roselli, Chris Ruppel, Oguzcan Sahin, Viljami Salminen, Luca Salvini, Luke Sands, aron santa, Jad Sarout, Brandon Satrom, Christoph Saxe, Doug Schepers, Jason Schmidt, Christopher Schmitt, Joe Schmitt, Boaz Sender, Tomoyuki Shimizu, Ariel Shkedi, Jen Simmons, Katerina Skotalova, Michael[tm] Smith, Ignacio Soriano Cano, Aaron Stanush, Jared Stilwell, Matt Stow, Kevin Suttle, Satoru Takagi, Philipp Tautz, James Tudsbury, Jacob van Zijp, Jitendra Vyas, Yoav Weiss, George White, Matt Wilcox, Richard Wild, John Albin Wilkins, Owen Winkler, Jeremy Worboys, Mike Wu, Carlos Zepeda, and jintian zheng.</p>
+<p id=participants>A <a href=http://www.w3.org/community/respimg/participants>complete list of participants</a> of the Responsive Images Community Group is available at the W3C Community Group Website.</p>
+<script src=https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js class=ricg></script> 
+<script src="https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse" class=ricg></script> 
+<script src=https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/ga.js class=ricg></script> 
+<script src=https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/load_cg_participants.js class=ricg></script> 
+</body></html>
