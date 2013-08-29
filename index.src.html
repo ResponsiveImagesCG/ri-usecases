@@ -334,14 +334,13 @@ On the other hand, <a href="http://picture.responsiveimages.org">the `picture` e
 <p>Currently, server side solutions exist to adapt web content to e-ink displays (e.g., <a href="http://kinstant.com/">kinstant</a>), but such services only work on text and layout and not on images. As interpreting the meaning of images is a problem of <a href="http://en.wikipedia.org/wiki/Semiotics">semiotics</a>, it is infeasible that this problem can ever be computationally solved. The only feasible solution is  for authors to provide alternative image content that communicates effectively in monochrome media. </p>
 <p>Lastly, through the<a href="http://www.w3.org/TR/css3-mediaqueries/"> CSS Media Queries specifications</a>, the <a href="http://www.w3.org/Style/CSS/">CSS Working Group</a> continues to add media features to the Web platform. New media features in <a href="http://dev.w3.org/csswg/mediaqueries4/">CSS Media Queries level 4</a> include <a href="http://dev.w3.org/csswg/mediaqueries4/#script">script</a>, <a href="http://dev.w3.org/csswg/mediaqueries4/#pointer">pointer</a>, <a href="http://dev.w3.org/csswg/mediaqueries4/#hover">hover</a>, and  <a href="http://dev.w3.org/csswg/mediaqueries4/#luminosity">luminosity</a>. The lack of a declarative mechanism to associate image content  with media features means that developers cannot use them without relying on the aforementioned problematic <span>techniques</span>.</p>
 <h3>Relative units</h3>
-<p>A common practice in creating flexible layouts is to specify the size values in media queries as relative units: <code>em</code>, <code>rem</code>, <code>vw</code>/<code>vh</code> etc. See, for example, Lyza Gardner's article <a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/"><cite>The EMs have it: Proportional Media Queries FTW!</cite></a> . This approach commonly uses <code>em</code>s in order to reflow layouts based on users’ zoom preferences, or to resize elements through JavaScript by dynamically altering a font-size value. </p>
-<p>In flexible layout designs, when a user zooms into a design, proportionally scaled images can be blurry or pixelated, affecting the image's impact and function (for example, on televisions or when projecting). So swapping to a more suitable image is used to overcome this problem.</p>
-<figure>
-  <div><img alt="The negative effect of zooming on images" class="stretchy" src="images/em_mq_labelled.png" width="1058" height="584" style="max-width: 1058px"></div>
-  <figcaption>
-    <p>Images become unacceptably blurry and pixelated as a user changes zoom ratio.</p>
-  </figcaption>
-</figure>
+<p>A common practice in creating flexible layouts is to specify the size values in media queries as relative units: <code>em</code>, <code>rem</code>, <code>vw</code>/<code>vh</code> etc. 
+See, for example, Lyza Gardner's article <a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/"><cite>The EMs have it: Proportional Media Queries FTW!</cite></a> . 
+This approach commonly uses <code>em</code>s in order to reflow layouts based on users’ default font size preferences, and to avoid cases
+where the layout breaks for users or devices who set a default font-size that is other than the usual 16px. </p>
+<p>In flexible layout designs with <code>em</code> based media queries, if art-directed images are not specified in relative units, they can either break the layout or become
+distorted when faced with a untypical default font-size. 
+</p>
 <h3>API to manipulate sources</h3>
 <p>In some cases the image data is dynamically generated (e.g., using <a href="http://www.w3.org/TR/2dcontext/">the <code>canvas</code> element</a> and related APIs) or is acquired from the device itself (e.g., from the camera on a phone or tablet using some form of media capture). Developers need practical means to interface programmatically with the source of an image or a set of images. Without having a suitable API, it will be difficult for developers to manipulate the sources of images or to even know what source is currently being displayed. </p>
 <h3>Image formats</h3>
