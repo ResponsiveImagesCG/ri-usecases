@@ -201,7 +201,7 @@ span {
 <body>
 <header>
   <div class="head">
-    <p><a href="http://responsiveimages.org"><img style="float:right" src="https://raw.github.com/ResponsiveImagesCG/meta/master/logo/Web/RICG_logo_small.png" alt="Responsive Images Community Group"></a> <a href="http://www.w3.org/"><img alt="W3C" src="http://www.w3.org/Icons/w3c_home" 
+    <p><a href="http://responsiveimages.org"><img style="float:right" src="https://raw.github.com/ResponsiveImagesCG/meta/master/logo/Web/RICG_logo_small.png" alt="Responsive Images Community Group"></a> <a href="http://www.w3.org/"><img alt="W3C" src="http://www.w3.org/Icons/w3c_home"
     height="48" width="72"></a> </p>
     <h1 class="head">Use Cases and Requirements for Standardizing Responsive Images</h1>
     <h2 class="no-num no-toc ricg">Living document - Last updated [DATE] </h2>
@@ -301,7 +301,7 @@ On the other hand, <a href="http://picture.responsiveimages.org">the `picture` e
 <h2>Use cases</h2>
 <p>The following <dfn>use cases</dfn> represent situations in which Web developers see a need for a browser-based solution for working with responsive images.</p>
 <h3>Resolution switching</h3>
-<p> 
+<p>
 Image dimensions in responsive layouts tend to vary according to the viewport size, often resulting in large images sent to browsers with narrow
 viewports, only to be downsized there</p>
 <p>
@@ -312,9 +312,25 @@ image data that he will not benefit from.
 <p>
 The use case can be divided into two sub-categories:
 <ul>
-    <li>Device pixel ratio based resolution switching - Different screen densities require different image resolutions in order to display
-    the same image dimensions in a crisp, artifact-free way</li>
-    <li>Viewport dimensions based resolution switching - Different viewport sizes result in different image dimensions </li>
+    <li>
+    	Device pixel ratio based resolution switching - Different screen densities require different image resolutions in order to display
+    the same image dimensions in a crisp, artifact-free way
+	<figure>
+	  <div><img src="images/dpr-camera-man.jpg" width="1200" height="320" style="max-width:1200px" class="stretchy" alt="an image displayed at 1x DPR, the same resolution stretched to display at 2x DPR, and with double the resolution at 2x DPR" /></div>
+	  <figcaption>
+	    <p>On a device with a device pixel ration greater than 1, higher image resolutions are required to eliminate artifacts.</p>
+	  </figcaption>
+	</figure>
+	</li>
+    <li>
+    	Viewport dimensions based resolution switching - Different viewport sizes result in different image dimensions
+		<figure>
+		  <div><img src="images/viewport-camera-man.jpg" width="960" height="320" style="max-width:960px" class="stretchy" alt="the same photograph at two resolutions, but displayed in equal-width viewports, will look identical" /></div>
+		  <figcaption>
+		    <p>To optimize performance, images that match the viewport size as closely as possible should be displayed.</p>
+		  </figcaption>
+		</figure>
+    </li>
 </ul>
 <div class="note">
   <div class="note-title">
@@ -328,8 +344,8 @@ The use case can be divided into two sub-categories:
   </div>
 </div>
 <h3>Art direction</h3>
-<p>In a responsive design, it is typical to change an image so it can 
-  be targeted towards the features of a particular display (or set of displays). Sometimes this means cropping an image. Other times, it can mean a new form of an 
+<p>In a responsive design, it is typical to change an image so it can
+  be targeted towards the features of a particular display (or set of displays). Sometimes this means cropping an image. Other times, it can mean a new form of an
   image that may have different proportions or may be changed in other ways to match changes in the layout. This means, for example: </p>
 <ul>
   <li>On large screens, a large image  is shown (e.g.,  an object or person with a broad background).</li>
@@ -359,7 +375,7 @@ The use case can be divided into two sub-categories:
       <param name="movie" value="videos/flashfox.swf">
       <param name="allowFullScreen" value="true">
       <param name="flashVars" value="autoplay=false&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=videos/screenrmx1.jpg&amp;src=screenrmx1.m4v">
-      <embed src="videos/flashfox.swf" width="652" height="389" style="position:relative;"  flashVars="autoplay=false&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=videos/screenrmx1.jpg&amp;src=screenrmx1.m4v"	allowFullScreen="true" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en"> 
+      <embed src="videos/flashfox.swf" width="652" height="389" style="position:relative;"  flashVars="autoplay=false&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=videos/screenrmx1.jpg&amp;src=screenrmx1.m4v"	allowFullScreen="true" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en">
       <img alt="Responsive images on Meego website" src="videos/screenrmx1.jpg" style="position:absolute;left:0;" width="652" height="389" title="Video playback is not supported by your browser">
     </object>
   </video>
@@ -397,12 +413,12 @@ The use case can be divided into two sub-categories:
 <p>Currently, server side solutions exist to adapt web content to e-ink displays (e.g., <a href="http://kinstant.com/">kinstant</a>), but such services only work on text and layout and not on images. As interpreting the meaning of images is a problem of <a href="http://en.wikipedia.org/wiki/Semiotics">semiotics</a>, it is infeasible that this problem can ever be computationally solved. The only feasible solution is  for authors to provide alternative image content that communicates effectively in monochrome media. </p>
 <p>Lastly, through the<a href="http://www.w3.org/TR/css3-mediaqueries/"> CSS Media Queries specifications</a>, the <a href="http://www.w3.org/Style/CSS/">CSS Working Group</a> continues to add media features to the Web platform. New media features in <a href="http://dev.w3.org/csswg/mediaqueries4/">CSS Media Queries level 4</a> include <a href="http://dev.w3.org/csswg/mediaqueries4/#script">script</a>, <a href="http://dev.w3.org/csswg/mediaqueries4/#pointer">pointer</a>, <a href="http://dev.w3.org/csswg/mediaqueries4/#hover">hover</a>, and  <a href="http://dev.w3.org/csswg/mediaqueries4/#luminosity">luminosity</a>. The lack of a declarative mechanism to associate image content  with media features means that developers cannot use them without relying on the aforementioned problematic <span>techniques</span>.</p>
 <h3>Relative units</h3>
-<p>A common practice in creating flexible layouts is to specify the size values in media queries as relative units: <code>em</code>, <code>rem</code>, <code>vw</code>/<code>vh</code> etc. 
-See, for example, Lyza Gardner's article <a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/"><cite>The EMs have it: Proportional Media Queries FTW!</cite></a> . 
+<p>A common practice in creating flexible layouts is to specify the size values in media queries as relative units: <code>em</code>, <code>rem</code>, <code>vw</code>/<code>vh</code> etc.
+See, for example, Lyza Gardner's article <a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/"><cite>The EMs have it: Proportional Media Queries FTW!</cite></a> .
 This approach commonly uses <code>em</code>s in order to reflow layouts based on users’ default font size preferences, and to avoid cases
 where the layout breaks for users or devices who set a default font-size that is other than the usual 16px. </p>
 <p>In flexible layout designs with <code>em</code> based media queries, if art-directed images are not specified in relative units, they can either break the layout or become
-distorted when faced with a untypical default font-size. 
+distorted when faced with a untypical default font-size.
 </p>
 <h3>API to manipulate sources</h3>
 <p>In some cases the image data is dynamically generated (e.g., using <a href="http://www.w3.org/TR/2dcontext/">the <code>canvas</code> element</a> and related APIs) or is acquired from the device itself (e.g., from the camera on a phone or tablet using some form of media capture). Developers need practical means to interface programmatically with the source of an image or a set of images. Without having a suitable API, it will be difficult for developers to manipulate the sources of images or to even know what source is currently being displayed. </p>
@@ -481,7 +497,7 @@ are counter-productive to one of the main goals of responsive images.</p>
 <p>The editors would like to thank the following people for reviewing this document: Mike Taylor, Doug Shults, David Newton, Barbara Barbosa Neves,  Eileen Webb, and Anselm Hannemann. </p>
 <p class="w3c"><dfn>Participants</dfn> of the <a href="http://w3c.responsiveimages.org">Responsive Images Community Group</a> at the time of publication were: George Adamson, Marie Alhomme, John Allan, Joshua Allen, Angely Alvarez, Aaryn Anderson, Philip Andrews, Phil Archer, Justin Avery, Michael Balensiefer, Toni Barrett, Bruno Barros, Paul Barton, Adrian Bateman, Jesse Renée Beach, Robin Berjon, Seth Bertalotto, Nicolaas Bijvoet, Andreas Bovens, J. Albert Bowden, Adam Bradley, Rodrigo Brancher, Gordon Brander, Paul Bridgestock, Aaron Brosey, Cory Brown, mairead buchan, Kris Bulman, Ariel Burone, Mathias Bynens, Marcos Caceres, Rusty Calder, Ben Callahan, Loïc Calvy, Chuck Carpenter, Brandon Carroll, Frederico Cerdeira, David Clements, Geri Coady, Anne-Gaelle Colom, Cyril Concolato, Pete Correia, Andy Crum, Jason Daihl, Francois Daoust, Kevin Davies, Robert Dawson, Ryan DeBeasi, Anna Debenham, Darryl deHaan, David Demaree, George DeMet, Ian Devlin, peter droogmans, Marlene Frykman, Dennis Gaebel, Nicolas Gallagher, Miguel Garcia, Rafael Garcia Lepper, Larry Garfield, Peter Gasston, David Goss, Chris Grant, Petra Gregorova, Jason Grigsby, Antoine Guergnon, Jeff Guntle, Aaron Gustafson, Jason Haag, Patrick Haney, Anselm Hannemann, chris hardy, Vincent Hardy, Dominique Hazaël-Massieux, Chris Hilditch, Nathan Hinshaw, Sean Hintz, John Holt Ripley, Shane Hudson, Tomomi Imura, Philip Ingrey, Brett Jankord, Scott Jehl, Dave Johnson, Nathanael Jones, Michael Jovel, Chao Ju, Tim Kadlec, Frédéric Kayser, Jin Kim, Andreas Klein, Peter Klein, John Kleinschmidt, Daniel Konopacki, Zoran Kurtin, Gerardo Lagger, Adam Lake, Chris Lamothe, Tom Lane, Matthieu Larcher, Bruce Lawson, Zach Leatherman, Silas Lepcha, Kornel Lesinski, Chris Lilley, grappler login, Tania Lopes, André Luís, Jacine Luisi, David Maciejewski, Kevin Mack, Ethan Malasky, Josh Marinacci, Eduardo Marques, Mathew Marquis, Daniel Martínez, Tom Maslen, Jacob Mather, Chris McAndrew, Denys Mishunov, Sabine Moebs, Ian Moffitt, Orestis Molopodis, jason morita, David Moulton, Brian Muenzenmeyer, Emi Myoudou, Irakli Nadareishvili, Christian Neuberger Jr, David Newton, Todd Nienkerk, Kothary Nishant, Ashley Nolan, Kenneth Nordahl, Lewis Nyman, Alejandro Oviedo, David Owens, Fernando Pasik, Andrew Pez Pengelly, Hassadee Pimsuwan, Manik Rathee, François REMY, Nestor Rojas, Adrian Roselli, Chris Ruppel, Oguzcan Sahin, Viljami Salminen, Luca Salvini, Luke Sands, aron santa, Jad Sarout, Brandon Satrom, Christoph Saxe, Doug Schepers, Jason Schmidt, Christopher Schmitt, Joe Schmitt, Boaz Sender, Tomoyuki Shimizu, Ariel Shkedi, Jen Simmons, Katerina Skotalova, Michael[tm] Smith, Ignacio Soriano Cano, Aaron Stanush, Jared Stilwell, Matt Stow, Kevin Suttle, Satoru Takagi, Philipp Tautz, James Tudsbury, Jacob van Zijp, Jitendra Vyas, Yoav Weiss, George White, Matt Wilcox, Richard Wild, John Albin Wilkins, Owen Winkler, Jeremy Worboys, Mike Wu, Carlos Zepeda, and jintian zheng.</p>
 <p id="participants">A <a href="http://www.w3.org/community/respimg/participants">complete list of participants</a> of the Responsive Images Community Group is available at the W3C Community Group Website.</p>
-<script class="ricg" src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js"></script> 
-<script class="ricg" src="https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse"></script> 
-<script class="ricg" src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/ga.js"></script> 
-<script class="ricg" src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/load_cg_participants.js"></script> 
+<script class="ricg" src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js"></script>
+<script class="ricg" src="https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse"></script>
+<script class="ricg" src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/ga.js"></script>
+<script class="ricg" src="https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/load_cg_participants.js"></script>
