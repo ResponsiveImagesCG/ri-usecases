@@ -351,7 +351,7 @@ function closeWarning(element) {
           Image dimensions in responsive layouts tend to vary according to the
           viewport size. This often results in large images being sent to
           browsers with narrow viewports, which are then resized by the browser
-          to fit the design (see "<a href=
+          to fit the design (see, for example, "<a href=
           "http://blog.netvlies.nl/design-interactie/retina-revolution/">Retina
           Revolution</a>" by Daan Jobsis).
         </p>
@@ -360,9 +360,8 @@ function closeWarning(element) {
           dimensions closely match the layout dimensions. Sending the right
           image for the given dimension avoids delaying the page load, wasting
           bandwidth, and reducing the impact on battery life (as the device's
-          antenna does can be powered off more quickly). It can also have
-          potential monetary saving for users by avoiding having to send
-          redundant data.
+          antenna can be powered off more quickly). It can also potentially
+          save user's money by avoiding having to download redundant data.
         </p>
         <p>
           The use case can be divided into two sub-categories:
@@ -372,9 +371,12 @@ function closeWarning(element) {
             Resolution switching based on device-pixel-ratio:
           </dt>
           <dd>
-            Different screen densities require different image resolutions in
-            order to display the same image dimensions in a crisp,
-            artifact-free way
+            In order to display the same image dimensions in a way the looks
+            crisp and reduces visual artefacts, different screen densities
+            require image at different resolutions. This also applies to icons,
+            where completely different images may need to be used for different
+            device-pixel-ratios (see "All the sizes of iOS app icons", by Neven
+            Mrgan).
           </dd>
           <dd>
             <figure>
