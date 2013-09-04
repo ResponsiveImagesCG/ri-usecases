@@ -214,54 +214,60 @@ function closeWarning(element) {
         technical specification can be created to formally address each of the
         <a>requirements</a> (i.e., the <dfn>solution</dfn>).
       </p>
-      <p>
-        To date, three such specifications are currently under development,
-        described below. The three proposed solutions are not mutually
-        exclusive: together they address the set of <cite><a href=
-        "http://usecases.responsiveimages.org">Use Cases and Requirements for
-        Responsive Images</a></cite>.
-      </p>
-      <dl>
-        <dt>
-          <cite><a href="http://dev.w3.org/html5/srcset/">The `srcset`
-          attribute</a></cite>
-        </dt>
-        <dd>
-          Allows authors to define various image resources and “hints” that
-          assist a user agent to determine the most appropriate image source to
-          display. Given a set of image resources, the user agent has the
-          option of either following or overriding the author’s declarations to
-          optimize the user experience based on criteria such as <a href=
-          "http://usecases.responsiveimages.org/#resolution-switching">display
-          density</a>, connection type, <a href=
-          "http://usecases.responsiveimages.org/#user-control-over-sources">user
-          preferences</a>, and so on.
-        </dd>
-        <dt>
-          <cite><a href="http://picture.responsiveimages.org">The `picture`
-          element</a></cite>
-        </dt>
-        <dd>
-          Building on <a href="http://dev.w3.org/html5/srcset/">srcset</a>,
-          this specification defines a declarative solution for grouping of
-          multiple versions of an image based on different characteristics
-          (e.g., format, resolution, cropping, etc.). This allows the user
-          agent to select the optimum image to present to an end-user based on
-          the user agent's environmental conditions.
-        </dd>
-        <dt>
-          <cite><a href=
-          "http://tools.ietf.org/html/draft-grigorik-http-client-hints">HTTP
-          Client Hints</a></cite>
-        </dt>
-        <dd>
-          Defines a set of HTTP headers that allow browsers to indicate a list
-          of device and agent specific preferences. Servers can then use these
-          "client hints" to assist in content negotiation, ideally resulting in
-          content being served that best matches the environmental conditions
-          of the client for the resource being requested.
-        </dd>
-      </dl>
+      <section>
+        <h3>
+          Proposed Solutions
+        </h3>
+        <p>
+          To date, three such specifications are currently under development,
+          described below. The three proposed solutions are not mutually
+          exclusive: together they address the set of <cite><a href=
+          "http://usecases.responsiveimages.org">Use Cases and Requirements for
+          Responsive Images</a></cite>.
+        </p>
+        <dl>
+          <dt>
+            <cite><a href="http://dev.w3.org/html5/srcset/">The `srcset`
+            attribute</a></cite>
+          </dt>
+          <dd>
+            Allows authors to define various image resources and “hints” that
+            assist a user agent to determine the most appropriate image source
+            to display. Given a set of image resources, the user agent has the
+            option of either following or overriding the author’s declarations
+            to optimize the user experience based on criteria such as <a href=
+            "http://usecases.responsiveimages.org/#resolution-switching">display
+            density</a>, connection type, <a href=
+            "http://usecases.responsiveimages.org/#user-control-over-sources">user
+            preferences</a>, and so on.
+          </dd>
+          <dt>
+            <cite><a href="http://picture.responsiveimages.org">The `picture`
+            element</a></cite>
+          </dt>
+          <dd>
+            Building on <a href="http://dev.w3.org/html5/srcset/">srcset</a>,
+            this specification defines a declarative solution for grouping of
+            multiple versions of an image based on different characteristics
+            (e.g., format, resolution, cropping, etc.). This allows the user
+            agent to select the optimum image to present to an end-user based
+            on the user agent's environmental conditions.
+          </dd>
+          <dt>
+            <cite><a href=
+            "http://tools.ietf.org/html/draft-grigorik-http-client-hints">HTTP
+            Client Hints</a></cite>
+          </dt>
+          <dd>
+            Defines a set of HTTP headers that allow browsers to indicate a
+            list of device and agent specific preferences. Servers can then use
+            these "client hints" to assist in content negotiation, ideally
+            resulting in content being served that best matches the
+            environmental conditions of the client for the resource being
+            requested.
+          </dd>
+        </dl>
+      </section>
     </section>
     <section>
       <h2>
