@@ -359,7 +359,8 @@ function closeWarning(element) {
           There is a need for browsers to request image resources whose display
           dimensions closely match the layout dimensions. Sending the right
           image for the given dimension avoids delaying the page load, wasting
-          bandwidth, and unnecessarily draining the battery. It can also have
+          bandwidth, and reducing the impact on battery life (as the device's
+          antenna does can be powered off more quickly). It can also have
           potential monetary saving for users by avoiding having to send
           redundant data.
         </p>
@@ -385,7 +386,8 @@ function closeWarning(element) {
               <figcaption>
                 <p>
                   On a device with a device pixel ratio greater than 1, higher
-                  image resolutions are required to eliminate artifacts.
+                  image resolutions are required to reduce visual artifacts
+                  resulting from compression.
                 </p>
               </figcaption>
             </figure>
@@ -406,7 +408,7 @@ function closeWarning(element) {
               <figcaption>
                 <p>
                   To optimize performance, authors can use images that more
-                  closely match the viewport size.
+                  closely match the size of the viewport.
                 </p>
               </figcaption>
             </figure>
@@ -640,8 +642,8 @@ function closeWarning(element) {
           content that communicates effectively in monochrome media.
         </p>
         <p>
-          Lastly, through the CSS<a href=
-          "http://www.w3.org/TR/css3-mediaqueries/">Media Queries
+          Lastly, through the <a href=
+          "http://www.w3.org/TR/css3-mediaqueries/">CSS Media Queries
           specifications</a>, the <a href="http://www.w3.org/Style/CSS/">CSS
           Working Group</a> continues to add media features to the Web
           platform. New media features in <a href=
