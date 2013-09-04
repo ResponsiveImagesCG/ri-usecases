@@ -243,7 +243,7 @@ function closeWarning(element) {
         </dt>
         <dd>
           Building on <a href="http://dev.w3.org/html5/srcset/">srcset</a>,
-          this specificaton defines a declarative solution for grouping of
+          this specification defines a declarative solution for grouping of
           multiple versions of an image based on different characteristics
           (e.g., format, resolution, cropping, etc.). This allows the user
           agent to select the optimum image to present to an end-user based on
@@ -268,9 +268,9 @@ function closeWarning(element) {
         Limitations of current techniques
       </h2>
       <p>
-        There are a number of problems with the <a href=
+        There significant <dfn>limitations</dfn> with the <a href=
         "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
-        techniques</a> currently being relied on by web developers:
+        techniques</a> currently being relied on by Web developers:
       </p>
       <dl>
         <dt>
@@ -279,20 +279,16 @@ function closeWarning(element) {
         <dd>
           <p>
             Large images incur unnecessary download and processing time,
-            slowing the experience for users. To solve this problem, web
-            developers provide multiple sources of the same image at different
+            slowing the experience for users. To work around this problem, web
+            developers specify multiple sources of the same image at different
             resolutions and then pick the image of the correct size based on
-            the viewport size. This is commonly done for CSS background images
-            in responsive designs, but web developers lack the markup to do so
-            for images in <a href="http://www.w3.org/TR/html5/">HTML</a>
-            without hacking together a solution. This means that developers
-            have resorted to using <code>div</code> and other container
-            elements to achieve the desired functionality.
-          </p>
-          <p>
-            In other words, developers are being forced to work around, or
-            completely ignore, authoring requirements of <a href=
-            "http://www.w3.org/TR/html5/">HTML</a>.
+            the viewport size. As Web developers lack the markup to achieve
+            what they need, they end up relying on semantically neutral
+            elements, <a href=
+            "http://dev.w3.org/csswg/css-backgrounds/#background-image">CSS
+            background images</a>, and JavaScript libraries. In other words,
+            developers are being forced to willfully violate the authoring
+            requirements of <a href="http://www.w3.org/TR/html5/">HTML</a>.
           </p>
         </dd>
         <dt>
@@ -304,15 +300,37 @@ function closeWarning(element) {
             "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
             techniques</a> rely on either JavaScript or a server-side solution
             (or both), which adds complexity and redundant HTTP requests to the
-            development process. Furthermore, the script-based solutions will
-            be unavailable to users who have turned off JavaScript.
+            development process. Furthermore, the script-based solutions are
+            unavailable to users who have turned off JavaScript.
+          </p>
+        </dd>
+        <dt>
+          Bypass preload scanner
+        </dt>
+        <dd>
+          <p>
+            The reliance on semantically neutral elements (e.g., the
+            <code>div</code> and <code>span</code> elements), instead of
+            semantically meaningful elements such as <code>img</code>, prevents
+            browsers from loading the image resources until after the DOM has
+            (at least partially) loaded and Javascript has run. This directly
+            hinders the performance work browser engineers have done over the
+            years to optimize resource loading (e.g., WebKit's <a href=
+            "https://github.com/WebKit/webkit/blob/master/Source/WebCore/html/parser/HTMLPreloadScanner.cpp">
+            HTMLPreloadScanner</a>). Unnecessarily bypassing things like the
+            preload scanner can have measurable performance impact when loading
+            documents. See, for example, "<a href=
+            "gent.ilcore.com/2011/01/webkit-preloadscanner.html">The WebKit
+            PreloadScanner</a>" by Tony Gentilcore for a small study that
+            demonstrates an up to 20% impact in load time when WebKit's
+            PreloadScanner is disabled.
           </p>
         </dd>
       </dl>
       <p>
         The <abbr title="Responsive Images Community Group">RICG</abbr>
         believes standardization of a browser-based solution can overcome these
-        problems.
+        <a>limitations</a>.
       </p>
     </section>
     <section>
@@ -320,9 +338,8 @@ function closeWarning(element) {
         Use cases
       </h2>
       <p>
-        The following <dfn>use cases</dfn> represent situations in which Web
-        developers see a need for a browser-based solution for working with
-        responsive images.
+        The following <dfn>use cases</dfn> represent situations commonly seen
+        "in the wild".
       </p>
       <section>
         <h3>
@@ -603,8 +620,8 @@ function closeWarning(element) {
           content that communicates effectively in monochrome media.
         </p>
         <p>
-          Lastly, through the<a href=
-          "http://www.w3.org/TR/css3-mediaqueries/">CSS Media Queries
+          Lastly, through the CSS<a href=
+          "http://www.w3.org/TR/css3-mediaqueries/">Media Queries
           specifications</a>, the <a href="http://www.w3.org/Style/CSS/">CSS
           Working Group</a> continues to add media features to the Web
           platform. New media features in <a href=
@@ -638,8 +655,8 @@ function closeWarning(element) {
         <p>
           In flexible layout designs with <code>em</code> based media queries,
           if art-directed images are not specified in relative units, they can
-          either break the layout or become distorted when faced with a
-          untypical default font-size.
+          either break the layout or become distorted when faced with a rare
+          default font-size.
         </p>
       </section>
       <section>
@@ -914,7 +931,7 @@ function closeWarning(element) {
         -->
          <dfn>Participants</dfn> of the <a href=
         "http://w3c.responsiveimages.org">Responsive Images Community Group</a>
-        at the time of publication were: Barry :atimer, Daniel Abril, George
+        at the time of publication were: Barry Atimer, Daniel Abril, George
         Adamson, Heide Alexander, Marie Alhomme, John Allan, Joshua Allen,
         Angely Alvarez, Henrique Alves, Agustin Amenabar, Aaryn Anderson,
         Philip Andrews, Ritchie Anesco, Phil Archer, Tom Atkins, Justin Avery,
