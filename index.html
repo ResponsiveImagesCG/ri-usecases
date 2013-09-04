@@ -6,122 +6,106 @@
     <title>
       Use Cases and Requirements for Standardizing Responsive Images
     </title>
-    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async=""
     class='remove'>
 </script>
     <script class='remove'>
-var respecConfig = {
-          additionalCopyrightHolders: "Copyright © the Contributors to this Specification, published by the <a href='http://www.w3.org/community/respimg/'>Responsive Images Community Group</a> under the <a href= 'https://www.w3.org/community/about/agreements/cla/'>W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href= 'http://www.w3.org/community/about/agreements/cla-deed/'>summary</a> is available.",
-                                
-          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-          specStatus: "unofficial",
+            var respecConfig = {
+                    additionalCopyrightHolders: "Copyright © the Contributors to this Specification, published by the <a href='http://www.w3.org/community/respimg/'>Responsive Images Community Group</a> under the <a href= 'https://www.w3.org/community/about/agreements/cla/'>W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href= 'http://www.w3.org/community/about/agreements/cla-deed/'>summary</a> is available.",
 
-          // the specification's short name, as in http://www.w3.org/TR/short-name/
-          shortName: "respimg-usecases",
+                    // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+                    specStatus: "unofficial",
 
-          // if your specification has a subtitle that goes below the main
-          // formal title, define it here
-          subtitle: "Living Document",
+                    // the specification's short name, as in http://www.w3.org/TR/short-name/
+                    shortName: "respimg-usecases",
 
-          // if you wish the publication date to be other than the last modification, set this
-          // publishDate:  "2009-08-06",
+                    // if your specification has a subtitle that goes below the main
+                    // formal title, define it here
+                    subtitle: "Living Document",
 
-          // if the specification's copyright date is a range of years, specify
-          // the start date here:
-          // copyrightStart: "2005"
+                    // if you wish the publication date to be other than the last modification, set this
+                    // publishDate:  "2009-08-06",
 
-          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
-          // and its maturity status
-          previousPublishDate: "2013-02-26",
-          previousMaturity: "FPWD",
+                    // if the specification's copyright date is a range of years, specify
+                    // the start date here:
+                    // copyrightStart: "2005"
 
-          // if there a publicly available Editor's Draft, this is the link
-          edDraftURI: "http://usecases.responsiveimages.org",
+                    // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+                    // and its maturity status
+                    previousPublishDate: "2013-02-26",
+                    previousMaturity: "FPWD",
 
-          // if this is a LCWD, uncomment and set the end of its review period
-          // lcEnd: "2009-08-05",
+                    // if there a publicly available Editor's Draft, this is the link
+                    edDraftURI: "http://usecases.responsiveimages.org",
 
-          // editors, add as many as you like
-          // only "name" is required
-          editors: [
-              {
-                  name: "Marcos Cáceres",
-                  url: "http://marcosc.com/",
-                  company: "Mozilla",
-                  companyURL: "http://mozilla.com"
-              },
-              {
-                  name: "Mat Marquis",
-                  url: "http://matmarquis.com/"
-              },
-              {
-                  name: "Yoav Weiss",
-                  url: "http://blog.yoav.ws/"
-              },
-                                                        {
-                  name: "David Newton",
-                  url: "http://davidnewton.ca/"
-              }
-          ],
+                    // if this is a LCWD, uncomment and set the end of its review period
+                    // lcEnd: "2009-08-05",
 
-          // name of the WG
-          wg: "HTML Working Group",
+                    // editors, add as many as you like
+                    // only "name" is required
+                    editors: [{
+                        name: "Marcos Cáceres",
+                        url: "http://marcosc.com/",
+                        company: "Mozilla",
+                        companyURL: "http://mozilla.com"
+                    }, {
+                        name: "Mat Marquis",
+                        url: "http://matmarquis.com/"
+                    }, {
+                        name: "Yoav Weiss",
+                        url: "http://blog.yoav.ws/"
+                    }, {
+                        name: "David Newton",
+                        url: "http://davidnewton.ca/"
+                    }],
 
-          // URI of the public WG page
-          wgURI: "http://www.w3.org/html/wg/",
+                    // name of the WG
+                    wg: "HTML Working Group",
 
-          // name (without the @w3c.org) of the public mailing to which comments are due
-          wgPublicList: "public-html@w3.org",
+                    // URI of the public WG page
+                    wgURI: "http://www.w3.org/html/wg/",
 
-          // URI of the patent status for this WG, for Rec-track documents
-          // !!!! IMPORTANT !!!!
-          // This is important for Rec-track documents, do not copy a patent URI from a random
-          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
-          // Team Contact.
-          wgPatentURI: "http://www.w3.org/community/respimg/spec/26/commitments",
-          // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
-          otherLinks: [
-              {
-                  key: "Version history",
-                  data: [
-                      {
-                          value: "Commit History",
-                          href: "https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages"
-                                                                },
-                                        {
-                          value: "Github commits on Twitter",
-                          href: "https://twitter.com/respimg_commits"
+                    // name (without the @w3c.org) of the public mailing to which comments are due
+                    wgPublicList: "public-html@w3.org",
 
-                                                                }
-                                                                ]
-                                        },
-              {
-                  key: "Participate",
-                  data: [
-                      {
-                          value: "Join the Responsive Images Community Group",
-                          href: "http://w3c.responsiveimages.org"
-                                                                        },
-                      {
-                          value: "http://list.responsiveimages.org",
-                          href: "Public mailing list"
-                                                                                },
-                      {
-                          value: "IRC: #respimg on W3C's IRC",
-                          href: "irc://irc.w3.org:6665/#respimg"
-                      },
-                      {
-                          value: "Twitter",
-                          href: "https://twitter.com/respimg"
-                      },
-                      {
-                          value: "Github",
-                          href: "https://github.com/ResponsiveImagesCG/picture-element"
+                    // URI of the patent status for this WG, for Rec-track documents
+                    // !!!! IMPORTANT !!!!
+                    // This is important for Rec-track documents, do not copy a patent URI from a random
+                    // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+                    // Team Contact.
+                    wgPatentURI: "http://www.w3.org/community/respimg/spec/26/commitments",
+                    // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
+                    otherLinks: [{
+                        key: "Version history",
+                        data: [{
+                            value: "Commit History",
+                            href: "https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages"
+                        }, {
+                            value: "Github commits on Twitter",
+                            href: "https://twitter.com/respimg_commits"
 
-                                                                                        }
-                                                                        ]
-                                }]
-      };                
+                        }]
+                    }, {
+                        key: "Participate",
+                        data: [{
+                            value: "Join the Responsive Images Community Group",
+                            href: "http://w3c.responsiveimages.org"
+                        }, {
+                            value: "http://list.responsiveimages.org",
+                            href: "Public mailing list"
+                        }, {
+                            value: "IRC: #respimg on W3C's IRC",
+                            href: "irc://irc.w3.org:6665/#respimg"
+                        }, {
+                            value: "Twitter",
+                            href: "https://twitter.com/respimg"
+                        }, {
+                            value: "Github",
+                            href: "https://github.com/ResponsiveImagesCG/picture-element"
+
+                        }]
+                    }]
+                };             
     </script>
   </head>
   <body>
@@ -445,7 +429,7 @@ function closeWarning(element) {
           the browser in the image.
         </p>
         <figure>
-          <video controls poster="videos/screenrmx1.jpg" width="652" height=
+          <video controls="" poster="videos/screenrmx1.jpg" width="652" height=
           "389" onclick="if(/Android/.test(navigator.userAgent))this.play();">
           <source src="videos/screenrmx1.m4v" type="video/mp4">
           <source src="videos/screenrmx1.webm" type="video/webm">
@@ -911,11 +895,11 @@ function closeWarning(element) {
         var all = document.querySelectorAll("td>h3"), 
             each = [];
         for(var i = 0; i < all.length; i++){ 
-        	each.push(all.item(i).textContent); 
+                each.push(all.item(i).textContent); 
         }
         console.log(each.join(", "))
         -->
-        <dfn>Participants</dfn> of the <a href=
+         <dfn>Participants</dfn> of the <a href=
         "http://w3c.responsiveimages.org">Responsive Images Community Group</a>
         at the time of publication were: Barry :atimer, Daniel Abril, George
         Adamson, Heide Alexander, Marie Alhomme, John Allan, Joshua Allen,
