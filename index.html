@@ -247,11 +247,12 @@ function closeWarning(element) {
           </dt>
           <dd>
             Building on <a href="http://dev.w3.org/html5/srcset/">srcset</a>,
-            this specification defines a declarative solution for grouping of
+            this specification defines a declarative solution for grouping
             multiple versions of an image based on different characteristics
-            (e.g., format, resolution, cropping, etc.). This allows the user
+            (e.g., format, resolution, orientation, etc.). This allows the user
             agent to select the optimum image to present to an end-user based
-            on the user agent's environmental conditions.
+            on the user agent's environmental conditions, while also providing
+            the ability to "<a title="art direction">art direct</a>" images.
           </dd>
           <dt>
             <cite><a href=
@@ -274,9 +275,14 @@ function closeWarning(element) {
         Limitations of current techniques
       </h2>
       <p>
-        There significant <dfn>limitations</dfn> with the <a href=
+        As currently there are no standardized solutions implemented in main
+        stream browsers, web developers are relying on various <a href=
         "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
-        techniques</a> currently being relied on by web developers:
+        techniques</a> to use responsive images in their applications.
+        Unfortunately, there are significant <dfn>limitations</dfn> with these
+        <a href=
+        "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
+        techniques</a>:
       </p>
       <dl>
         <dt>
@@ -298,19 +304,6 @@ function closeWarning(element) {
           </p>
         </dd>
         <dt>
-          Reliance on scripts and server-side processing:
-        </dt>
-        <dd>
-          <p>
-            The <a href=
-            "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
-            techniques</a> rely on either JavaScript or a server-side solution
-            (or both), which adds complexity and redundant HTTP requests to the
-            development process. Furthermore, the script-based solutions are
-            unavailable to users who have turned off JavaScript.
-          </p>
-        </dd>
-        <dt>
           Bypass preload scanner
         </dt>
         <dd>
@@ -319,7 +312,7 @@ function closeWarning(element) {
             <code>div</code> and <code>span</code> elements), instead of
             semantically meaningful elements such as <code>img</code>, prevents
             browsers from loading the image resources until after the DOM has
-            (at least partially) loaded and Javascript has run. This directly
+            (at least partially) loaded and scripts have run. This directly
             hinders the performance work browser engineers have done over the
             years to optimize resource loading (e.g., WebKit's <a href=
             "https://github.com/WebKit/webkit/blob/master/Source/WebCore/html/parser/HTMLPreloadScanner.cpp">
@@ -334,6 +327,19 @@ function closeWarning(element) {
             tests</a> yield similar results.
           </p>
         </dd>
+        <dt>
+          Reliance on scripts and server-side processing:
+        </dt>
+        <dd>
+          <p>
+            The <a href=
+            "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
+            techniques</a> rely on either JavaScript or a server-side solution
+            (or both), which adds complexity and redundant HTTP requests to the
+            development process. Furthermore, the script-based solutions are
+            unavailable to users who have turned off JavaScript.
+          </p>
+        </dd>
       </dl>
       <p>
         The <abbr title="Responsive Images Community Group">RICG</abbr>
@@ -346,8 +352,8 @@ function closeWarning(element) {
         Use cases
       </h2>
       <p>
-        The following <dfn>use cases</dfn> represent situations commonly seen
-        "in the wild".
+        The following <dfn>use cases</dfn> represent usage scenarios commonly
+        seen "in the wild".
       </p>
       <section>
         <h3>
@@ -367,7 +373,7 @@ function closeWarning(element) {
           image for the given dimension avoids delaying the page load, wasting
           bandwidth, and reducing the impact on battery life (as the device's
           antenna can be powered off more quickly). It can also potentially
-          save user's money by avoiding having to download redundant data.
+          save users money by not downloading redundant image data.
         </p>
         <p>
           The use case can be divided into two sub-categories:
@@ -437,9 +443,9 @@ function closeWarning(element) {
           In a responsive design, it is typical to change an image so it can be
           targeted towards the features of a particular display (or set of
           displays). Sometimes this means cropping an image. Other times, it
-          can mean a new form of an image that may have different proportions
-          or may be changed in other ways to match changes in the layout. This
-          means, for example:
+          can mean a different image altogether that may have different
+          proportions or may be changed in other ways to communicate more
+          effectively in a layout. This means, for example:
         </p>
         <ul>
           <li>On a large screen, a large image with plenty of details can be
@@ -542,7 +548,7 @@ function closeWarning(element) {
         <p>
           Developers currently match specific <a>breakpoints</a> for images to
           the breakpoints that they have defined in the <a href=
-          "http://www.w3.org/Style/CSS/Overview.en.html">CSS</a> of their
+          "http://www.w3.org/Style/CSS/Overview.en.html">CSS</a> for their
           applications. Being able to match the breakpoints ensures that images
           are operating under the same rules that define the layout of a
           design. It also helps developers verify their approach by ensuring
@@ -740,7 +746,7 @@ function closeWarning(element) {
           Although a web developer may want to use a specific image format, new
           or otherwise, the browser may not always support it. Currently,
           developers are forced to abandon the most suitable image format in
-          favor of one that has ubiquitous user agent support.
+          favor of one that has ubiquitous support across user agents.
         </p>
       </section>
       <section>
@@ -751,15 +757,15 @@ function closeWarning(element) {
           In situations where the user knows their bandwidth is limited or
           expensive (e.g., while roaming), the browser could assist users by:
         </p>
-        <ol>
-          <li>giving users an option to only download images in the quality
+        <ul>
+          <li>Giving users an option to only download images in the quality
           they desire - or disable images all together, as Google Chrome
           currently does through site preferences.
           </li>
-          <li>automatically select the most suitable image for the browsing
+          <li>Automatically select the most suitable image for the browsing
           environment.
           </li>
-        </ol>
+        </ul>
         <p>
           There are browsers already catering for these kinds of situations:
           for example Opera Mini provides users with a choice of image quality
@@ -779,11 +785,6 @@ function closeWarning(element) {
           download in the browser is the browser's ability to kick-off the
           resource download as soon as the tag containing the resource is read
           (but possibly before it is parsed, since the parser may be blocked).
-        </p>
-        <p>
-          A responsive images solution need to maintain that aspect of image
-          loading, in order to avoid introducing delays to the page load, which
-          are counter-productive to one of the main goals of responsive images.
         </p>
       </section>
     </section>
@@ -900,14 +901,24 @@ function closeWarning(element) {
             W3C's TAG's recommendations to the RICG.</a>
           </p>
         </li>
-        <li>The <a>solution</a> SHOULD afford user agents with the ability to
-        provide a user-settable preference for controlling which source of an
-        image they prefer.&nbsp;For example, &nbsp;preference options could
-        include: "always lowest resolution", "always high resolution",
-        "download high resolution as bandwidth permits", and so on. To be
-        clear, user agents are not required to provide such a user-settable
-        preference, but the <a>solution</a> needs to be designed in such a way
-        that it could be done.
+        <li>
+          <p>
+            The <a>solution</a> SHOULD afford user agents with the ability to
+            provide a user-settable preference for controlling which source of
+            an image they prefer.&nbsp;For example, &nbsp;preference options
+            could include: "always lowest resolution", "always high
+            resolution", "download high resolution as bandwidth permits", and
+            so on. To be clear, user agents are not required to provide such a
+            user-settable preference, but the <a>solution</a> needs to be
+            designed in such a way that it could be done.
+          </p>
+        </li>
+        <li>
+          <p>
+            In order to avoid introducing delays to the page load, the solution
+            MUST intergrate well with existing performance optimization
+            provided by browsers (e.g., the preload scanner).
+          </p>
         </li>
       </ol>
     </section>
