@@ -362,10 +362,16 @@ function closeWarning(element) {
         <p>
           The use case can be divided into two sub-categories:
         </p>
-        <ul>
-          <li>Device pixel ratio based resolution switching - Different screen
-          densities require different image resolutions in order to display the
-          same image dimensions in a crisp, artifact-free way
+        <dl>
+          <dt>
+            Resolution switching based on device-pixel-ratio
+          </dt>
+          <dd>
+            Different screen densities require different image resolutions in
+            order to display the same image dimensions in a crisp,
+            artifact-free way
+          </dd>
+          <dd>
             <figure>
               <div>
                 <img src="images/dpr-camera-man.jpg" width="960" height="320"
@@ -379,9 +385,14 @@ function closeWarning(element) {
                 </p>
               </figcaption>
             </figure>
-          </li>
-          <li>Viewport dimensions based resolution switching - Different
-          viewport sizes result in different image dimensions
+          </dd>
+          <dt>
+            Resolution switching based on viewport dimensions
+          </dt>
+          <dd>
+            Different viewport sizes result in different image dimensions.
+          </dd>
+          <dd>
             <figure>
               <div>
                 <img src="images/viewport-camera-man.jpg" width="960" height=
@@ -395,8 +406,8 @@ function closeWarning(element) {
                 </p>
               </figcaption>
             </figure>
-          </li>
-        </ul>
+          </dd>
+        </dl>
         <p class="note">
           The reason display dimensions are not considered for the resolution
           switching use-case is that these are not known to the browser until
