@@ -10,7 +10,7 @@
     class='remove'>
 </script>
     <script class='remove'>
-        var respecConfig = {
+var respecConfig = {
                     additionalCopyrightHolders: "Copyright © the Contributors to this Specification, published by the <a href='http://www.w3.org/community/respimg/'>Responsive Images Community Group</a> under the <a href= 'https://www.w3.org/community/about/agreements/cla/'>W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href= 'http://www.w3.org/community/about/agreements/cla-deed/'>summary</a> is available.",
 
                     // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
@@ -118,8 +118,8 @@
     <section id="abstract">
       <p>
         This document captures the use cases and requirements for standardizing
-        a solution for responsive images. The <span>use cases</span> and
-        <span>requirements</span> were gathered with consultation with <a href=
+        a solution for responsive images. The <a>use cases</a> and
+        <a>requirements</a> were gathered with consultation with <a href=
         "http://w3c.org/">HTML Working Group</a> and <a href=
         "http://whatwg.org">WHATWG</a> participants, <a href=
         "http://www.w3.org/community/respimg/"><abbr title=
@@ -159,42 +159,45 @@ function closeWarning(element) {
         Introduction
       </h2>
       <p>
-        In <span><a href="http://www.w3.org/TR/html5/">HTML</a></span>, a user
-        agent's <dfn>environmental conditions</dfn> are primarily expressed as
-        CSS <dfn>media features</dfn> (e.g., max-width, orientation,
-        monochrome, etc.) and CSS media types (e.g., print, screen, etc.). A
+        In <a href="http://www.w3.org/TR/html5/">HTML</a>, a user agent's
+        <dfn>environmental conditions</dfn> are primarily expressed as CSS
+        <dfn>media features</dfn> (e.g., pixel-density, orientation, max-width,
+        etc.) and CSS media types (e.g., print, screen, etc.). A
         <dfn>responsive image</dfn> is an image that a developer explicitly
-        adapts in response to different <span>environmental conditions</span>:
-        adaptations can include, but are not limited to, changing the width,
-        height, or even the source of an image.
+        adapts in response to different <a>environmental conditions</a>:
+        adaptations can include, but are not limited to, changing the
+        dimensions, crop, or even the source of an image.
       </p>
       <p>
         Many <a href="http://www.w3.org/TR/css3-mediaqueries/#media1">media
         features</a> are dynamic in nature (e.g., a browser window is re-sized,
         a device is rotated from portrait to landscape, and so on), thus a user
         agent constantly responds to events that change the properties of media
-        features. As a web page's layout adapts to changes in media features
-        and media type, an image's ability to communicate effectively can be
-        significantly reduced (e.g., images start to show compression artefacts
-        as they are scaled to match the quality of media or some media
-        feature). When this happens, developers rely on <span>responsive
-        images</span> to present images at different resolutions, or even in
-        different formats (e.g., swapping to SVG), to make sure their images
-        continue communicating effectively.
+        features. As a document's layout adapts to changes in media features
+        and <a>media type</a>, an image's ability to communicate effectively
+        can be significantly reduced (e.g., images start to show compression
+        artefacts as they are scaled to match the quality of media or some
+        media feature). When this happens, developers rely on various <a href=
+        "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
+        client/server-side solutions</a> to present images at different
+        resolutions, or even in different formats. Swapping images provides a
+        means to continue communicating effectively as media features
+        dynamically change.
       </p>
       <p>
-        Furthermore, as the number and varieties of high-density screens has
-        increased (both on mobile and desktop devices), web developers have had
-        to create custom techniques for serving images that best match a
-        browser's <span>environmental conditions</span>. For a list of examples
-        of the range of <dfn>techniques</dfn> in use in 2012, see Chris
-        Coyier's article "<a href=
+        Furthermore, as the <a href=
+        "https://github.com/ResponsiveImagesCG/picture-element/wiki/Display-technologies:-beyond-Retina">
+        number and varieties of high-density screens has increased</a> (both on
+        mobile and desktop devices), web developers have had to create custom
+        techniques for serving images that best match a browser's
+        <a>environmental conditions</a>. For a list of examples of the range of
+        <dfn>techniques</dfn> in use in 2012, see Chris Coyier's article
+        "<a href=
         "http://css-tricks.com/which-responsive-images-solution-should-you-use/">Which
         responsive images solution should you use?</a>". These techniques have
-        a number of shortcomings, which are discussed below (and these
-        shortcomings serve as the motivation to reach out to the <a href=
-        "http://w3.org">W3C</a> and <a href="http://whatwg.org">WHATWG</a> for
-        standardization).
+        a number of limitations, discussed below, which serve as the motivation
+        to standardization a solution through the <a href=
+        "http://w3.org">W3C</a> and <a href="http://whatwg.org">WHATWG</a>).
       </p>
       <p>
         In formulating the requirements, this document tries to be
@@ -202,59 +205,67 @@ function closeWarning(element) {
         only tries to describe the use cases and what the <a href=
         "http://www.w3.org/community/respimg/"><abbr title=
         "Responsive Images Community Group">RICG</abbr></a> understands, from
-        practice, would be needed to address the use cases in the form of
-        <span>requirements</span>. The <a href=
+        <a href=
+        "https://github.com/ResponsiveImagesCG/picture-element/wiki/Relevant-resources#articles">
+        practice</a>, would be needed to address the use cases in the form of
+        <a>requirements</a>. The <a href=
         "http://www.w3.org/community/respimg/"><abbr title=
         "Responsive Images Community Group">RICG</abbr></a> expects that a
         technical specification can be created to formally address each of the
-        <span>requirements</span> (i.e., the <dfn>solution</dfn>). To date, two
-        such specifications are currently under development:
+        <a>requirements</a> (i.e., the <dfn>solution</dfn>).
       </p>
-      <ul>
-        <li>
-          <cite><a href="http://picture.responsiveimages.org">The picture
-          element: An HTML extension for responsive images</a></cite>.
-        </li>
-        <li>
-          <cite><a href="http://dev.w3.org/html5/srcset/">The srcset attribute:
-          An HTML extension for adaptive images</a></cite>.
-        </li>
-      </ul>
       <p>
-        On the one hand, <a href="http://dev.w3.org/html5/srcset/">the `srcset`
-        attribute</a> allows authors to define various image resources and
-        “hints” that assist a user agent to determine the most appropriate
-        image source to display. Given a set of image resources, the user agent
-        has the option of either following or overriding the author’s
-        declarations to optimize the user experience based on criteria such as
-        <a href=
-        "http://usecases.responsiveimages.org/#resolution-switching">display
-        density</a>, connection type, <a href=
-        "http://usecases.responsiveimages.org/#user-control-over-sources">user
-        preferences</a>, and so on.
-      </p>On the other hand, <a href="http://picture.responsiveimages.org">the
-      `picture` element</a> defines conditions under which the browser should
-      follow the author's intentions when selecting which resource to display.
-      This includes image source sizes designed to align with layouts
-      variations specified in CSS media queries ( see: <a href=
-      "http://usecases.responsiveimages.org/#design-breakpoints">design
-      breakpoints</a>, <a href=
-      "http://usecases.responsiveimages.org/#matching-media-features-and-media-types">
-      media features and types</a> and <a href=
-      "http://usecases.responsiveimages.org/#relative-units">relative units</a>
-      ) or content variations for increased clarity and focus based on the
-      <a href="http://usecases.responsiveimages.org/#art-direction">client’s
-      display size</a>.
-      <p>
-        The two proposed solutions are not mutually exclusive: together they
-        address the set of <cite><a href=
+        To date, three such specifications are currently under development,
+        described below. The three proposed solutions are not mutually
+        exclusive: together they address the set of <cite><a href=
         "http://usecases.responsiveimages.org">Use Cases and Requirements for
         Responsive Images</a></cite>.
       </p>
+      <dl>
+        <dt>
+          <cite><a href="http://dev.w3.org/html5/srcset/">The `srcset`
+          attribute</a></cite>
+        </dt>
+        <dd>
+          Allows authors to define various image resources and “hints” that
+          assist a user agent to determine the most appropriate image source to
+          display. Given a set of image resources, the user agent has the
+          option of either following or overriding the author’s declarations to
+          optimize the user experience based on criteria such as <a href=
+          "http://usecases.responsiveimages.org/#resolution-switching">display
+          density</a>, connection type, <a href=
+          "http://usecases.responsiveimages.org/#user-control-over-sources">user
+          preferences</a>, and so on.
+        </dd>
+        <dt>
+          <cite><a href="http://picture.responsiveimages.org">The `picture`
+          element</a></cite>
+        </dt>
+        <dd>
+          Building on <a href="http://dev.w3.org/html5/srcset/">srcset</a>,
+          this specificaton defines a declarative solution for grouping of
+          multiple versions of an image based on different characteristics
+          (e.g., format, resolution, cropping, etc.). This allows the user
+          agent to select the optimum image to present to an end-user based on
+          the user agent's environmental conditions.
+        </dd>
+        <dt>
+          <cite><a href=
+          "http://tools.ietf.org/html/draft-grigorik-http-client-hints">HTTP
+          Client Hints</a></cite>
+        </dt>
+        <dd>
+          Defines a set of HTTP headers that allow browsers to indicate a list
+          of device and agent specific preferences. Servers can then use these
+          "client hints" to assist in content negotiation, ideally resulting in
+          content being served that best matches the environmental conditions
+          of the client for the resource being requested.
+        </dd>
+      </dl>
     </section>
     <section>
       <h2>
-        Problems with current techniques
+        Limitations of current techniques
       </h2>
       <p>
         There are a number of problems with the <a href=
@@ -280,8 +291,8 @@ function closeWarning(element) {
           </p>
           <p>
             In other words, developers are being forced to work around, or
-            completely ignore, authoring requirements of <span><a href=
-            "http://www.w3.org/TR/html5/">HTML</a></span>.
+            completely ignore, authoring requirements of <a href=
+            "http://www.w3.org/TR/html5/">HTML</a>.
           </p>
         </dd>
         <dt>
@@ -482,8 +493,8 @@ function closeWarning(element) {
 @media screen and (max-width: 41em) { ... }
 </pre>
         <p>
-          Developers currently match specific <span>breakpoints</span> for
-          images to the breakpoints that they have defined in the <a href=
+          Developers currently match specific <a>breakpoints</a> for images to
+          the breakpoints that they have defined in the <a href=
           "http://www.w3.org/Style/CSS/Overview.en.html">CSS</a> of their
           responsive designs. Being able to match the breakpoints ensures that
           images are operating under the same rules that define the layout of a
@@ -498,12 +509,12 @@ function closeWarning(element) {
           likelihood of errors on the part of developers.
         </p>
         <p>
-          For example, if a <span>breakpoint</span> is specified as
-          "<span class="example"><code>max-width: 41em</code></span>", then web
-          developers would like to define a similar breakpoint for images at a
-          <code>max-width</code> of <code>41em</code>. Otherwise they are
-          forced to transform measurements into another unit like pixels, which
-          is tedious and potentially error-prone for developers.
+          For example, if a <a>breakpoint</a> is specified as "<code>max-width:
+          41em</code>", then web developers would like to define a similar
+          breakpoint for images at a <code>max-width</code> of
+          <code>41em</code>. Otherwise they are forced to transform
+          measurements into another unit like pixels, which is tedious and
+          potentially error-prone for developers.
         </p>
       </section>
       <section>
@@ -605,7 +616,7 @@ function closeWarning(element) {
           "http://dev.w3.org/csswg/mediaqueries4/#luminosity">luminosity</a>.
           The lack of a declarative mechanism to associate image content with
           media features means that developers cannot use them without relying
-          on the aforementioned problematic <span>techniques</span>.
+          on the aforementioned problematic <a>techniques</a>.
         </p>
       </section>
       <section>
@@ -736,39 +747,37 @@ function closeWarning(element) {
         Requirements
       </h2>
       <p>
-        The <span>use cases</span> give rise to the following
+        The <a>use cases</a> give rise to the following
         <dfn>requirements</dfn>:
       </p>
       <ol>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">MUST</em> afford
-            developers the ability to match image sources with particular media
-            features and/or media types - and have the user agent update the
-            source of an image as the media features and media types of the
-            browser environment change dynamically.
+            The <a>solution</a> MUST afford developers the ability to match
+            image sources with particular media features and/or media types -
+            and have the user agent update the source of an image as the media
+            features and media types of the browser environment change
+            dynamically.
           </p>
         </li>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">MUST</em> degrade
-            gracefully on legacy user agents by, for example, relying on
-            <span>HTML</span>'s built-in fallback mechanisms and legacy
-            elements.
+            The <a>solution</a> MUST degrade gracefully on legacy user agents
+            by, for example, relying on HTML's built-in fallback mechanisms and
+            legacy elements.
           </p>
         </li>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">MUST</em> afford
-            developers with the ability to include content that is accessible
-            to assistive technologies.
+            The <a>solution</a> MUST afford developers with the ability to
+            include content that is accessible to assistive technologies.
           </p>
         </li>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">MUST NOT</em> require
-            server-side processing to work. However, if required, server-side
-            adaptation can still occur through <a href=
+            The <a>solution</a> MUST NOT require server-side processing to
+            work. However, if required, server-side adaptation can still occur
+            through <a href=
             "http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html">content
             negotiation</a> or similar techniques (i.e., they are not mutually
             exclusive).
@@ -776,14 +785,13 @@ function closeWarning(element) {
         </li>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">MUST</em> provide
-            developers with a means to programmatically interface with image
-            resources, as well as access relevant attributes and methods that
-            make the solution practical to work with (i.e., it shouldn't
-            require complicated Regex or nested loops to manipulate values). In
-            addition, the <a href="#solution">solution</a> MUST provide means
-            to hook into relevant events resulting from changes in state
-            (<a href=
+            The <a>solution</a> MUST provide developers with a means to
+            programmatically interface with image resources, as well as access
+            relevant attributes and methods that make the solution practical to
+            work with (i.e., it shouldn't require complicated Regex or nested
+            loops to manipulate values). In addition, the <a href=
+            "#solution">solution</a> MUST provide means to hook into relevant
+            events resulting from changes in state (<a href=
             "http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-none">unavailable</a>,
             <a href=
             "http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-inc">
@@ -817,25 +825,24 @@ function closeWarning(element) {
         </li>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">MUST</em> afford
-            developers the ability to explicitly define different image
-            versions as opposed to only different resolutions of the same
-            image.
+            The <a>solution</a> MUST afford developers the ability to
+            explicitly define different image versions as opposed to only
+            different resolutions of the same image.
           </p>
         </li>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">MUST</em> afford
-            developers the ability to define the breakpoints for images as
-            either minimum values (mobile first) or maximum values (desktop
-            first) to match the media queries used in their design.
+            The <a>solution</a> MUST afford developers the ability to define
+            the breakpoints for images as either minimum values (mobile first)
+            or maximum values (desktop first) to match the media queries used
+            in their design.
           </p>
         </li>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">SHOULD</em> allow
-            developers to specify images in different formats (or specify the
-            format of a set of image sources).
+            The <a>solution</a> SHOULD allow developers to specify images in
+            different formats (or specify the format of a set of image
+            sources).
           </p>
         </li>
         <li>
@@ -843,17 +850,17 @@ function closeWarning(element) {
             To provide compatibility with legacy user agents, it SHOULD be
             possible for developers to <a href=
             "http://remysharp.com/2010/10/08/what-is-a-polyfill/">polyfill</a>
-            the <span>solution</span>.
+            the <a>solution</a>.
           </p>
         </li>
-        <li>The <span>solution</span> <em class="ct">SHOULD</em> afford user
-        agents with the ability to provide a user-settable preference for
-        controlling which source of an image they prefer.&nbsp;For example,
-        &nbsp;preference options could include: "always lowest resolution",
-        "always high resolution", "download high resolution as bandwidth
-        permits", and so on. To be clear, user agents are not required to
-        provide such a user-settable preference, but the <span>solution</span>
-        needs to be designed in such a way that it could be done.
+        <li>The <a>solution</a> SHOULD afford user agents with the ability to
+        provide a user-settable preference for controlling which source of an
+        image they prefer.&nbsp;For example, &nbsp;preference options could
+        include: "always lowest resolution", "always high resolution",
+        "download high resolution as bandwidth permits", and so on. To be
+        clear, user agents are not required to provide such a user-settable
+        preference, but the <a>solution</a> needs to be designed in such a way
+        that it could be done.
         </li>
       </ol>
     </section>
