@@ -350,21 +350,25 @@ function closeWarning(element) {
         <p>
           Image dimensions in responsive layouts tend to vary according to the
           viewport size. This often results in large images being sent to
-          browsers with narrow viewports and resized to fit on the client.
+          browsers with narrow viewports, which are then resized by the browser
+          to fit the design (see "<a href=
+          "http://blog.netvlies.nl/design-interactie/retina-revolution/">Retina
+          Revolution</a>" by Daan Jobsis).
         </p>
         <p>
-          There is a need to enable browsers to request image resources that
-          are as close as possible to these images display dimensions. That is
-          in order to avoid delaying the page load, wasting bandwidth, draining
-          the user's battery and incurring costs on his data plan, by sending
-          him image data that he will not benefit from.
+          There is a need for browsers to request image resources whose display
+          dimensions closely match the layout dimensions. Sending the right
+          image for the given dimension avoids delaying the page load, wasting
+          bandwidth, and unnecessarily draining the battery. It can also have
+          potential monetary saving for users by avoiding having to send
+          redundant data.
         </p>
         <p>
           The use case can be divided into two sub-categories:
         </p>
         <dl>
           <dt>
-            Resolution switching based on device-pixel-ratio
+            Resolution switching based on device-pixel-ratio:
           </dt>
           <dd>
             Different screen densities require different image resolutions in
@@ -387,7 +391,7 @@ function closeWarning(element) {
             </figure>
           </dd>
           <dt>
-            Resolution switching based on viewport dimensions
+            Resolution switching based on viewport dimensions:
           </dt>
           <dd>
             Different viewport sizes result in different image dimensions.
@@ -428,14 +432,14 @@ function closeWarning(element) {
           means, for example:
         </p>
         <ul>
-          <li>On large screens, a large image image with plenty of details can
-          be shown (e.g., an object or person with a broad background as shown
-          in the figure below).
+          <li>On a large screen, a large image with plenty of details can be
+          shown (e.g., an object with a broad background).
           </li>
-          <li>On smaller screens, shrinking the same image can reduce its
-          relevance, usefulness, and legibility. Thus, by "art directing" parts
-          that reduce communication are manipulated to better control the
-          image's commu
+          <li>On a smaller screen, shrinking the same image can reduce its
+          relevance, usefulness, and legibility. Thus, by "art directing", a
+          web developer can better control communication by explicitly
+          dictating which image should be shown at which size (or when some <a>
+            environmental condition</a> is met).
           </li>
         </ul>
         <p>
