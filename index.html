@@ -6,130 +6,120 @@
     <title>
       Use Cases and Requirements for Standardizing Responsive Images
     </title>
-    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async=""
     class='remove'>
 </script>
     <script class='remove'>
 var respecConfig = {
-          additionalCopyrightHolders: "Copyright © the Contributors to this Specification, published by the <a href='http://www.w3.org/community/respimg/'>Responsive Images Community Group</a> under the <a href= 'https://www.w3.org/community/about/agreements/cla/'>W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href= 'http://www.w3.org/community/about/agreements/cla-deed/'>summary</a> is available.",
-                                
-          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-          specStatus: "unofficial",
+                    additionalCopyrightHolders: "Copyright © the Contributors to this Specification, published by the <a href='http://www.w3.org/community/respimg/'>Responsive Images Community Group</a> under the <a href= 'https://www.w3.org/community/about/agreements/cla/'>W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href= 'http://www.w3.org/community/about/agreements/cla-deed/'>summary</a> is available.",
 
-          // the specification's short name, as in http://www.w3.org/TR/short-name/
-          shortName: "respimg-usecases",
+                    // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+                    specStatus: "unofficial",
 
-          // if your specification has a subtitle that goes below the main
-          // formal title, define it here
-          subtitle: "Living Document",
+                    // the specification's short name, as in http://www.w3.org/TR/short-name/
+                    shortName: "respimg-usecases",
 
-          // if you wish the publication date to be other than the last modification, set this
-          // publishDate:  "2009-08-06",
+                    // if your specification has a subtitle that goes below the main
+                    // formal title, define it here
+                    subtitle: "Living Document",
 
-          // if the specification's copyright date is a range of years, specify
-          // the start date here:
-          // copyrightStart: "2005"
+                    // if you wish the publication date to be other than the last modification, set this
+                    // publishDate:  "2009-08-06",
 
-          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
-          // and its maturity status
-          previousPublishDate: "2013-02-26",
-          previousMaturity: "FPWD",
+                    // if the specification's copyright date is a range of years, specify
+                    // the start date here:
+                    // copyrightStart: "2005"
 
-          // if there a publicly available Editor's Draft, this is the link
-          edDraftURI: "http://usecases.responsiveimages.org",
+                    // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+                    // and its maturity status
+                    previousPublishDate: "2013-02-26",
+                    previousMaturity: "FPWD",
 
-          // if this is a LCWD, uncomment and set the end of its review period
-          // lcEnd: "2009-08-05",
+                    // if there a publicly available Editor's Draft, this is the link
+                    edDraftURI: "http://usecases.responsiveimages.org",
 
-          // editors, add as many as you like
-          // only "name" is required
-          editors: [
-              {
-                  name: "Marcos Cáceres",
-                  url: "http://marcosc.com/",
-                  company: "Mozilla",
-                  companyURL: "http://mozilla.com"
-              },
-              {
-                  name: "Mat Marquis",
-                  url: "http://matmarquis.com/"
-              },
-              {
-                  name: "Yoav Weiss",
-                  url: "http://blog.yoav.ws/"
-              },
-                                                        {
-                  name: "David Newton",
-                  url: "http://davidnewton.ca/"
-              }
-          ],
+                    // if this is a LCWD, uncomment and set the end of its review period
+                    // lcEnd: "2009-08-05",
 
-          // name of the WG
-          wg: "HTML Working Group",
+                    // editors, add as many as you like
+                    // only "name" is required
+                    editors: [{
+                        name: "Marcos Cáceres",
+                        url: "http://marcosc.com/",
+                        company: "Mozilla",
+                        companyURL: "http://mozilla.com"
+                    }, {
+                        name: "Mat Marquis",
+                        url: "http://matmarquis.com/"
+                    }, {
+                        name: "Yoav Weiss",
+                        url: "http://blog.yoav.ws/"
+                    }, {
+                        name: "David Newton",
+                        url: "http://davidnewton.ca/"
+                    }],
 
-          // URI of the public WG page
-          wgURI: "http://www.w3.org/html/wg/",
+                    // name of the WG
+                    wg: "HTML Working Group",
 
-          // name (without the @w3c.org) of the public mailing to which comments are due
-          wgPublicList: "public-html@w3.org",
+                    // URI of the public WG page
+                    wgURI: "http://www.w3.org/html/wg/",
 
-          // URI of the patent status for this WG, for Rec-track documents
-          // !!!! IMPORTANT !!!!
-          // This is important for Rec-track documents, do not copy a patent URI from a random
-          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
-          // Team Contact.
-          wgPatentURI: "http://www.w3.org/community/respimg/spec/26/commitments",
-          // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
-          otherLinks: [
-              {
-                  key: "Version history",
-                  data: [
-                      {
-                          value: "Commit History",
-                          href: "https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages"
-                                                                },
-                                        {
-                          value: "Github commits on Twitter",
-                          href: "https://twitter.com/respimg_commits"
+                    // name (without the @w3c.org) of the public mailing to which comments are due
+                    wgPublicList: "public-html@w3.org",
 
-                                                                }
-                                                                ]
-                                        },
-              {
-                  key: "Participate",
-                  data: [
-                      {
-                          value: "Join the Responsive Images Community Group",
-                          href: "http://w3c.responsiveimages.org"
-                                                                        },
-                      {
-                          value: "http://list.responsiveimages.org",
-                          href: "Public mailing list"
-                                                                                },
-                      {
-                          value: "IRC: #respimg on W3C's IRC",
-                          href: "irc://irc.w3.org:6665/#respimg"
-                      },
-                      {
-                          value: "Twitter",
-                          href: "https://twitter.com/respimg"
-                      },
-                      {
-                          value: "Github",
-                          href: "https://github.com/ResponsiveImagesCG/picture-element"
+                    // URI of the patent status for this WG, for Rec-track documents
+                    // !!!! IMPORTANT !!!!
+                    // This is important for Rec-track documents, do not copy a patent URI from a random
+                    // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+                    // Team Contact.
+                    wgPatentURI: "http://www.w3.org/community/respimg/spec/26/commitments",
+                    // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
+                    otherLinks: [{
+                        key: "Version history",
+                        data: [{
+                            value: "Commit History",
+                            href: "https://github.com/ResponsiveImagesCG/ri-usecases/commits/gh-pages"
+                        }, {
+                            value: "Github commits on Twitter",
+                            href: "https://twitter.com/respimg_commits"
 
-                                                                                        }
-                                                                        ]
-                                }]
-      };                
+                        }]
+                    }, {
+                        key: "Participate",
+                        data: [{
+                            value: "Join the Responsive Images Community Group",
+                            href: "http://w3c.responsiveimages.org"
+                        }, {
+                            value: "http://list.responsiveimages.org",
+                            href: "Public mailing list"
+                        }, {
+                            value: "IRC: #respimg on W3C's IRC",
+                            href: "irc://irc.w3.org:6665/#respimg"
+                        }, {
+                            value: "Twitter",
+                            href: "https://twitter.com/respimg"
+                        }, {
+                            value: "Github",
+                            href: "https://github.com/ResponsiveImagesCG/picture-element"
+
+                        }]
+                    }]
+                };             
     </script>
   </head>
   <body>
+    <p>
+      <a href="http://responsiveimages.org"><img style=
+      "position: absolute; top: 1em; right: 1em;" src=
+      "https://raw.github.com/ResponsiveImagesCG/meta/master/logo/Web/RICG_logo_small.png"
+      alt="Responsive Images Community Group"></a>
+    </p>
     <section id="abstract">
       <p>
         This document captures the use cases and requirements for standardizing
-        a solution for responsive images. The <span>use cases</span> and
-        <span>requirements</span> were gathered with consultation with <a href=
+        a solution for responsive images. The <a>use cases</a> and
+        <a>requirements</a> were gathered with consultation with the <a href=
         "http://w3c.org/">HTML Working Group</a> and <a href=
         "http://whatwg.org">WHATWG</a> participants, <a href=
         "http://www.w3.org/community/respimg/"><abbr title=
@@ -169,42 +159,45 @@ function closeWarning(element) {
         Introduction
       </h2>
       <p>
-        In <span><a href="http://www.w3.org/TR/html5/">HTML</a></span>, a user
-        agent's <dfn>environmental conditions</dfn> are primarily expressed as
-        CSS <dfn>media features</dfn> (e.g., max-width, orientation,
-        monochrome, etc.) and CSS media types (e.g., print, screen, etc.). A
-        <dfn>responsive image</dfn> is an image that a developer explicitly
-        adapts in response to different <span>environmental conditions</span>:
-        adaptations can include, but are not limited to, changing the width,
-        height, or even the source of an image.
+        In <a href="http://www.w3.org/TR/html5/">HTML</a>, a user agent's
+        <dfn>environmental conditions</dfn> are primarily expressed as CSS
+        <dfn>media features</dfn> (e.g., pixel-density, orientation, max-width,
+        etc.) and CSS media types (e.g., print, screen, etc.). A
+        <dfn>responsive image</dfn> is an image that adapts in response to
+        different <a>environmental conditions</a>: adaptations can include, but
+        are not limited to, changing the dimensions, crop, or even the source
+        of an image.
       </p>
       <p>
         Many <a href="http://www.w3.org/TR/css3-mediaqueries/#media1">media
         features</a> are dynamic in nature (e.g., a browser window is re-sized,
         a device is rotated from portrait to landscape, and so on), thus a user
         agent constantly responds to events that change the properties of media
-        features. As a web page's layout adapts to changes in media features
-        and media type, an image's ability to communicate effectively can be
-        significantly reduced (e.g., images start to show compression artefacts
-        as they are scaled to match the quality of media or some media
-        feature). When this happens, developers rely on <span>responsive
-        images</span> to present images at different resolutions, or even in
-        different formats (e.g., swapping to SVG), to make sure their images
-        continue communicating effectively.
+        features. As a document's layout adapts to changes in media features
+        and <a>media type</a>, an image's ability to communicate effectively
+        can be significantly reduced (e.g., images start to show compression
+        artifacts as they are scaled to match the quality of media or some
+        media feature). When this happens, developers rely on various <a href=
+        "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
+        client/server-side solutions</a> to present images at different
+        resolutions, or even in different formats. Swapping images provides a
+        means to continue communicating effectively as media features
+        dynamically change.
       </p>
       <p>
-        Furthermore, as the number and varieties of high-density screens has
-        increased (both on mobile and desktop devices), web developers have had
-        to create custom techniques for serving images that best match a
-        browser's <span>environmental conditions</span>. For a list of examples
-        of the range of <dfn>techniques</dfn> in use in 2012, see Chris
-        Coyier's article "<a href=
+        Furthermore, as the <a href=
+        "https://github.com/ResponsiveImagesCG/picture-element/wiki/Display-technologies:-beyond-Retina">
+        number and varieties of high-density screens has increased</a> (both on
+        mobile and desktop devices), web developers have had to create custom
+        techniques for serving images that best match a browser's
+        <a>environmental conditions</a>. For a list of examples of the range of
+        <dfn>techniques</dfn> in use in 2012, see Chris Coyier's article
+        "<a href=
         "http://css-tricks.com/which-responsive-images-solution-should-you-use/">Which
         responsive images solution should you use?</a>". These techniques have
-        a number of shortcomings, which are discussed below (and these
-        shortcomings serve as the motivation to reach out to the <a href=
-        "http://w3.org">W3C</a> and <a href="http://whatwg.org">WHATWG</a> for
-        standardization).
+        a number of limitations, discussed below, which serve as the motivation
+        to standardize a solution through the <a href="http://w3.org">W3C</a>
+        and <a href="http://whatwg.org">WHATWG</a>).
       </p>
       <p>
         In formulating the requirements, this document tries to be
@@ -212,64 +205,84 @@ function closeWarning(element) {
         only tries to describe the use cases and what the <a href=
         "http://www.w3.org/community/respimg/"><abbr title=
         "Responsive Images Community Group">RICG</abbr></a> understands, from
-        practice, would be needed to address the use cases in the form of
-        <span>requirements</span>. The <a href=
+        <a href=
+        "https://github.com/ResponsiveImagesCG/picture-element/wiki/Relevant-resources#articles">
+        practice</a>, would be needed to address the use cases in the form of
+        <a>requirements</a>. The <a href=
         "http://www.w3.org/community/respimg/"><abbr title=
         "Responsive Images Community Group">RICG</abbr></a> expects that a
         technical specification can be created to formally address each of the
-        <span>requirements</span> (i.e., the <dfn>solution</dfn>). To date, two
-        such specifications are currently under development:
+        <a>requirements</a> (i.e., the <dfn>solution</dfn>).
       </p>
-      <ul>
-        <li>
-          <cite><a href="http://picture.responsiveimages.org">The picture
-          element: An HTML extension for responsive images</a></cite>.
-        </li>
-        <li>
-          <cite><a href="http://dev.w3.org/html5/srcset/">The srcset attribute:
-          An HTML extension for adaptive images</a></cite>.
-        </li>
-      </ul>
-      <p>
-        On the one hand, <a href="http://dev.w3.org/html5/srcset/">the `srcset`
-        attribute</a> allows authors to define various image resources and
-        “hints” that assist a user agent to determine the most appropriate
-        image source to display. Given a set of image resources, the user agent
-        has the option of either following or overriding the author’s
-        declarations to optimize the user experience based on criteria such as
-        <a href=
-        "http://usecases.responsiveimages.org/#resolution-switching">display
-        density</a>, connection type, <a href=
-        "http://usecases.responsiveimages.org/#user-control-over-sources">user
-        preferences</a>, and so on.
-      </p>On the other hand, <a href="http://picture.responsiveimages.org">the
-      `picture` element</a> defines conditions under which the browser should
-      follow the author's intentions when selecting which resource to display.
-      This includes image source sizes designed to align with layouts
-      variations specified in CSS media queries ( see: <a href=
-      "http://usecases.responsiveimages.org/#design-breakpoints">design
-      breakpoints</a>, <a href=
-      "http://usecases.responsiveimages.org/#matching-media-features-and-media-types">
-      media features and types</a> and <a href=
-      "http://usecases.responsiveimages.org/#relative-units">relative units</a>
-      ) or content variations for increased clarity and focus based on the
-      <a href="http://usecases.responsiveimages.org/#art-direction">client’s
-      display size</a>.
-      <p>
-        The two proposed solutions are not mutually exclusive: together they
-        address the set of <cite><a href=
-        "http://usecases.responsiveimages.org">Use Cases and Requirements for
-        Responsive Images</a></cite>.
-      </p>
+      <section>
+        <h3>
+          Proposed Solutions
+        </h3>
+        <p>
+          To date, three such specifications are currently under development,
+          described below. The three proposed solutions are not mutually
+          exclusive: together they address the set of <cite><a href=
+          "http://usecases.responsiveimages.org">Use Cases and Requirements for
+          Responsive Images</a></cite>.
+        </p>
+        <dl>
+          <dt>
+            <cite><a href="http://dev.w3.org/html5/srcset/">The `srcset`
+            attribute</a></cite>
+          </dt>
+          <dd>
+            Allows authors to define various image resources and “hints” that
+            assist a user agent to determine the most appropriate image source
+            to display. Given a set of image resources, the user agent has the
+            option of either following or overriding the author’s declarations
+            to optimize the user experience based on criteria such as <a href=
+            "http://usecases.responsiveimages.org/#resolution-switching">display
+            density</a>, connection type, <a href=
+            "http://usecases.responsiveimages.org/#user-control-over-sources">user
+            preferences</a>, and so on.
+          </dd>
+          <dt>
+            <cite><a href="http://picture.responsiveimages.org">The `picture`
+            element</a></cite>
+          </dt>
+          <dd>
+            Building on <a href="http://dev.w3.org/html5/srcset/">srcset</a>,
+            this specification defines a declarative solution for grouping
+            multiple versions of an image based on different characteristics
+            (e.g., format, resolution, orientation, etc.). This allows the user
+            agent to select the optimum image to present to an end-user based
+            on the user agent's environmental conditions, while also providing
+            the ability to "<a title="art direction">art direct</a>" images.
+          </dd>
+          <dt>
+            <cite><a href=
+            "http://tools.ietf.org/html/draft-grigorik-http-client-hints">HTTP
+            Client Hints</a></cite>
+          </dt>
+          <dd>
+            Defines a set of HTTP headers that allow browsers to indicate a
+            list of device and agent specific preferences. Servers can then use
+            these "client hints" to assist in content negotiation, ideally
+            resulting in content being served that best matches the
+            environmental conditions of the client for the resource being
+            requested.
+          </dd>
+        </dl>
+      </section>
     </section>
     <section>
       <h2>
-        Problems with current techniques
+        Limitations of current techniques
       </h2>
       <p>
-        There are a number of problems with the <a href=
+        As currently there are no standardized solutions implemented in main
+        stream browsers, web developers are relying on various <a href=
         "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
-        techniques</a> currently being relied on by web developers:
+        techniques</a> to use responsive images in their applications.
+        Unfortunately, there are significant <dfn>limitations</dfn> with these
+        <a href=
+        "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
+        techniques</a>:
       </p>
       <dl>
         <dt>
@@ -278,24 +291,44 @@ function closeWarning(element) {
         <dd>
           <p>
             Large images incur unnecessary download and processing time,
-            slowing the experience for users. To solve this problem, web
-            developers provide multiple sources of the same image at different
+            slowing the experience for users. To work around this problem, web
+            developers specify multiple sources of the same image at different
             resolutions and then pick the image of the correct size based on
-            the viewport size. This is commonly done for CSS background images
-            in responsive designs, but web developers lack the markup to do so
-            for images in <a href="http://www.w3.org/TR/html5/">HTML</a>
-            without hacking together a solution. This means that developers
-            have resorted to using <code>div</code> and other container
-            elements to achieve the desired functionality.
-          </p>
-          <p>
-            In other words, developers are being forced to work around, or
-            completely ignore, authoring requirements of <span><a href=
-            "http://www.w3.org/TR/html5/">HTML</a></span>.
+            the viewport size. As web developers lack the markup to achieve
+            what they need, they end up relying on semantically neutral
+            elements, <a href=
+            "http://dev.w3.org/csswg/css-backgrounds/#background-image">CSS
+            background images</a>, and JavaScript libraries. In other words,
+            developers are being forced to willfully violate the authoring
+            requirements of <a href="http://www.w3.org/TR/html5/">HTML</a>.
           </p>
         </dd>
         <dt>
-          Reliance on scripts and server side processing:
+          Bypass preload scanner
+        </dt>
+        <dd>
+          <p>
+            The reliance on semantically neutral elements (e.g., the
+            <code>div</code> and <code>span</code> elements), instead of
+            semantically meaningful elements such as <code>img</code>, prevents
+            browsers from loading the image resources until after the DOM has
+            (at least partially) loaded and scripts have run. This directly
+            hinders the performance work browser engineers have done over the
+            years to optimize resource loading (e.g., WebKit's <a href=
+            "https://github.com/WebKit/webkit/blob/master/Source/WebCore/html/parser/HTMLPreloadScanner.cpp">
+            HTMLPreloadScanner</a>). Unnecessarily bypassing things like the
+            preload scanner can have measurable performance impact when loading
+            documents. See, for example, "<a href=
+            "gent.ilcore.com/2011/01/webkit-preloadscanner.html">The WebKit
+            PreloadScanner</a>" by Tony Gentilcore for a small study that
+            demonstrates an up to 20% impact in load time when WebKit's
+            PreloadScanner is disabled. More recent <a href=
+            "https://plus.google.com/+IlyaGrigorik/posts/8AwRUE7wqAE">performance
+            tests</a> yield similar results.
+          </p>
+        </dd>
+        <dt>
+          Reliance on scripts and server-side processing:
         </dt>
         <dd>
           <p>
@@ -303,15 +336,15 @@ function closeWarning(element) {
             "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
             techniques</a> rely on either JavaScript or a server-side solution
             (or both), which adds complexity and redundant HTTP requests to the
-            development process. Furthermore, the script-based solutions will
-            be unavailable to users who have turned off JavaScript.
+            development process. Furthermore, the script-based solutions are
+            unavailable to users who have turned off JavaScript.
           </p>
         </dd>
       </dl>
       <p>
         The <abbr title="Responsive Images Community Group">RICG</abbr>
         believes standardization of a browser-based solution can overcome these
-        problems.
+        <a>limitations</a>.
       </p>
     </section>
     <section>
@@ -319,9 +352,8 @@ function closeWarning(element) {
         Use cases
       </h2>
       <p>
-        The following <dfn>use cases</dfn> represent situations in which Web
-        developers see a need for a browser-based solution for working with
-        responsive images.
+        The following <dfn>use cases</dfn> represent usage scenarios commonly
+        seen "in the wild".
       </p>
       <section>
         <h3>
@@ -329,39 +361,60 @@ function closeWarning(element) {
         </h3>
         <p>
           Image dimensions in responsive layouts tend to vary according to the
-          viewport size, often resulting in large images sent to browsers with
-          narrow viewports, only to be downsized there
+          viewport size. This often results in large images being sent to
+          browsers with narrow viewports, which are then resized by the browser
+          to fit the design (see, for example, "<a href=
+          "http://blog.netvlies.nl/design-interactie/retina-revolution/">Retina
+          Revolution</a>" by Daan Jobsis).
         </p>
         <p>
-          There is a need to enable browsers to request image resources that
-          are as close as possible to these images display dimensions. That is
-          in order to avoid delaying the page load, wasting bandwidth, draining
-          the user's battery and incurring costs on his data plan, by sending
-          him image data that he will not benefit from.
+          There is a need for browsers to request image resources whose display
+          dimensions closely match the layout dimensions. Sending the right
+          image for the given dimension avoids delaying the page load, wasting
+          bandwidth, and reducing the impact on battery life (as the device's
+          antenna can be powered off more quickly). It can also potentially
+          save users money by not downloading redundant image data.
         </p>
         <p>
           The use case can be divided into two sub-categories:
         </p>
-        <ul>
-          <li>Device pixel ratio based resolution switching - Different screen
-          densities require different image resolutions in order to display the
-          same image dimensions in a crisp, artifact-free way
+        <dl>
+          <dt>
+            Resolution switching based on device-pixel-ratio:
+          </dt>
+          <dd>
+            To display images in a way that reduces perceptable artifacts
+            (i.e., so the images look "crisp"), devices with different screen
+            densities require images with different minimal resolutions. Thus,
+            the higher the pixel density, the more pixels the image needs to
+            have to look good. This also applies to icons, where completely
+            different images may need to be used for different
+            device-pixel-ratios (see "All the sizes of iOS app icons", by Neven
+            Mrgan).
+          </dd>
+          <dd>
             <figure>
               <div>
-                <img src="images/dpr-camera-man.jpg" width="1200" height="320"
-                style="max-width:1200px" class="stretchy" alt=
+                <img src="images/dpr-camera-man.jpg" width="960" height="320"
+                style="max-width:960px" class="stretchy" alt=
                 "an image displayed at 1x DPR, the same resolution stretched to display at 2x DPR, and with double the resolution at 2x DPR">
               </div>
               <figcaption>
                 <p>
                   On a device with a device pixel ratio greater than 1, higher
-                  image resolutions are required to eliminate artifacts.
+                  image resolutions are required to reduce visual artifacts
+                  resulting from compression.
                 </p>
               </figcaption>
             </figure>
-          </li>
-          <li>Viewport dimensions based resolution switching - Different
-          viewport sizes result in different image dimensions
+          </dd>
+          <dt>
+            Resolution switching based on viewport dimensions:
+          </dt>
+          <dd>
+            Different viewport sizes result in different image dimensions.
+          </dd>
+          <dd>
             <figure>
               <div>
                 <img src="images/viewport-camera-man.jpg" width="960" height=
@@ -371,12 +424,12 @@ function closeWarning(element) {
               <figcaption>
                 <p>
                   To optimize performance, authors can use images that more
-                  closely match the viewport size.
+                  closely match the size of the viewport.
                 </p>
               </figcaption>
             </figure>
-          </li>
-        </ul>
+          </dd>
+        </dl>
         <p class="note">
           The reason display dimensions are not considered for the resolution
           switching use-case is that these are not known to the browser until
@@ -392,16 +445,19 @@ function closeWarning(element) {
           In a responsive design, it is typical to change an image so it can be
           targeted towards the features of a particular display (or set of
           displays). Sometimes this means cropping an image. Other times, it
-          can mean a new form of an image that may have different proportions
-          or may be changed in other ways to match changes in the layout. This
-          means, for example:
+          can mean a different image altogether that may have different
+          proportions or may be changed in other ways to communicate more
+          effectively in a layout. This means, for example:
         </p>
         <ul>
-          <li>On large screens, a large image is shown (e.g., an object or
-          person with a broad background).
+          <li>On a large screen, a large image with plenty of details can be
+          shown (e.g., an object with a broad background).
           </li>
-          <li>On smaller screens, shrinking the image can reduce its relevance,
-          usefulness, and legibility.
+          <li>On a smaller screen, shrinking the same image can reduce its
+          relevance, usefulness, and legibility. Thus, by "art directing", a
+          web developer can better control communication by explicitly
+          dictating which image should be shown at which size (or when some <a>
+            environmental condition</a> is met).
           </li>
         </ul>
         <p>
@@ -445,7 +501,7 @@ function closeWarning(element) {
           the browser in the image.
         </p>
         <figure>
-          <video controls poster="videos/screenrmx1.jpg" width="652" height=
+          <video controls="" poster="videos/screenrmx1.jpg" width="652" height=
           "389" onclick="if(/Android/.test(navigator.userAgent))this.play();">
           <source src="videos/screenrmx1.m4v" type="video/mp4">
           <source src="videos/screenrmx1.webm" type="video/webm">
@@ -469,8 +525,7 @@ function closeWarning(element) {
           </object></video>
           <figcaption>
             <p>
-              Video showing how responsive images are used on Nokia's Meego
-              Website.
+              Video showing art direction used on Nokia's Meego Website.
             </p>
           </figcaption>
         </figure>
@@ -480,9 +535,10 @@ function closeWarning(element) {
           Design breakpoints
         </h3>
         <p>
-          In Web development, a <dfn>breakpoint</dfn> is one of a series of CSS
-          Media Queries that updates the styles of a page based on logical
-          matching of media features. A single breakpoint represents a rule (or
+          In Web development, a <dfn>breakpoint</dfn> is one of a series of
+          <a href="http://www.w3.org/TR/css3-mediaqueries/">CSS Media
+          Queries</a>, which can update the styles of a page based on matching
+          of <a>media features</a>. A single breakpoint represents a rule (or
           set of rules) that determines the point at which the contents of that
           media query are applied to a page’s layout. For example:
         </p>
@@ -492,11 +548,11 @@ function closeWarning(element) {
 @media screen and (max-width: 41em) { ... }
 </pre>
         <p>
-          Developers currently match specific <span>breakpoints</span> for
-          images to the breakpoints that they have defined in the <a href=
-          "http://www.w3.org/Style/CSS/Overview.en.html">CSS</a> of their
-          responsive designs. Being able to match the breakpoints ensures that
-          images are operating under the same rules that define the layout of a
+          Developers currently match specific <a>breakpoints</a> for images to
+          the breakpoints that they have defined in the <a href=
+          "http://www.w3.org/Style/CSS/Overview.en.html">CSS</a> for their
+          applications. Being able to match the breakpoints ensures that images
+          are operating under the same rules that define the layout of a
           design. It also helps developers verify their approach by ensuring
           that the same viewport measurement tests are being used in both
           <a href="http://www.w3.org/TR/html5/">HTML</a> and <a href=
@@ -505,15 +561,15 @@ function closeWarning(element) {
           that they are defined for the design, developers will need to convert
           the breakpoints back to the values specified in the layout in order
           to verify that they match. This increases authoring time and the
-          likelihood of errors on the part of developers.
+          likelihood of human-error on the part of developers.
         </p>
         <p>
-          For example, if a <span>breakpoint</span> is specified as
-          "<span class="example"><code>max-width: 41em</code></span>", then web
-          developers would like to define a similar breakpoint for images at a
-          <code>max-width</code> of <code>41em</code>. Otherwise they are
-          forced to transform measurements into another unit like pixels, which
-          is tedious and potentially error-prone for developers.
+          For example, if a <a>breakpoint</a> is specified as "<code>max-width:
+          41em</code>", then web developers would like to define a similar
+          breakpoint for images at a <code>max-width</code> of
+          <code>41em</code>. Otherwise they are forced to transform
+          measurements into another unit, like pixels, which is tedious and
+          potentially error-prone.
         </p>
       </section>
       <section>
@@ -592,7 +648,7 @@ function closeWarning(element) {
           </figcaption>
         </figure>
         <p>
-          Currently, server side solutions exist to adapt web content to e-ink
+          Currently, server-side solutions exist to adapt web content to e-ink
           displays (e.g., <a href="http://kinstant.com/">kinstant</a>), but
           such services only work on text and layout and not on images. As
           interpreting the meaning of images is a problem of <a href=
@@ -602,7 +658,7 @@ function closeWarning(element) {
           content that communicates effectively in monochrome media.
         </p>
         <p>
-          Lastly, through the<a href=
+          Lastly, through the <a href=
           "http://www.w3.org/TR/css3-mediaqueries/">CSS Media Queries
           specifications</a>, the <a href="http://www.w3.org/Style/CSS/">CSS
           Working Group</a> continues to add media features to the Web
@@ -615,7 +671,8 @@ function closeWarning(element) {
           "http://dev.w3.org/csswg/mediaqueries4/#luminosity">luminosity</a>.
           The lack of a declarative mechanism to associate image content with
           media features means that developers cannot use them without relying
-          on the aforementioned problematic <span>techniques</span>.
+          on the aforementioned <a title="limitations">limited</a>
+          <a>techniques</a>.
         </p>
       </section>
       <section>
@@ -638,7 +695,8 @@ function closeWarning(element) {
           In flexible layout designs with <code>em</code> based media queries,
           if art-directed images are not specified in relative units, they can
           either break the layout or become distorted when faced with a
-          untypical default font-size.
+          uncommon default font-size (e.g., Amazon's Kindle defaults to 20px
+          instead of the usual 16px).
         </p>
       </section>
       <section>
@@ -681,9 +739,9 @@ function closeWarning(element) {
         </div>
         <p>
           In a responsive design, images need to be displayed at different
-          sizes. When possible, a vector format such as SVG might be most
-          appropriate. There have also been proposals for new responsive image
-          formats (see, for example, <a href=
+          sizes and device pixel ratios. When possible, a vector format such as
+          SVG might be most appropriate. There have also been proposals for new
+          responsive image formats (see, for example, <a href=
           "http://www.netmagazine.com/opinions/need-responsive-image-format">Christopher
           Schmitt's .net article</a>).
         </p>
@@ -691,7 +749,7 @@ function closeWarning(element) {
           Although a web developer may want to use a specific image format, new
           or otherwise, the browser may not always support it. Currently,
           developers are forced to abandon the most suitable image format in
-          favor of one that has good user agent support.
+          favor of one that has ubiquitous support across user agents.
         </p>
       </section>
       <section>
@@ -702,15 +760,15 @@ function closeWarning(element) {
           In situations where the user knows their bandwidth is limited or
           expensive (e.g., while roaming), the browser could assist users by:
         </p>
-        <ol>
-          <li>giving users an option to only download images in the quality
+        <ul>
+          <li>Giving users an option to only download images in the quality
           they desire - or disable images all together, as Google Chrome
           currently does through site preferences.
           </li>
-          <li>automatically select the most suitable image for the browsing
+          <li>Automatically select the most suitable image for the browsing
           environment.
           </li>
-        </ol>
+        </ul>
         <p>
           There are browsers already catering for these kinds of situations:
           for example Opera Mini provides users with a choice of image quality
@@ -726,18 +784,10 @@ function closeWarning(element) {
         <p>
           One of the main needs from a responsive images solution is speed, and
           specifically it needs to result in faster page loads than the current
-          JavaScript based solutions are providing.
-        </p>
-        <p>
-          One of the key aspects of resource download in the browser is the
-          browser's ability to kick-off the resource download as soon as the
-          tag containing the resource is read (but possibly before it is
-          parsed, since the parser may be blocked).
-        </p>
-        <p>
-          A responsive images solution need to maintain that aspect of image
-          loading, in order to avoid introducing delays to the page load, which
-          are counter-productive to one of the main goals of responsive images.
+          <a>techniques</a> are providing. One of the key aspects of resource
+          download in the browser is the browser's ability to kick-off the
+          resource download as soon as the tag containing the resource is read
+          (but possibly before it is parsed, since the parser may be blocked).
         </p>
       </section>
     </section>
@@ -746,39 +796,37 @@ function closeWarning(element) {
         Requirements
       </h2>
       <p>
-        The <span>use cases</span> give rise to the following
+        The <a>use cases</a> give rise to the following
         <dfn>requirements</dfn>:
       </p>
       <ol>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">MUST</em> afford
+            To allow for art direction, the <a>solution</a> MUST afford
             developers the ability to match image sources with particular media
-            features and/or media types - and have the user agent update the
+            features and/or media types - and the user agent SHOULD update the
             source of an image as the media features and media types of the
             browser environment change dynamically.
           </p>
         </li>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">MUST</em> degrade
-            gracefully on legacy user agents by, for example, relying on
-            <span>HTML</span>'s built-in fallback mechanisms and legacy
-            elements.
+            The <a>solution</a> MUST degrade gracefully on legacy user agents
+            by, for example, relying on HTML's built-in fallback mechanisms and
+            legacy elements.
           </p>
         </li>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">MUST</em> afford
-            developers with the ability to include content that is accessible
-            to assistive technologies.
+            The <a>solution</a> MUST afford developers with the ability to
+            include content that is accessible to assistive technologies.
           </p>
         </li>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">MUST NOT</em> require
-            server-side processing to work. However, if required, server-side
-            adaptation can still occur through <a href=
+            The <a>solution</a> MUST NOT require server-side processing to
+            work. However, if required, server-side adaptation can still occur
+            through <a href=
             "http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html">content
             negotiation</a> or similar techniques (i.e., they are not mutually
             exclusive).
@@ -786,14 +834,13 @@ function closeWarning(element) {
         </li>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">MUST</em> provide
-            developers with a means to programmatically interface with image
-            resources, as well as access relevant attributes and methods that
-            make the solution practical to work with (i.e., it shouldn't
-            require complicated Regex or nested loops to manipulate values). In
-            addition, the <a href="#solution">solution</a> MUST provide means
-            to hook into relevant events resulting from changes in state
-            (<a href=
+            The <a>solution</a> MUST provide developers with a means to
+            programmatically interface with image resources, as well as access
+            relevant attributes and methods that make the solution practical to
+            work with (i.e., it shouldn't require complicated Regex or nested
+            loops to manipulate values). In addition, the <a href=
+            "#solution">solution</a> MUST provide means to hook into relevant
+            events resulting from changes in state (<a href=
             "http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-none">unavailable</a>,
             <a href=
             "http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-inc">
@@ -827,25 +874,24 @@ function closeWarning(element) {
         </li>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">MUST</em> afford
-            developers the ability to explicitly define different image
-            versions as opposed to only different resolutions of the same
-            image.
+            The <a>solution</a> MUST afford developers the ability to
+            explicitly define different image versions as opposed to only
+            different resolutions of the same image.
           </p>
         </li>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">MUST</em> afford
-            developers the ability to define the breakpoints for images as
-            either minimum values (mobile first) or maximum values (desktop
-            first) to match the media queries used in their design.
+            The <a>solution</a> MUST afford developers the ability to define
+            the breakpoints for images as either minimum values (mobile first)
+            or maximum values (desktop first) to match the media queries used
+            in their design.
           </p>
         </li>
         <li>
           <p>
-            The <span>solution</span> <em class="ct">SHOULD</em> allow
-            developers to specify images in different formats (or specify the
-            format of a set of image sources).
+            The <a>solution</a> SHOULD allow developers to specify images in
+            different formats (or specify the format of a set of image
+            sources).
           </p>
         </li>
         <li>
@@ -853,17 +899,29 @@ function closeWarning(element) {
             To provide compatibility with legacy user agents, it SHOULD be
             possible for developers to <a href=
             "http://remysharp.com/2010/10/08/what-is-a-polyfill/">polyfill</a>
-            the <span>solution</span>.
+            the <a>solution</a>. See the <a href=
+            "https://github.com/w3ctag/extending-html-responsibly/blob/master/RICG-recs/ricg.md">
+            W3C's TAG's recommendations to the RICG.</a>
           </p>
         </li>
-        <li>The <span>solution</span> <em class="ct">SHOULD</em> afford user
-        agents with the ability to provide a user-settable preference for
-        controlling which source of an image they prefer.&nbsp;For example,
-        &nbsp;preference options could include: "always lowest resolution",
-        "always high resolution", "download high resolution as bandwidth
-        permits", and so on. To be clear, user agents are not required to
-        provide such a user-settable preference, but the <span>solution</span>
-        needs to be designed in such a way that it could be done.
+        <li>
+          <p>
+            The <a>solution</a> SHOULD afford user agents with the ability to
+            provide a user-settable preference for controlling which source of
+            an image they prefer.&nbsp;For example, &nbsp;preference options
+            could include: "always lowest resolution", "always high
+            resolution", "download high resolution as bandwidth permits", and
+            so on. To be clear, user agents are not required to provide such a
+            user-settable preference, but the <a>solution</a> needs to be
+            designed in such a way that it could be done.
+          </p>
+        </li>
+        <li>
+          <p>
+            In order to avoid introducing delays to the page load, the solution
+            MUST intergrate well with existing performance optimization
+            provided by browsers (e.g., the preload scanner).
+          </p>
         </li>
       </ol>
     </section>
@@ -911,13 +969,13 @@ function closeWarning(element) {
         var all = document.querySelectorAll("td>h3"), 
             each = [];
         for(var i = 0; i < all.length; i++){ 
-        	each.push(all.item(i).textContent); 
+                each.push(all.item(i).textContent); 
         }
         console.log(each.join(", "))
         -->
-        <dfn>Participants</dfn> of the <a href=
+         <dfn>Participants</dfn> of the <a href=
         "http://w3c.responsiveimages.org">Responsive Images Community Group</a>
-        at the time of publication were: Barry :atimer, Daniel Abril, George
+        at the time of publication were: Barry Atimer, Daniel Abril, George
         Adamson, Heide Alexander, Marie Alhomme, John Allan, Joshua Allen,
         Angely Alvarez, Henrique Alves, Agustin Amenabar, Aaryn Anderson,
         Philip Andrews, Ritchie Anesco, Phil Archer, Tom Atkins, Justin Avery,
