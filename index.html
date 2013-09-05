@@ -176,7 +176,7 @@ function closeWarning(element) {
         features. As a document's layout adapts to changes in media features
         and <a>media type</a>, an image's ability to communicate effectively
         can be significantly reduced (e.g., images start to show compression
-        artefacts as they are scaled to match the quality of media or some
+        artifacts as they are scaled to match the quality of media or some
         media feature). When this happens, developers rely on various <a href=
         "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
         client/server-side solutions</a> to present images at different
@@ -383,10 +383,12 @@ function closeWarning(element) {
             Resolution switching based on device-pixel-ratio:
           </dt>
           <dd>
-            In order to display the same image dimensions in a way the looks
-            crisp and reduces visual artefacts, different screen densities
-            require image at different resolutions. This also applies to icons,
-            where completely different images may need to be used for different
+            To display images in a way that reduces perceptable artifacts
+            (i.e., so the images look "crisp"), devices with different screen
+            densities require images with different minimal resolutions. Thus,
+            the higher the pixel density, the more pixels the image needs to
+            have to look good. This also applies to icons, where completely
+            different images may need to be used for different
             device-pixel-ratios (see "All the sizes of iOS app icons", by Neven
             Mrgan).
           </dd>
@@ -692,8 +694,9 @@ function closeWarning(element) {
         <p>
           In flexible layout designs with <code>em</code> based media queries,
           if art-directed images are not specified in relative units, they can
-          either break the layout or become distorted when faced with a rare
-          default font-size.
+          either break the layout or become distorted when faced with a
+          uncommon default font-size (e.g., Amazon's Kindle defaults to 20px
+          instead of the usual 16px).
         </p>
       </section>
       <section>
