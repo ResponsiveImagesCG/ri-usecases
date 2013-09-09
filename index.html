@@ -105,7 +105,7 @@ var respecConfig = {
 
                         }]
                     }]
-                };             
+                };
     </script>
   </head>
   <body>
@@ -698,6 +698,23 @@ function closeWarning(element) {
           uncommon default font-size (e.g., Amazon's Kindle defaults to 20px
           instead of the usual 16px).
         </p>
+        <figure>
+          <div>
+            <img src="images/rel-units-bad.jpg" alt=
+            "Art direction with pixels produces the wrong layout"> <img src=
+            "images/rel-units-good.jpg" alt=
+            "Art direction with relative units produces the desired layout">
+          </div>
+          <figcaption>
+            At the usual default font-size of 16px, the Media Query’s 30em
+            breakpoint and the art direction’s 480px breakpoint are equivalent.
+            If the user changes the default font-size to something other than
+            16px, such as 24px in this example, the Media Query and Art
+            Direction breakpoints are no longer equivalent and the layout
+            breaks. Using em-based breakpoints for art direction solves this
+            problem.
+          </figcaption>
+        </figure>
       </section>
       <section>
         <h3>
@@ -962,14 +979,14 @@ function closeWarning(element) {
         Neves, Eileen Webb, and Anselm Hannemann.
       </p>
       <p>
-        <!-- 
-        To get the participant's list, go to 
+        <!--
+        To get the participant's list, go to
         http://www.w3.org/community/respimg/participants
-        
-        var all = document.querySelectorAll("td>h3"), 
+
+        var all = document.querySelectorAll("td>h3"),
             each = [];
-        for(var i = 0; i < all.length; i++){ 
-                each.push(all.item(i).textContent); 
+        for(var i = 0; i < all.length; i++){
+                each.push(all.item(i).textContent);
         }
         console.log(each.join(", "))
         -->
