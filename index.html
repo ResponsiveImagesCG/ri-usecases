@@ -181,8 +181,8 @@ function closeWarning(element) {
         "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
         client/server-side solutions</a> to present images at different
         resolutions, or even in different formats. Swapping images provides a
-        means to continue communicating effectively as media features
-        dynamically change.
+        means to continue communicating effectively as the features of media
+        change dynamically.
       </p>
       <p>
         Furthermore, as the <a href=
@@ -371,6 +371,22 @@ function closeWarning(element) {
       </p>
       <section>
         <h3>
+          Resolution-based selection
+        </h3>
+        <p>
+          Developers generally want to provide the same image in multiple
+          resolutions, so that high-res devices can get the optimum image for a
+          given resolution, while low-resolution devices can avoid wasting time
+          and bandwidth downloading overly-large files.
+        </p>
+        <figure>
+          <img src="images/resolution_selection.jpg" alt=
+          "Screens have a range of resolutions. Both real and virtual." style=
+          "max-width: 415px" class="stretchy">
+        </figure>
+      </section>
+      <section>
+        <h3>
           Viewport-based selection
         </h3>
         <p>
@@ -383,14 +399,20 @@ function closeWarning(element) {
           "http://filamentgroup.com/lab/rwd_img_compression/">compressive
           images</a></cite> technique). Ideally, developers would like to serve
           images that match the user's viewport dimensions. Without a means to
-          do this, they are sometimes need to send more data to the user than
-          they would otherwise need to.
+          do this, they sometimes need to send more data to the user than they
+          would otherwise need to.
+        </p>
+        <p>
+          For example, a 1000px wide image might be appropriate as a 1x image
+          when used to fill the background of the page, but it’s far too large
+          to use for the same purpose on a 320px wide screen. On a screen that
+          small, it’s more like a 2x or 3x image. In other words, the same
+          image might be applicable to multiple viewport sizes, but at
+          different effective resolutions.
         </p>
         <figure>
           <figcaption>
-            <img src="images/viewport_selection.jpg" alt=
-            "Screens have a range of resolutions. Both real and virtual."
-            style="max-width: 815px" class="stretchy">
+            <img src="images/viewport_selection.jpg">
             <p>
               To avoid sending excess data, developers will send images that
               more closely match the size of the viewport.
@@ -415,7 +437,8 @@ function closeWarning(element) {
         </p>
         <figure>
           <img src="images/dpr_selection.jpg" class="stretchy" style=
-          "max-width: 415px">
+          "max-width: 415px" alt=
+          "three devices, each having a unique device pixel ratio of 1x, 1.5, and 3x respectively.">
           <figcaption>
             <p>
               On a device with a device-pixel-ratio greater than 1, higher
@@ -453,9 +476,8 @@ function closeWarning(element) {
         </p>
         <figure>
           <div>
-            <img src="images/art_direction.jpg" width="800" height="520" style=
-            "max-width:800px" class="stretchy" alt=
-            "four devices showing art directed crops of a dog">
+            <img src="images/art_direction.jpg" style="max-width:800px" class=
+            "stretchy" alt="four devices showing art directed crops of a dog.">
           </div>
           <figcaption>
             <p>
@@ -489,8 +511,9 @@ function closeWarning(element) {
           the browser in the image.
         </p>
         <figure>
-          <video controls="" poster="videos/screenrmx1.jpg" width="652" height=
-          "389" onclick="if(/Android/.test(navigator.userAgent))this.play();">
+          <video controls="" poster="videos/screenrmx1.jpg" class="stretchy"
+          style="max-width: 652px" onclick=
+          "if(/Android/.test(navigator.userAgent))this.play();">
           <source src="videos/screenrmx1.m4v" type="video/mp4">
           <source src="videos/screenrmx1.webm" type="video/webm">
           <source src="videos/screenrmx1.ogv" type="video/ogg">
