@@ -184,7 +184,7 @@ function closeWarning(element) {
         a device is rotated from portrait to landscape, and so on), thus a user
         agent constantly responds to events that change the properties of media
         features. As a document's layout adapts to changes in media features
-        and <a>media type</a>, an image's ability to communicate effectively
+        and media type, an image's ability to communicate effectively
         can be significantly reduced (e.g., images start to show compression
         artifacts as they are scaled to match the quality of media or some
         media feature). When this happens, developers rely on various <a href=
@@ -261,7 +261,7 @@ function closeWarning(element) {
             multiple versions of an image based on different characteristics
             (e.g., format, resolution, orientation, etc.). This allows the user
             agent to select the optimum image to present to an end-user based
-            on the user agent's environmental conditions, while also providing
+            on the user agent's <a>environmental conditions</a>, while also providing
             the ability to "<a title="art direction">art direct</a>" images.
           </dd>
           <dt>
@@ -274,7 +274,7 @@ function closeWarning(element) {
             list of device and agent specific preferences. Servers can then use
             these "client hints" to assist in content negotiation, ideally
             resulting in content being served that best matches the
-            environmental conditions of the client for the resource being
+            <a>environmental conditions</a> of the client for the resource being
             requested.
           </dd>
           <dt>
@@ -393,6 +393,9 @@ function closeWarning(element) {
           <img src="images/resolution_selection.jpg" alt=
           "Screens have a range of resolutions. Both real and virtual." style=
           "max-width: 415px" class="stretchy">
+          <figcaption>Figure shows screens that having different resolutions. These resolutions 
+            can be either physical (matching physical pixels) or virtual (matching css pixels).
+          </figcaption> 
         </figure>
       </section>
       <section>
@@ -452,17 +455,15 @@ function closeWarning(element) {
           "max-width: 415px" alt=
           "three devices, each having a unique device pixel ratio of 1x, 1.5, and 3x respectively.">
           <figcaption>
-            <p>
               On a device with a device-pixel-ratio greater than 1, higher
               image resolutions are required to reduce visual artifacts
               resulting from compression.
-            </p>
           </figcaption>
         </figure>
       </section>
       <section>
         <h3>
-          Art direction
+          <dfn>Art direction</dfn>
         </h3>
         <p>
           In a responsive design, it is typical to change an image so it can be
@@ -479,7 +480,8 @@ function closeWarning(element) {
           <li>On a smaller screen, shrinking the same image can reduce its
           relevance, usefulness, and legibility. Thus, by "art directing", a
           web developer can better control communication by explicitly
-          dictating which image should be shown at which size (or when some <a>
+          dictating which image should be shown at which size (or when some 
+          <a title="environmental conditions">
             environmental condition</a> is met).
           </li>
         </ul>
@@ -571,7 +573,7 @@ function closeWarning(element) {
 @media screen and (max-width: 41em) { ... }
 </pre>
         <p>
-          Developers currently match specific <a>breakpoints</a> for images to
+          Developers currently match specific <a title="breakpoint">breakpoints</a> for images to
           the breakpoints that they have defined in the <a href=
           "http://www.w3.org/Style/CSS/Overview.en.html">CSS</a> for their
           applications. Being able to match the breakpoints ensures that images
