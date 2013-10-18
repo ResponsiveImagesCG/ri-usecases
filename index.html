@@ -261,8 +261,9 @@ function closeWarning(element) {
             multiple versions of an image based on different characteristics
             (e.g., format, resolution, orientation, etc.). This allows the user
             agent to select the optimum image to present to an end-user based
-            on the user agent's <a>environmental conditions</a>, while also providing
-            the ability to "<a title="art direction">art direct</a>" images.
+            on the user agent's <a>environmental conditions</a>, while also 
+            providing the ability to "<a title="art direction">art direct</a>" 
+            images.
           </dd>
           <dt>
             <cite><a href=
@@ -404,7 +405,8 @@ function closeWarning(element) {
         </h3>
         <p>
           Image dimensions in responsive layouts tend to vary according to the
-          size of the viewport. This often results in large images being sent
+          size of the viewport. This often results in images with large 
+          dimensions (e.g., 2x or more times the size of the viewport) being sent
           to browsers with narrow viewports, which are then resized by the
           browser to fit the design (see, for example, <cite><a href=
           "http://blog.netvlies.nl/design-interactie/retina-revolution/">Retina
@@ -573,8 +575,8 @@ function closeWarning(element) {
 @media screen and (max-width: 41em) { ... }
 </pre>
         <p>
-          Developers currently match specific <a title="breakpoint">breakpoints</a> for images to
-          the breakpoints that they have defined in the <a href=
+          Developers currently match specific <a title="breakpoint">breakpoints</a> 
+          for images to the breakpoints that they have defined in the <a href=
           "http://www.w3.org/Style/CSS/Overview.en.html">CSS</a> for their
           applications. Being able to match the breakpoints ensures that images
           are operating under the same rules that define the layout of a
@@ -690,8 +692,9 @@ function closeWarning(element) {
           "http://dev.w3.org/csswg/mediaqueries4/">CSS Media Queries level
           4</a> include <a href=
           "http://dev.w3.org/csswg/mediaqueries4/#script">script</a>, <a href=
-          "http://dev.w3.org/csswg/mediaqueries4/#pointer">pointer</a>,&nbsp;<a href="http://dev.w3.org/csswg/mediaqueries4/#hover">hover</a>,
-          and &nbsp;<a href=
+          "http://dev.w3.org/csswg/mediaqueries4/#pointer">pointer</a>, 
+          <a href="http://dev.w3.org/csswg/mediaqueries4/#hover">hover</a>,
+          and <a href=
           "http://dev.w3.org/csswg/mediaqueries4/#luminosity">luminosity</a>.
           The lack of a declarative mechanism to associate image content with
           media features means that developers cannot use them without relying
@@ -744,14 +747,15 @@ function closeWarning(element) {
           Image formats
         </h3>
         <p>
-          Developers rely on different on capabilities of a range of image
+          Developers rely on the different  capabilities of a range of image
           formats to communicate effectively. These capabilities include, but
           are not limited to, alpha transparency, animation, high-color depth
-          support, or particular compressing technique. For example, JPEG
-          offers developers good optimization between image quality and file
-          size, but lacks alpha transparency or animation. So, in cases where
-          alpha transparency or animation is needed, developers may instead
-          rely on PNG, GIF, and emerging formats like WebP.
+          support, or better compression ratios for certain image categories. 
+          For example, JPEG offers developers good optimization between image 
+          quality and file size, but lacks alpha transparency or animation. 
+          So, in cases where alpha transparency or animation is needed, 
+          developers may instead rely on PNG, GIF, and emerging formats like 
+          WebP.
         </p>
         <p>
           In a responsive design, images need to be displayed at different
@@ -817,7 +821,7 @@ function closeWarning(element) {
           <p>
             The <a>solution</a> MUST support selection based on viewport width
             and device-pixel-ratio (DPR). Sending the right image for the given
-            dimension and DRP avoids delaying the page load, wasting bandwidth,
+            dimension and DPR avoids delaying the page load, wasting bandwidth,
             and potentially reduces the impact on battery life (as the device's
             antenna can be powered off more quickly and smaller images are
             faster to process and display). It can also potentially save users
