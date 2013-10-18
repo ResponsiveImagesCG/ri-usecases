@@ -2,16 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=600,initial-scale=1">
     <title>
       Use Cases and Requirements for Standardizing Responsive Images
     </title>
     <style>
-                    .stretchy{
-                                width: 100%;    
-                        }
+		.stretchy{width: 100%;}
+		@media all and (max-width: 600px){
+			main{
+				 display: block;
+				 margin-left: -1.5em;
+			}	
+		}
     </style>
-    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async=""
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async
     class='remove'>
 </script>
     <script class='remove'>
@@ -120,6 +124,7 @@ var respecConfig = {
       "https://raw.github.com/ResponsiveImagesCG/meta/master/logo/Web/RICG_logo_small.png"
       alt="Responsive Images Community Group"></a>
     </p>
+    <main>
     <section id="abstract">
       <p>
         This document captures the use cases and requirements for standardizing
@@ -518,7 +523,7 @@ function closeWarning(element) {
           the browser in the image.
         </p>
         <figure>
-          <video controls="" poster="videos/screenrmx1.jpg" class="stretchy"
+          <video controls poster="videos/screenrmx1.jpg" class="stretchy"
           style="max-width: 652px" onclick=
           "if(/Android/.test(navigator.userAgent))this.play();">
           <source src="videos/screenrmx1.m4v" type="video/mp4">
@@ -539,7 +544,7 @@ function closeWarning(element) {
             "http://www.adobe.com/go/getflashplayer_en"> <img alt=
             "Responsive images on Meego website" src="videos/screenrmx1.jpg"
             style="position:absolute;left:0;" width="652" height="389" title=
-            "Video playback is not supported by your browser">
+            "Video playback is not supported by your browser"></embed>
           </object></video>
           <figcaption>
             <p>
@@ -560,7 +565,7 @@ function closeWarning(element) {
           set of rules) that determines the point at which the contents of that
           media query are applied to a page’s layout. For example:
         </p>
-        <pre class="example">
+        <pre class="example" style="overflow:auto">
 @media screen and (max-width: 16em) { ... }
 @media screen and (max-width: 32em) { ... }
 @media screen and (max-width: 41em) { ... }
@@ -1035,5 +1040,6 @@ function closeWarning(element) {
 "http://responsiveimagescg.github.io/meta/scripts/ga.js">
 </script> <script class="ricg" src=
 "http://responsiveimagescg.github.io/meta/scripts/load_cg_participants.js"-->
+  </main>
   </body>
 </html>
