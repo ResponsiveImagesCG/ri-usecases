@@ -2,11 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=.6">
     <title>
       Use Cases and Requirements for Standardizing Responsive Images
     </title>
-    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async=""
+    <style>
+		.stretchy{width: 100%;}
+		@media all and (max-width: 960px){
+			main{
+				 display: block;
+				 margin-left: -2.5em;
+			}	
+		}
+    </style>
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async
     class='remove'>
 </script>
     <script class='remove'>
@@ -115,6 +124,7 @@ var respecConfig = {
       "https://raw.github.com/ResponsiveImagesCG/meta/master/logo/Web/RICG_logo_small.png"
       alt="Responsive Images Community Group"></a>
     </p>
+    <main>
     <section id="abstract">
       <p>
         This document captures the use cases and requirements for standardizing
@@ -174,15 +184,15 @@ function closeWarning(element) {
         a device is rotated from portrait to landscape, and so on), thus a user
         agent constantly responds to events that change the properties of media
         features. As a document's layout adapts to changes in media features
-        and <a>media type</a>, an image's ability to communicate effectively
+        and media type, an image's ability to communicate effectively
         can be significantly reduced (e.g., images start to show compression
         artifacts as they are scaled to match the quality of media or some
         media feature). When this happens, developers rely on various <a href=
         "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
         client/server-side solutions</a> to present images at different
         resolutions, or even in different formats. Swapping images provides a
-        means to continue communicating effectively as media features
-        dynamically change.
+        means to continue communicating effectively as the features of media
+        change dynamically.
       </p>
       <p>
         Furthermore, as the <a href=
@@ -251,8 +261,9 @@ function closeWarning(element) {
             multiple versions of an image based on different characteristics
             (e.g., format, resolution, orientation, etc.). This allows the user
             agent to select the optimum image to present to an end-user based
-            on the user agent's environmental conditions, while also providing
-            the ability to "<a title="art direction">art direct</a>" images.
+            on the user agent's <a>environmental conditions</a>, while also 
+            providing the ability to "<a title="art direction">art direct</a>" 
+            images.
           </dd>
           <dt>
             <cite><a href=
@@ -264,8 +275,22 @@ function closeWarning(element) {
             list of device and agent specific preferences. Servers can then use
             these "client hints" to assist in content negotiation, ideally
             resulting in content being served that best matches the
-            environmental conditions of the client for the resource being
+            <a>environmental conditions</a> of the client for the resource being
             requested.
+          </dd>
+          <dt>
+            <cite><a href=
+            "http://tabatkins.github.io/specs/respimg/Overview.html">Proposal
+            for RespImg Syntax</a></cite>
+          </dt>
+          <dd>
+            The <cite>RespImg Syntax</cite> introduces a new
+            "<code>src-n</code>" attribute set on the <code>img</code> element
+            that accepts a small set of microsyntaxes. These microsyntaxes
+            address the viewport-based selection, device-pixel-ratio-based
+            selection, and art direction use cases described in this document.
+            The proposal claims to avoid the implementor concerns associated
+            with the `picture` element proposal.
           </dd>
         </dl>
       </section>
@@ -275,8 +300,8 @@ function closeWarning(element) {
         Limitations of current techniques
       </h2>
       <p>
-        As currently there are no standardized solutions implemented in main
-        stream browsers, web developers are relying on various <a href=
+        As currently there are no standardized solutions implemented in
+        mainstream browsers, web developers are relying on various <a href=
         "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
         techniques</a> to use responsive images in their applications.
         Unfortunately, there are significant <dfn>limitations</dfn> with these
@@ -357,89 +382,90 @@ function closeWarning(element) {
       </p>
       <section>
         <h3>
-          Resolution switching
+          Resolution-based selection
         </h3>
         <p>
-          Image dimensions in responsive layouts tend to vary according to the
-          viewport size. This often results in large images being sent to
-          browsers with narrow viewports, which are then resized by the browser
-          to fit the design (see, for example, "<a href=
-          "http://blog.netvlies.nl/design-interactie/retina-revolution/">Retina
-          Revolution</a>" by Daan Jobsis).
+          Developers generally want to provide the same image in multiple
+          resolutions, so that high-res devices can get the optimum image for a
+          given resolution, while low-resolution devices can avoid wasting time
+          and bandwidth downloading overly-large files.
         </p>
-        <p>
-          There is a need for browsers to request image resources whose display
-          dimensions closely match the layout dimensions. Sending the right
-          image for the given dimension avoids delaying the page load, wasting
-          bandwidth, and reducing the impact on battery life (as the device's
-          antenna can be powered off more quickly). It can also potentially
-          save users money by not downloading redundant image data.
-        </p>
-        <p>
-          The use case can be divided into two sub-categories:
-        </p>
-        <dl>
-          <dt>
-            Resolution switching based on device-pixel-ratio:
-          </dt>
-          <dd>
-            To display images in a way that reduces perceptable artifacts
-            (i.e., so the images look "crisp"), devices with different screen
-            densities require images with different minimal resolutions. Thus,
-            the higher the pixel density, the more pixels the image needs to
-            have to look good. This also applies to icons, where completely
-            different images may need to be used for different
-            device-pixel-ratios (see "All the sizes of iOS app icons", by Neven
-            Mrgan).
-          </dd>
-          <dd>
-            <figure>
-              <div>
-                <img src="images/dpr-camera-man.jpg" width="960" height="320"
-                style="max-width:960px" class="stretchy" alt=
-                "an image displayed at 1x DPR, the same resolution stretched to display at 2x DPR, and with double the resolution at 2x DPR">
-              </div>
-              <figcaption>
-                <p>
-                  On a device with a device pixel ratio greater than 1, higher
-                  image resolutions are required to reduce visual artifacts
-                  resulting from compression.
-                </p>
-              </figcaption>
-            </figure>
-          </dd>
-          <dt>
-            Resolution switching based on viewport dimensions:
-          </dt>
-          <dd>
-            Different viewport sizes result in different image dimensions.
-          </dd>
-          <dd>
-            <figure>
-              <div>
-                <img src="images/viewport-camera-man.jpg" width="960" height=
-                "320" style="max-width:960px" class="stretchy" alt=
-                "the same photograph at two resolutions, but displayed in equal-width viewports, will look identical">
-              </div>
-              <figcaption>
-                <p>
-                  To optimize performance, authors can use images that more
-                  closely match the size of the viewport.
-                </p>
-              </figcaption>
-            </figure>
-          </dd>
-        </dl>
-        <p class="note">
-          The reason display dimensions are not considered for the resolution
-          switching use-case is that these are not known to the browser until
-          relatively late in the page load life cycle, and relying on them is
-          likely to introduce a delay to the page's load time.
-        </p>
+        <figure>
+          <img src="images/resolution_selection.jpg" alt=
+          "Screens have a range of resolutions. Both real and virtual." style=
+          "max-width: 415px" class="stretchy">
+          <figcaption>Figure shows screens that having different resolutions. These resolutions 
+            can be either physical (matching physical pixels) or virtual (matching css pixels).
+          </figcaption> 
+        </figure>
       </section>
       <section>
         <h3>
-          Art direction
+          Viewport-based selection
+        </h3>
+        <p>
+          Image dimensions in responsive layouts tend to vary according to the
+          size of the viewport. This often results in images with large 
+          dimensions (e.g., 2x or more times the size of the viewport) being sent
+          to browsers with narrow viewports, which are then resized by the
+          browser to fit the design (see, for example, <cite><a href=
+          "http://blog.netvlies.nl/design-interactie/retina-revolution/">Retina
+          Revolution</a></cite> by Daan Jobsis and the <cite><a href=
+          "http://filamentgroup.com/lab/rwd_img_compression/">compressive
+          images</a></cite> technique). Ideally, developers would like to serve
+          images that match the user's viewport dimensions. Without a means to
+          do this, they sometimes need to send more data to the user than they
+          would otherwise need to.
+        </p>
+        <p>
+          For example, a 1000px wide image might be appropriate as a 1x image
+          when used to fill the background of the page, but it’s far too large
+          to use for the same purpose on a 320px wide screen. On a screen that
+          small, it’s more like a 2x or 3x image. In other words, the same
+          image might be applicable to multiple viewport sizes, but at
+          different effective resolutions.
+        </p>
+        <figure>
+          <img src="images/viewport_selection.jpg" alt=
+          "3 different viewport layouts, where the size of images differs based on the viewport."
+          class="stretchy" style="max-width: 415px">
+          <figcaption>
+            <p>
+              To avoid sending excess data, developers will send images that
+              more closely match the size of the viewport.
+            </p>
+          </figcaption>
+        </figure>
+      </section>
+      <section>
+        <h3>
+          Device-pixel-ratio-based selection
+        </h3>
+        <p>
+          To display images in a way that reduces perceptible artifacts (i.e.,
+          so the images look "crisp"), devices with different screen densities
+          require images with different minimal resolutions. Thus, the higher
+          the pixel density, the more pixels an image needs to have to look
+          good. This also applies to icons, where completely different images
+          may need to be used for different device-pixel-ratios (see
+          <cite><a href=
+          "http://mrgan.tumblr.com/post/708404794/ios-app-icon-sizes">All the
+          sizes of iOS app icons</a></cite>, by Neven Mrgan).
+        </p>
+        <figure>
+          <img src="images/dpr_selection.jpg" class="stretchy" style=
+          "max-width: 415px" alt=
+          "three devices, each having a unique device pixel ratio of 1x, 1.5, and 3x respectively.">
+          <figcaption>
+              On a device with a device-pixel-ratio greater than 1, higher
+              image resolutions are required to reduce visual artifacts
+              resulting from compression.
+          </figcaption>
+        </figure>
+      </section>
+      <section>
+        <h3>
+          <dfn>Art direction</dfn>
         </h3>
         <p>
           In a responsive design, it is typical to change an image so it can be
@@ -456,7 +482,8 @@ function closeWarning(element) {
           <li>On a smaller screen, shrinking the same image can reduce its
           relevance, usefulness, and legibility. Thus, by "art directing", a
           web developer can better control communication by explicitly
-          dictating which image should be shown at which size (or when some <a>
+          dictating which image should be shown at which size (or when some 
+          <a title="environmental conditions">
             environmental condition</a> is met).
           </li>
         </ul>
@@ -465,9 +492,8 @@ function closeWarning(element) {
         </p>
         <figure>
           <div>
-            <img src="images/art_direction.jpg" width="800" height="520" style=
-            "max-width:800px" class="stretchy" alt=
-            "four devices showing art directed crops of a dog">
+            <img src="images/art_direction.jpg" style="max-width:400px" class=
+            "stretchy" alt="four devices showing art directed crops of a dog.">
           </div>
           <figcaption>
             <p>
@@ -501,8 +527,9 @@ function closeWarning(element) {
           the browser in the image.
         </p>
         <figure>
-          <video controls="" poster="videos/screenrmx1.jpg" width="652" height=
-          "389" onclick="if(/Android/.test(navigator.userAgent))this.play();">
+          <video controls poster="videos/screenrmx1.jpg" class="stretchy"
+          style="max-width: 652px" onclick=
+          "if(/Android/.test(navigator.userAgent))this.play();">
           <source src="videos/screenrmx1.m4v" type="video/mp4">
           <source src="videos/screenrmx1.webm" type="video/webm">
           <source src="videos/screenrmx1.ogv" type="video/ogg">
@@ -521,7 +548,7 @@ function closeWarning(element) {
             "http://www.adobe.com/go/getflashplayer_en"> <img alt=
             "Responsive images on Meego website" src="videos/screenrmx1.jpg"
             style="position:absolute;left:0;" width="652" height="389" title=
-            "Video playback is not supported by your browser">
+            "Video playback is not supported by your browser"></embed>
           </object></video>
           <figcaption>
             <p>
@@ -542,14 +569,14 @@ function closeWarning(element) {
           set of rules) that determines the point at which the contents of that
           media query are applied to a page’s layout. For example:
         </p>
-        <pre class="example">
+        <pre class="example" style="overflow:auto">
 @media screen and (max-width: 16em) { ... }
 @media screen and (max-width: 32em) { ... }
 @media screen and (max-width: 41em) { ... }
 </pre>
         <p>
-          Developers currently match specific <a>breakpoints</a> for images to
-          the breakpoints that they have defined in the <a href=
+          Developers currently match specific <a title="breakpoint">breakpoints</a> 
+          for images to the breakpoints that they have defined in the <a href=
           "http://www.w3.org/Style/CSS/Overview.en.html">CSS</a> for their
           applications. Being able to match the breakpoints ensures that images
           are operating under the same rules that define the layout of a
@@ -600,8 +627,8 @@ function closeWarning(element) {
           blurry and low-quality when compared to text.
         </p>
         <figure>
-          <img src="images/printed_image.jpg" width="403" height="107" alt=
-          "image comparison between screen and print">
+          <img src="images/printed_image.jpg" class="stretchy" style=
+          "max-width:403px" alt="image comparison between screen and print.">
           <figcaption>
             <p>
               Example of a 48px by 48px image and text printed at 1,200 DPI.
@@ -633,9 +660,8 @@ function closeWarning(element) {
         </p>
         <figure>
           <div>
-            <img class="stretchy" src="images/color_and_bw_graph.png" width=
-            "560" style="max-width: 560px" height="211" alt=
-            "a color and a black and white graph">
+            <img class="stretchy" src="images/color_and_bw_graph.png" style=
+            "max-width: 560px" alt="a color and a black and white graph">
           </div>
           <figcaption>
             <p>
@@ -666,8 +692,9 @@ function closeWarning(element) {
           "http://dev.w3.org/csswg/mediaqueries4/">CSS Media Queries level
           4</a> include <a href=
           "http://dev.w3.org/csswg/mediaqueries4/#script">script</a>, <a href=
-          "http://dev.w3.org/csswg/mediaqueries4/#pointer">pointer</a>,&nbsp;<a href="http://dev.w3.org/csswg/mediaqueries4/#hover">hover</a>,
-          and &nbsp;<a href=
+          "http://dev.w3.org/csswg/mediaqueries4/#pointer">pointer</a>, 
+          <a href="http://dev.w3.org/csswg/mediaqueries4/#hover">hover</a>,
+          and <a href=
           "http://dev.w3.org/csswg/mediaqueries4/#luminosity">luminosity</a>.
           The lack of a declarative mechanism to associate image content with
           media features means that developers cannot use them without relying
@@ -682,14 +709,11 @@ function closeWarning(element) {
         <p>
           A common practice in creating flexible layouts is to specify the size
           values in media queries as relative units: <code>em</code>,
-          <code>rem</code>, <code>vw</code>/<code>vh</code> etc. See, for
-          example, Lyza Gardner's article <a href=
-          "http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/">
-          <cite>The EMs have it: Proportional Media Queries FTW!</cite></a> .
-          This approach commonly uses <code>em</code>s in order to reflow
-          layouts based on users’ default font size preferences, and to avoid
-          cases where the layout breaks for users or devices who set a default
-          font-size that is other than the usual 16px.
+          <code>rem</code>, <code>vw</code>/<code>vh</code> etc. This approach
+          commonly uses <code>em</code>s in order to reflow layouts based on
+          users’ default font size preferences, and to avoid cases where the
+          layout breaks for users or devices who set a default font-size that
+          is other than the usual 16px.
         </p>
         <p>
           In flexible layout designs with <code>em</code> based media queries,
@@ -701,9 +725,11 @@ function closeWarning(element) {
         <figure>
           <div>
             <img src="images/rel-units-bad.jpg" alt=
-            "Art direction with pixels produces the wrong layout"> <img src=
+            "Art direction with pixels produces the wrong layout" class=
+            "stretchy" style="max-width: 468px"> <img src=
             "images/rel-units-good.jpg" alt=
-            "Art direction with relative units produces the desired layout">
+            "Art direction with relative units produces the desired layout"
+            class="stretchy" style="max-width: 434px">
           </div>
           <figcaption>
             At the usual default font-size of 16px, the Media Query’s 30em
@@ -718,42 +744,19 @@ function closeWarning(element) {
       </section>
       <section>
         <h3>
-          API to manipulate sources
-        </h3>
-        <p>
-          In some cases the image data is dynamically generated (e.g., using
-          <a href="http://www.w3.org/TR/2dcontext/">the <code>canvas</code>
-          element</a> and related APIs) or is acquired from the device itself
-          (e.g., from the camera on a phone or tablet using some form of media
-          capture). Developers need practical means to interface
-          programmatically with the source of an image or a set of images.
-          Without having a suitable API, it will be difficult for developers to
-          manipulate the sources of images or to even know what source is
-          currently being displayed.
-        </p>
-      </section>
-      <section>
-        <h3>
           Image formats
         </h3>
         <p>
-          Some images are best suited to a specific file type for reasons such
-          as file size optimization, alpha transparency, scalability,
-          animation, etc. For example, a photo usually requires good color
-          depth, but does not require alpha transparency or animation; JPEG or
-          WebP are well-suited to these needs and offer good optimization
-          between image quality and file size. Icons are often simpler in terms
-          of color depth, but may require alpha transparency; the PNG and WebP
-          format is better-suited to these needs.
+          Developers rely on the different  capabilities of a range of image
+          formats to communicate effectively. These capabilities include, but
+          are not limited to, alpha transparency, animation, high-color depth
+          support, or better compression ratios for certain image categories. 
+          For example, JPEG offers developers good optimization between image 
+          quality and file size, but lacks alpha transparency or animation. 
+          So, in cases where alpha transparency or animation is needed, 
+          developers may instead rely on PNG, GIF, and emerging formats like 
+          WebP.
         </p>
-        <div class="issue">
-          <p>
-            Sharing URLs for formats that are not interoperable across browsers
-            is a problem in the wild. See <a href=
-            "https://github.com/ResponsiveImagesCG/ri-usecases/issues/11">issue
-            11</a>.
-          </p>
-        </div>
         <p>
           In a responsive design, images need to be displayed at different
           sizes and device pixel ratios. When possible, a vector format such as
@@ -779,32 +782,20 @@ function closeWarning(element) {
         </p>
         <ul>
           <li>Giving users an option to only download images in the quality
-          they desire - or disable images all together, as Google Chrome
-          currently does through site preferences.
+          they desire - or disable images all together.
           </li>
           <li>Automatically select the most suitable image for the browsing
           environment.
           </li>
         </ul>
         <p>
-          There are browsers already catering for these kinds of situations:
-          for example Opera Mini provides users with a choice of image quality
+          There are browsers already catering for these kinds of situations.
+          For example, Opera Mini provides users with a choice of image quality
           (but those images are compressed on the server). Amazon's Silk
           browser also compresses images "in the cloud" (i.e., through their
           own proxy servers) before serving those images to a user's device.
-        </p>
-      </section>
-      <section>
-        <h3>
-          Performance oriented
-        </h3>
-        <p>
-          One of the main needs from a responsive images solution is speed, and
-          specifically it needs to result in faster page loads than the current
-          <a>techniques</a> are providing. One of the key aspects of resource
-          download in the browser is the browser's ability to kick-off the
-          resource download as soon as the tag containing the resource is read
-          (but possibly before it is parsed, since the parser may be blocked).
+          Google Chrome also allows users to disable images altogether through
+          "site preferences".
         </p>
       </section>
     </section>
@@ -828,6 +819,17 @@ function closeWarning(element) {
         </li>
         <li>
           <p>
+            The <a>solution</a> MUST support selection based on viewport width
+            and device-pixel-ratio (DPR). Sending the right image for the given
+            dimension and DPR avoids delaying the page load, wasting bandwidth,
+            and potentially reduces the impact on battery life (as the device's
+            antenna can be powered off more quickly and smaller images are
+            faster to process and display). It can also potentially save users
+            money by not downloading redundant image data.
+          </p>
+        </li>
+        <li>
+          <p>
             The <a>solution</a> MUST degrade gracefully on legacy user agents
             by, for example, relying on HTML's built-in fallback mechanisms and
             legacy elements.
@@ -847,53 +849,6 @@ function closeWarning(element) {
             "http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html">content
             negotiation</a> or similar techniques (i.e., they are not mutually
             exclusive).
-          </p>
-        </li>
-        <li>
-          <p>
-            The <a>solution</a> MUST provide developers with a means to
-            programmatically interface with image resources, as well as access
-            relevant attributes and methods that make the solution practical to
-            work with (i.e., it shouldn't require complicated Regex or nested
-            loops to manipulate values). In addition, the <a href=
-            "#solution">solution</a> MUST provide means to hook into relevant
-            events resulting from changes in state (<a href=
-            "http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-none">unavailable</a>,
-            <a href=
-            "http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-inc">
-            partially available</a>, <a href=
-            "http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-all">
-            completely available</a>, <a href=
-            "http://www.w3.org/html/wg/drafts/html/master/single-page.html#img-error">
-            broken</a>). In any case, an API SHOULD provide a means to:
-          </p>
-          <ul>
-            <li>
-              <p>
-                Determine the current source of the image.
-              </p>
-            </li>
-            <li>
-              <p>
-                Determine what environmental condition caused the current
-                source to be selected (reflected as, for example, a CSS Media
-                Query).
-              </p>
-            </li>
-            <li>
-              <p>
-                Add, remove, and update image sources.
-              </p>
-            </li>
-            <li>Deal with events.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>
-            The <a>solution</a> MUST afford developers the ability to
-            explicitly define different image versions as opposed to only
-            different resolutions of the same image.
           </p>
         </li>
         <li>
@@ -936,8 +891,12 @@ function closeWarning(element) {
         <li>
           <p>
             In order to avoid introducing delays to the page load, the solution
-            MUST intergrate well with existing performance optimization
-            provided by browsers (e.g., the preload scanner).
+            MUST integrate well with existing performance optimization provided
+            by browsers (e.g., the solution would work well with a browser's
+            the preload scanner). Specifically, the solution needs to result in
+            faster page loads than the current <a href=
+            "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
+            techniques</a> are providing.
           </p>
         </li>
       </ol>
@@ -951,6 +910,7 @@ function closeWarning(element) {
         "https://github.com/ResponsiveImagesCG/ri-usecases/issues">Please help
         us close them</a>!
       </p>
+      <div id="open-issues-xhr"></div>
       <h2>
         Changes history
       </h2>
@@ -979,8 +939,20 @@ function closeWarning(element) {
         Neves, Eileen Webb, and Anselm Hannemann.
       </p>
       <p>
-        <!--
-        To get the participant's list, go to
+        This document repoduces text from <a href=
+        "http://www.xanthir.com/contact/">Tab Atkin</a>'s <cite>Proposal for
+        RespImg Syntax</cite>, as permitted by its C0 license.
+      </p>
+      <p>
+        The figure in the viewport-based selection section is a derivative work
+        from <cite><a href=
+        "http://24ways.org/2012/responsive-images-what-we-thought-we-needed/"
+        rel="bookmark">Responsive Images: What We Thought We Needed</a></cite>,
+        by <a href="http://paulrobertlloyd.com/">Paul Robert Lloyd</a>.
+      </p>
+      <p>
+        <!-- 
+        To get the participant's list, go to 
         http://www.w3.org/community/respimg/participants
 
         var all = document.querySelectorAll("td>h3"),
@@ -1066,14 +1038,14 @@ function closeWarning(element) {
         list of participants</a> of the Responsive Images Community Group is
         available at the W3C Community Group Website.
       </p>
-    </section><script class="ricg" src=
-    "https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/show_issues.js">
+    </section><!--script class="ricg" src=
+    "http://responsiveimagescg.github.io/meta/scripts/show_issues.js">
 </script> <script class="ricg" src=
 "https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse">
 </script> <script class="ricg" src=
-"https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/ga.js">
+"http://responsiveimagescg.github.io/meta/scripts/ga.js">
 </script> <script class="ricg" src=
-"https://raw.github.com/ResponsiveImagesCG/meta/master/scripts/load_cg_participants.js">
-</script>
+"http://responsiveimagescg.github.io/meta/scripts/load_cg_participants.js"-->
+  </main>
   </body>
 </html>
