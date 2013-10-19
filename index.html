@@ -228,29 +228,34 @@ var respecConfig = {
             attribute</a></cite>
           </dt>
           <dd>
-            Allows authors to define various image resources and “hints” that
-            assist a user agent to determine the most appropriate image source
-            to display. Given a set of image resources, the user agent has the
-            option of either following or overriding the author’s declarations
-            to optimize the user experience based on criteria such as <a href=
-            "http://usecases.responsiveimages.org/#resolution-switching">display
-            density</a>, connection type, <a href=
-            "http://usecases.responsiveimages.org/#user-control-over-sources">user
-            preferences</a>, and so on.
+            <p>
+              Allows authors to define various image resources and “hints” that
+              assist a user agent to determine the most appropriate image
+              source to display. Given a set of image resources, the user agent
+              has the option of either following or overriding the author’s
+              declarations to optimize the user experience based on criteria
+              such as <a href=
+              "http://usecases.responsiveimages.org/#resolution-switching">display
+              density</a>, connection type, <a href=
+              "http://usecases.responsiveimages.org/#user-control-over-sources">
+              user preferences</a>, and so on.
+            </p>
           </dd>
           <dt>
             <cite><a href="http://picture.responsiveimages.org">The `picture`
             element</a></cite>
           </dt>
           <dd>
-            Building on <a href="http://dev.w3.org/html5/srcset/">srcset</a>,
-            this specification defines a declarative solution for grouping
-            multiple versions of an image based on different characteristics
-            (e.g., format, resolution, orientation, etc.). This allows the user
-            agent to select the optimum image to present to an end-user based
-            on the user agent's <a>environmental conditions</a>, while also
-            providing the ability to "<a title="art direction">art direct</a>"
-            images.
+            <p>
+              Building on <a href="http://dev.w3.org/html5/srcset/">srcset</a>,
+              this specification defines a declarative solution for grouping
+              multiple versions of an image based on different characteristics
+              (e.g., format, resolution, orientation, etc.). This allows the
+              user agent to select the optimum image to present to an end-user
+              based on the user agent's <a>environmental conditions</a>, while
+              also providing the ability to "<a title="art direction">art
+              direct</a>" images.
+            </p>
           </dd>
           <dt>
             <cite><a href=
@@ -258,12 +263,14 @@ var respecConfig = {
             Client Hints</a></cite>
           </dt>
           <dd>
-            Defines a set of HTTP headers that allow browsers to indicate a
-            list of device and agent specific preferences. Servers can then use
-            these "client hints" to assist in content negotiation, ideally
-            resulting in content being served that best matches the
-            <a>environmental conditions</a> of the client for the resource
-            being requested.
+            <p>
+              Defines a set of HTTP headers that allow browsers to indicate a
+              list of device and agent specific preferences. Servers can then
+              use these "client hints" to assist in content negotiation,
+              ideally resulting in content being served that best matches the
+              <a>environmental conditions</a> of the client for the resource
+              being requested.
+            </p>
           </dd>
           <dt>
             <cite><a href=
@@ -271,13 +278,16 @@ var respecConfig = {
             for RespImg Syntax</a></cite>
           </dt>
           <dd>
-            The <cite>RespImg Syntax</cite> introduces a new
-            "<code>src-n</code>" attribute set on the <code>img</code> element
-            that accepts a small set of microsyntaxes. These microsyntaxes
-            address the viewport-based selection, device-pixel-ratio-based
-            selection, and art direction use cases described in this document.
-            The proposal claims to avoid the implementor concerns associated
-            with the `picture` element proposal.
+            <p>
+              The <cite>RespImg Syntax</cite> introduces a new
+              "<code>src-n</code>" attribute set on the <code>img</code>
+              element that accepts a small set of microsyntaxes. These
+              microsyntaxes address the viewport-based selection,
+              device-pixel-ratio-based selection, and art direction use cases
+              described in this document. The proposal claims to avoid the
+              implementor concerns associated with the `picture` element
+              proposal.
+            </p>
           </dd>
         </dl>
       </section>
