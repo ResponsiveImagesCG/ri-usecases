@@ -7,15 +7,23 @@
       Use Cases and Requirements for Standardizing Responsive Images
     </title>
     <style>
-		.stretchy{width: 100%;}
-		@media all and (max-width: 960px){
-			main{
-				 display: block;
-				 margin-left: -2.5em;
-			}	
-		}
+.stretchy{width: 100%;}
+    @media all and (max-width: 960px){
+                html{
+                                                margin-left: -2.5em;
+                }       
+    }
+    @media print{
+                #participants{
+                                                display: none;  
+                }       
+                a:link,a:visited{
+                                                text-decoration: none;
+                                                color: inherit;
+                }
+    }
     </style>
-    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async=""
     class='remove'>
 </script>
     <script class='remove'>
@@ -23,7 +31,7 @@ var respecConfig = {
                     additionalCopyrightHolders: "Copyright © the Contributors to this Specification, published by the <a href='http://www.w3.org/community/respimg/'>Responsive Images Community Group</a> under the <a href= 'https://www.w3.org/community/about/agreements/cla/'>W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href= 'http://www.w3.org/community/about/agreements/cla-deed/'>summary</a> is available.",
 
                     // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-                    specStatus: "unofficial",
+                    specStatus: "NOTE",
 
                     // the specification's short name, as in http://www.w3.org/TR/short-name/
                     shortName: "respimg-usecases",
@@ -124,7 +132,6 @@ var respecConfig = {
       "https://raw.github.com/ResponsiveImagesCG/meta/master/logo/Web/RICG_logo_small.png"
       alt="Responsive Images Community Group"></a>
     </p>
-    <main>
     <section id="abstract">
       <p>
         This document captures the use cases and requirements for standardizing
@@ -143,27 +150,7 @@ var respecConfig = {
         us</a>!
       </p>
     </section>
-    <section id="sotd">
-      <!-- p class="stability" id="wip">
-        <strong>This is a work in progress!</strong> For the latest updates
-        from the HTML WG, possibly including important bug fixes, please look
-        at the <a href="http://usecases.responsiveimages.org">editor's
-        draft</a> instead. If you find any bugs, typos, or issues please
-        <a href=
-        "https://github.com/ResponsiveImagesCG/picture-element/issues">file a
-        bug</a>&nbsp;on Github! <input onclick="closeWarning(this.parentNode)"
-        type="button" value="X">
-      </p><script>
-function closeWarning(element) {
-      element.parentNode.removeChild(element);
-      var date = new Date();
-      date.setDate(date.getDate()+4);
-      document.cookie = 'hide-obsolescence-warning=1; expires=' + date.toGMTString();
-      }
-      if (getCookie('hide-obsolescence-warning') == '1')
-      setTimeout(function () { document.getElementById('wip').parentNode.removeChild(document.getElementById('wip')); }, 2000);
-      </script -->
-    </section><!--toc-->
+    <section id="sotd"></section>
     <section>
       <h2>
         Introduction
@@ -184,10 +171,10 @@ function closeWarning(element) {
         a device is rotated from portrait to landscape, and so on), thus a user
         agent constantly responds to events that change the properties of media
         features. As a document's layout adapts to changes in media features
-        and media type, an image's ability to communicate effectively
-        can be significantly reduced (e.g., images start to show compression
-        artifacts as they are scaled to match the quality of media or some
-        media feature). When this happens, developers rely on various <a href=
+        and media type, an image's ability to communicate effectively can be
+        significantly reduced (e.g., images start to show compression artifacts
+        as they are scaled to match the quality of media or some media
+        feature). When this happens, developers rely on various <a href=
         "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
         client/server-side solutions</a> to present images at different
         resolutions, or even in different formats. Swapping images provides a
@@ -261,8 +248,8 @@ function closeWarning(element) {
             multiple versions of an image based on different characteristics
             (e.g., format, resolution, orientation, etc.). This allows the user
             agent to select the optimum image to present to an end-user based
-            on the user agent's <a>environmental conditions</a>, while also 
-            providing the ability to "<a title="art direction">art direct</a>" 
+            on the user agent's <a>environmental conditions</a>, while also
+            providing the ability to "<a title="art direction">art direct</a>"
             images.
           </dd>
           <dt>
@@ -275,8 +262,8 @@ function closeWarning(element) {
             list of device and agent specific preferences. Servers can then use
             these "client hints" to assist in content negotiation, ideally
             resulting in content being served that best matches the
-            <a>environmental conditions</a> of the client for the resource being
-            requested.
+            <a>environmental conditions</a> of the client for the resource
+            being requested.
           </dd>
           <dt>
             <cite><a href=
@@ -394,9 +381,13 @@ function closeWarning(element) {
           <img src="images/resolution_selection.jpg" alt=
           "Screens have a range of resolutions. Both real and virtual." style=
           "max-width: 415px" class="stretchy">
-          <figcaption>Figure shows screens that having different resolutions. These resolutions 
-            can be either physical (matching physical pixels) or virtual (matching css pixels).
-          </figcaption> 
+          <figcaption>
+            <p>
+              Figure shows screens that having different resolutions. These
+              resolutions can be either physical (matching physical pixels) or
+              virtual (matching css pixels).
+            </p>
+          </figcaption>
         </figure>
       </section>
       <section>
@@ -405,9 +396,9 @@ function closeWarning(element) {
         </h3>
         <p>
           Image dimensions in responsive layouts tend to vary according to the
-          size of the viewport. This often results in images with large 
-          dimensions (e.g., 2x or more times the size of the viewport) being sent
-          to browsers with narrow viewports, which are then resized by the
+          size of the viewport. This often results in images with large
+          dimensions (e.g., 2x or more times the size of the viewport) being
+          sent to browsers with narrow viewports, which are then resized by the
           browser to fit the design (see, for example, <cite><a href=
           "http://blog.netvlies.nl/design-interactie/retina-revolution/">Retina
           Revolution</a></cite> by Daan Jobsis and the <cite><a href=
@@ -457,9 +448,11 @@ function closeWarning(element) {
           "max-width: 415px" alt=
           "three devices, each having a unique device pixel ratio of 1x, 1.5, and 3x respectively.">
           <figcaption>
+            <p>
               On a device with a device-pixel-ratio greater than 1, higher
               image resolutions are required to reduce visual artifacts
               resulting from compression.
+            </p>
           </figcaption>
         </figure>
       </section>
@@ -482,19 +475,17 @@ function closeWarning(element) {
           <li>On a smaller screen, shrinking the same image can reduce its
           relevance, usefulness, and legibility. Thus, by "art directing", a
           web developer can better control communication by explicitly
-          dictating which image should be shown at which size (or when some 
-          <a title="environmental conditions">
-            environmental condition</a> is met).
+          dictating which image should be shown at which size (or when some
+          <a title="environmental conditions">environmental condition</a> is
+          met).
           </li>
         </ul>
         <p>
           This is illustrated in the figure below.
         </p>
         <figure>
-          <div>
-            <img src="images/art_direction.jpg" style="max-width:400px" class=
-            "stretchy" alt="four devices showing art directed crops of a dog.">
-          </div>
+          <img src="images/art_direction.jpg" style="max-width:400px" class=
+          "stretchy" alt="four devices showing art directed crops of a dog.">
           <figcaption>
             <p>
               Using different images that have been cropped to fit a particular
@@ -527,7 +518,7 @@ function closeWarning(element) {
           the browser in the image.
         </p>
         <figure>
-          <video controls poster="videos/screenrmx1.jpg" class="stretchy"
+          <video controls="" poster="videos/screenrmx1.jpg" class="stretchy"
           style="max-width: 652px" onclick=
           "if(/Android/.test(navigator.userAgent))this.play();">
           <source src="videos/screenrmx1.m4v" type="video/mp4">
@@ -548,7 +539,7 @@ function closeWarning(element) {
             "http://www.adobe.com/go/getflashplayer_en"> <img alt=
             "Responsive images on Meego website" src="videos/screenrmx1.jpg"
             style="position:absolute;left:0;" width="652" height="389" title=
-            "Video playback is not supported by your browser"></embed>
+            "Video playback is not supported by your browser">
           </object></video>
           <figcaption>
             <p>
@@ -575,8 +566,9 @@ function closeWarning(element) {
 @media screen and (max-width: 41em) { ... }
 </pre>
         <p>
-          Developers currently match specific <a title="breakpoint">breakpoints</a> 
-          for images to the breakpoints that they have defined in the <a href=
+          Developers currently match specific <a title=
+          "breakpoint">breakpoints</a> for images to the breakpoints that they
+          have defined in the <a href=
           "http://www.w3.org/Style/CSS/Overview.en.html">CSS</a> for their
           applications. Being able to match the breakpoints ensures that images
           are operating under the same rules that define the layout of a
@@ -659,10 +651,8 @@ function closeWarning(element) {
           labels.
         </p>
         <figure>
-          <div>
-            <img class="stretchy" src="images/color_and_bw_graph.png" style=
-            "max-width: 560px" alt="a color and a black and white graph">
-          </div>
+          <img class="stretchy" src="images/color_and_bw_graph.png" style=
+          "max-width: 560px" alt="a color and a black and white graph">
           <figcaption>
             <p>
               Two pie charts, one in color and one in black and white, which
@@ -692,9 +682,9 @@ function closeWarning(element) {
           "http://dev.w3.org/csswg/mediaqueries4/">CSS Media Queries level
           4</a> include <a href=
           "http://dev.w3.org/csswg/mediaqueries4/#script">script</a>, <a href=
-          "http://dev.w3.org/csswg/mediaqueries4/#pointer">pointer</a>, 
-          <a href="http://dev.w3.org/csswg/mediaqueries4/#hover">hover</a>,
-          and <a href=
+          "http://dev.w3.org/csswg/mediaqueries4/#pointer">pointer</a>,
+          <a href="http://dev.w3.org/csswg/mediaqueries4/#hover">hover</a>, and
+          <a href=
           "http://dev.w3.org/csswg/mediaqueries4/#luminosity">luminosity</a>.
           The lack of a declarative mechanism to associate image content with
           media features means that developers cannot use them without relying
@@ -708,54 +698,32 @@ function closeWarning(element) {
         </h3>
         <p>
           A common practice in creating flexible layouts is to specify the size
-          values in media queries as relative units: <code>em</code>,
-          <code>rem</code>, <code>vw</code>/<code>vh</code> etc. This approach
-          commonly uses <code>em</code>s in order to reflow layouts based on
-          users’ default font size preferences, and to avoid cases where the
-          layout breaks for users or devices who set a default font-size that
-          is other than the usual 16px.
+          values in media queries as relative units (e.g., <code>em</code>s or
+          percentages). This approach allows layouts to match the users’
+          default font size (based on zoom level), and it avoid cases where the
+          layout breaks on devices who set a default font-size is set to
+          something other than the usual 16px.
         </p>
         <p>
-          In flexible layout designs with <code>em</code> based media queries,
-          if art-directed images are not specified in relative units, they can
+          If art-directed images are not specified in relative units, they can
           either break the layout or become distorted when faced with a
           uncommon default font-size (e.g., Amazon's Kindle defaults to 20px
           instead of the usual 16px).
         </p>
-        <figure>
-          <div>
-            <img src="images/rel-units-bad.jpg" alt=
-            "Art direction with pixels produces the wrong layout" class=
-            "stretchy" style="max-width: 468px"> <img src=
-            "images/rel-units-good.jpg" alt=
-            "Art direction with relative units produces the desired layout"
-            class="stretchy" style="max-width: 434px">
-          </div>
-          <figcaption>
-            At the usual default font-size of 16px, the Media Query’s 30em
-            breakpoint and the art direction’s 480px breakpoint are equivalent.
-            If the user changes the default font-size to something other than
-            16px, such as 24px in this example, the Media Query and Art
-            Direction breakpoints are no longer equivalent and the layout
-            breaks. Using em-based breakpoints for art direction solves this
-            problem.
-          </figcaption>
-        </figure>
       </section>
       <section>
         <h3>
           Image formats
         </h3>
         <p>
-          Developers rely on the different  capabilities of a range of image
+          Developers rely on the different capabilities of a range of image
           formats to communicate effectively. These capabilities include, but
           are not limited to, alpha transparency, animation, high-color depth
-          support, or better compression ratios for certain image categories. 
-          For example, JPEG offers developers good optimization between image 
-          quality and file size, but lacks alpha transparency or animation. 
-          So, in cases where alpha transparency or animation is needed, 
-          developers may instead rely on PNG, GIF, and emerging formats like 
-          WebP.
+          support, or better compression ratios for certain image categories.
+          For example, JPEG offers developers good optimization between image
+          quality and file size, but lacks alpha transparency or animation. So,
+          in cases where alpha transparency or animation is needed, developers
+          may instead rely on PNG, GIF, and emerging formats like WebP.
         </p>
         <p>
           In a responsive design, images need to be displayed at different
@@ -819,13 +787,14 @@ function closeWarning(element) {
         </li>
         <li>
           <p>
-            The <a>solution</a> MUST support selection based on viewport width
-            and device-pixel-ratio (DPR). Sending the right image for the given
-            dimension and DPR avoids delaying the page load, wasting bandwidth,
-            and potentially reduces the impact on battery life (as the device's
-            antenna can be powered off more quickly and smaller images are
-            faster to process and display). It can also potentially save users
-            money by not downloading redundant image data.
+            The <a>solution</a> MUST support selection based on viewport
+            dimensions, screen resolution, and device-pixel-ratio (DPR).
+            Sending the right image for the given dimension and DPR avoids
+            delaying the page load, wasting bandwidth, and potentially reduces
+            the impact on battery life (as the device's antenna can be powered
+            off more quickly and smaller images are faster to process and
+            display). It can also potentially save users money by not
+            downloading redundant image data.
           </p>
         </li>
         <li>
@@ -910,7 +879,6 @@ function closeWarning(element) {
         "https://github.com/ResponsiveImagesCG/ri-usecases/issues">Please help
         us close them</a>!
       </p>
-      <div id="open-issues-xhr"></div>
       <h2>
         Changes history
       </h2>
@@ -950,7 +918,7 @@ function closeWarning(element) {
         rel="bookmark">Responsive Images: What We Thought We Needed</a></cite>,
         by <a href="http://paulrobertlloyd.com/">Paul Robert Lloyd</a>.
       </p>
-      <p>
+      <p id="participants">
         <!-- 
         To get the participant's list, go to 
         http://www.w3.org/community/respimg/participants
@@ -966,86 +934,80 @@ function closeWarning(element) {
         "http://w3c.responsiveimages.org">Responsive Images Community Group</a>
         at the time of publication were: Barry Atimer, Daniel Abril, George
         Adamson, Heide Alexander, Marie Alhomme, John Allan, Joshua Allen,
-        Angely Alvarez, Henrique Alves, Agustin Amenabar, Aaryn Anderson,
-        Philip Andrews, Ritchie Anesco, Phil Archer, Tom Atkins, Justin Avery,
-        Mohsen Azimi, Phillip Baker, Raymond Baker, Michael Balensiefer, Steve
-        Barnett, Toni Barrett, Bruno Barros, Paul Barton, Adrian Bateman, Jesse
-        Renée Beach, Robin Berjon, Seth Bertalotto, Anirban Bhattacharya,
-        Nicolaas Bijvoet, Nathan Bleigh, Andreas Bovens, J. Albert Bowden, Adam
+        Angely Alvarez, Agustin Amenabar, Aaryn Anderson, Philip Andrews,
+        Ritchie Anesco, Phil Archer, Tony Atayi, Tom Atkins, Justin Avery,
+        Mohsen Azimi, Phillip Baker, Raymond Baker, Michael Balensiefer, Toni
+        Barrett, Bruno Barros, Paul Barton, Adrian Bateman, Jesse Renée Beach,
+        Robin Berjon, Seth Bertalotto, Anirban Bhattacharya, Nicolaas Bijvoet,
+        Barna Bitai, Nathan Bleigh, Andreas Bovens, J. Albert Bowden, Adam
         Bradley, Rodrigo Brancher, Gordon Brander, Paul Bridgestock, Aaron
         Brosey, Brandon Brown, Cory Brown, mairead buchan, Kris Bulman, Ariel
         Burone, Mathias Bynens, Marcos Caceres, Rusty Calder, Ben Callahan,
         Loïc Calvy, Welch Canavan, Chuck Carpenter, Brandon Carroll, Frederico
         Cerdeira, Daniel Chamberlin, Adi Chikara, David Clements, Geri Coady,
-        Anne-Gaelle Colom, Cyril Concolato, Jessica Constantine, Pete Correia,
-        Greg Cota, Geoff Cowan, Andy Crum, David D'Amico, Jason Daihl, Francois
-        Daoust, Kevin Davies, Robert Dawson, Jacques de Klerk, Timothy de
-        Paris, Ryan DeBeasi, Anna Debenham, Darryl deHaan, David Demaree,
-        George DeMet, Ian Devlin, Alex DiLiberto, peter droogmans, Ronni
-        Dyrholm Chidekel, simpson eddie, Sylvia Egger, Dominic Fee, Ève
-        Février, Maximiliano Firtman, Ben Fonarov, Harry Fozzard, Marlene
-        Frykman, Dennis Gaebel, Igor Gajosinskas, Nicolas Gallagher, Miguel
-        Garcia, Rafael Garcia Lepper, Larry Garfield, Peter Gasston, George
-        GeorgeHaeger, Nick Glenn, David Goss, Chris Grant, Petra Gregorova,
-        Ilya Grigorik, Jason Grigsby, Aaron Grogg, Antoine Guergnon, Jeff
-        Guntle, Aaron Gustafson, Jason Haag, Jordan Haines, Cristina Hanes,
-        Patrick Haney, Anselm Hannemann, chris hardy, Vincent Hardy, Bridget
-        Harrison, Duncan Hawthorne, Dominique Hazaël-Massieux, Chris Hilditch,
-        Jon Hill, Nathan Hinshaw, Sean Hintz, John Holt Ripley, Enrico Hösel,
-        Peter Hrynkow, Kym Huang, Shane Hudson, Vinicius Ianni, Tomomi Imura,
-        Philip Ingrey, Bryn Jackson, Rihnna Jakosalem, Brett Jankord, Scott
-        Jehl, Dave Johnson, Nathanael Jones, Danny Jongerius, Michael Jovel,
-        Chao Ju, Tim Kadlec, Raj Kaimal, Kevin Joe Kanger, Frédéric Kayser, Jin
+        Anne-Gaelle Colom, Cyril Concolato, Jessica Constantine, Greg Cota,
+        Geoff Cowan, Andy Crum, David D'Amico, Jason Daihl, Francois Daoust,
+        Kevin Davies, Robert Dawson, Jacques de Klerk, Timothy de Paris, Ryan
+        DeBeasi, Anna Debenham, Darryl deHaan, David Demaree, George DeMet, Ian
+        Devlin, Alex DiLiberto, peter droogmans, Ronni Dyrholm Chidekel,
+        simpson eddie, Sylvia Egger, Dominic Fee, Ève Février, Maximiliano
+        Firtman, Ben Fonarov, Harry Fozzard, Marlene Frykman, Dennis Gaebel,
+        Igor Gajosinskas, Nicolas Gallagher, Miguel Garcia, Rafael Garcia
+        Lepper, Larry Garfield, Peter Gasston, George GeorgeHaeger, David Goss,
+        Chris Grant, Petra Gregorova, Ilya Grigorik, Jason Grigsby, Aaron
+        Grogg, Antoine Guergnon, Jeff Guntle, Aaron Gustafson, Jason Haag,
+        Jordan Haines, Cristina Hanes, Patrick Haney, Anselm Hannemann, chris
+        hardy, Vincent Hardy, Bridget Harrison, Duncan Hawthorne, Dominique
+        Hazaël-Massieux, Chris Hilditch, Jon Hill, Nathan Hinshaw, Sean Hintz,
+        John Holt Ripley, Enrico Hösel, Peter Hrynkow, Kym Huang, Shane Hudson,
+        Vinicius Ianni, Tomomi Imura, Philip Ingrey, Bryn Jackson, Rihnna
+        Jakosalem, Brett Jankord, Scott Jehl, Dave Johnson, Nathanael Jones,
+        Danny Jongerius, Michael Jovel, Chao Ju, Tim Kadlec, Raj Kaimal, Kevin
+        Joe Kanger, Frédéric Kayser, Serge K. Keller, Arthur Khachatryan, Jin
         Kim, Andreas Klein, Peter Klein, John Kleinschmidt, Daniel Konopacki,
-        Zoran Kurtin, Vitaliy Kuzmin, Gerardo Lagger, Adam Lake, Chris Lamothe,
-        Tom Lane, Matthieu Larcher, Christopher Latham, Bruce Lawson, Zach
-        Leatherman, Silas Lepcha, Kornel Lesinski, Chris Lilley, grappler
-        login, Tania Lopes, Amie Lucas, André Luís, Jacine Luisi, David
-        Maciejewski, Kevin Mack, Ethan Malasky, Josh Marinacci, Eduardo
-        Marques, Mathew Marquis, Daniel Martínez, Tom Maslen, Jacob Mather,
-        Chris McAndrew, Mark McDonnell, Andre Jay Meissner, Benjamin Melançon,
-        Julian Mendl, Rick Messer, Zane Milakovic, Denys Mishunov, Sabine
-        Moebs, Ian Moffitt, Orestis Molopodis, jason morita, David Moulton,
-        Bobby Mozumder, Brian Muenzenmeyer, Emi Myoudou, Irakli Nadareishvili,
-        Giorgio Natili, Christian Neuberger Jr, David Newton, Todd Nienkerk,
-        Ashley Nolan, Johnna Nonboe, Kenneth Nordahl, Mark Nottingham, Lewis
-        Nyman, Darrel O'Pry, Alejandro Oviedo, David Owens, Paddy O’Hanlon,
-        Isabel Palomar, Fernando Pasik, Andrew Pez Pengelly, suzanne peter,
+        Darius Kruythoff, Zoran Kurtin, Vitaliy Kuzmin, Gerardo Lagger, Adam
+        Lake, Chris Lamothe, Tom Lane, Matthieu Larcher, Christopher Latham,
+        Bruce Lawson, Zach Leatherman, Silas Lepcha, Kornel Lesinski, Chris
+        Lilley, grappler login, william lombardo, Tania Lopes, Amie Lucas,
+        André Luís, Jacine Luisi, David Maciejewski, Kevin Mack, Ethan Malasky,
+        Josh Marinacci, Eduardo Marques, Mathew Marquis, Daniel Martínez, Tom
+        Maslen, Jacob Mather, Chris McAndrew, Mark McDonnell, Andre Jay
+        Meissner, Benjamin Melançon, Julian Mendl, Rick Messer, Zane Milakovic,
+        Denys Mishunov, Sabine Moebs, Ian Moffitt, Orestis Molopodis, jason
+        morita, David Moulton, Bobby Mozumder, Brian Muenzenmeyer, Emi Myoudou,
+        Irakli Nadareishvili, Giorgio Natili, Jonathan Neal, Christian
+        Neuberger Jr, David Newton, Todd Nienkerk, Ashley Nolan, Johnna Nonboe,
+        Kenneth Nordahl, Mark Nottingham, Lewis Nyman, Darrel O'Pry, Alejandro
+        Oviedo, David Owens, Paddy O’Hanlon, Isabel Palomar, suzanne peter,
         Hassadee Pimsuwan, Guy Podjarny, Andreas Pollak, gentian polovina, Dave
-        Poole, Manik Rathee, François REMY, Venkatesh Rengasamy, Jen Reynolds,
-        Ricardo Andrade Belo Ricardo Belo, Michael Riethmuller, Carlo Rizzante,
-        John Rodler, Kallew Rodrigues Guedes, César Rodríguez, Nestor Rojas,
-        Adrian Roselli, Chris Ruppel, Oguzcan Sahin, Viljami Salminen, Luca
-        Salvini, Ana Sampaio, Luke Sands, aron santa, Osny Santos, Jad Sarout,
-        Brandon Satrom, Stéphane Savona, Christoph Saxe, Doug Schepers, Jason
-        Schmidt, Christopher Schmitt, Joe Schmitt, Greg Schumacher, Boaz
-        Sender, SHAHINA SHEIK, Tomoyuki Shimizu, Ariel Shkedi, Pandapotan
+        Poole, Florent Preynat, Manik Rathee, François REMY, Venkatesh
+        Rengasamy, Jen Reynolds, Ricardo Andrade Belo Ricardo Belo, Michael
+        Riethmuller, Carlo Rizzante, John Rodler, César Rodríguez, Nestor
+        Rojas, Adrian Roselli, David Rupert, Chris Ruppel, Oguzcan Sahin,
+        Viljami Salminen, Luca Salvini, Ana Sampaio, Luke Sands, crazyrohila
+        sanjay, aron santa, Osny Santos, Jad Sarout, Brandon Satrom, Jeroen
+        Savat, Stéphane Savona, Christoph Saxe, Doug Schepers, Jason Schmidt,
+        Christopher Schmitt, Joe Schmitt, Greg Schumacher, Boaz Sender, SHAHINA
+        SHEIK, Tomoyuki Shimizu, Ariel Shkedi, Abdul Wahid Sial, Pandapotan
         Silaban, Mauricio Silva Teixeira de Nobrega, Jen Simmons, Michael
-        Singleterry, Katerina Skotalova, David Sleight, Michael[tm] Smith,
-        Ignacio Soriano Cano, Steve Souders, Brenden Sparks, Aaron Staker,
-        Aaron Stanush, Walter Stevenson, Bridget Stewart, Jared Stilwell, Matt
-        Stow, Shari Sullivan, Kevin Suttle, Patrick Szalapski, Satoru Takagi,
-        Philipp Tautz, Edward Thurgood, Anthony Ticknor, Erek Tinker, Sebastián
-        Tromer, Tsvetan Tsvetkov, James Tudsbury, Yusuke Uchida, Mads Ulsø
-        Østergaard, Adam van den Hoven, Jacob van Zijp, Lucas Vilaboim,
-        Jitendra Vyas, Amy W, Tady Walsh, Yoav Weiss, George White, Matt
-        Wilcox, Richard Wild, John Albin Wilkins, Chris Williams, Rory Wilson,
-        Owen Winkler, Robin Winslow, Cyril Wolfangel, Mike Woodard, Jeremy
-        Worboys, Mike Wu, Bruce Zawalsky, Carlos Zepeda, and jintian zheng.
+        Singleterry, Katerina Skotalova, David Sleight, Michael[tm] Smith, Nick
+        Snyder, Ignacio Soriano Cano, Steve Souders, Brenden Sparks, Aaron
+        Staker, Aaron Stanush, Walter Stevenson, Bridget Stewart, Jared
+        Stilwell, Matt Stow, Shari Sullivan, Kevin Suttle, Patrick Szalapski,
+        Satoru Takagi, Rob Tarr, Philipp Tautz, Nguyen Thao Thao, Edward
+        Thurgood, Anthony Ticknor, Erek Tinker, Sebastián Tromer, Tsvetan
+        Tsvetkov, Yusuke Uchida, Mads Ulsø Østergaard, Katarina Ur, Adam van
+        den Hoven, Jacob van Zijp, Lucas Vilaboim, Jitendra Vyas, Amy W, Tady
+        Walsh, Yoav Weiss, George White, Michael Whittet, Matt Wilcox, Richard
+        Wild, John Albin Wilkins, Chris Williams, Rory Wilson, Owen Winkler,
+        Robin Winslow, Cyril Wolfangel, Mike Woodard, Jeremy Worboys, Mike Wu,
+        Bruce Zawalsky, Carlos Zepeda, and jintian zheng.
       </p>
       <p id="participants">
         A <a href="http://www.w3.org/community/respimg/participants">complete
         list of participants</a> of the Responsive Images Community Group is
         available at the W3C Community Group Website.
       </p>
-    </section><!--script class="ricg" src=
-    "http://responsiveimagescg.github.io/meta/scripts/show_issues.js">
-</script> <script class="ricg" src=
-"https://api.github.com/repos/ResponsiveImagesCG/ri-usecases/issues?state=open&amp;callback=processResponse">
-</script> <script class="ricg" src=
-"http://responsiveimagescg.github.io/meta/scripts/ga.js">
-</script> <script class="ricg" src=
-"http://responsiveimagescg.github.io/meta/scripts/load_cg_participants.js"-->
-  </main>
+    </section>
   </body>
 </html>
