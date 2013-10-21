@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=.6">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>
       Use Cases and Requirements for Standardizing Responsive Images
     </title>
@@ -28,20 +28,22 @@
 </script>
     <script class='remove'>
 var respecConfig = {
-                    additionalCopyrightHolders: "Copyright © the Contributors to this Specification, published by the <a href='http://www.w3.org/community/respimg/'>Responsive Images Community Group</a> under the <a href= 'https://www.w3.org/community/about/agreements/cla/'>W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href= 'http://www.w3.org/community/about/agreements/cla-deed/'>summary</a> is available.",
+                    //additionalCopyrightHolders: "Copyright © the Contributors to this Specification, published by the <a href='http://www.w3.org/community/respimg/'>Responsive Images Community Group</a> under the <a href= 'https://www.w3.org/community/about/agreements/cla/'>W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href= 'http://www.w3.org/community/about/agreements/cla-deed/'>summary</a> is available.",
+                                                                                
+                                                                                //license: "cc-by",
 
                     // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-                    specStatus: "NOTE",
+                    specStatus: "WG-NOTE",
 
                     // the specification's short name, as in http://www.w3.org/TR/short-name/
                     shortName: "respimg-usecases",
 
                     // if your specification has a subtitle that goes below the main
                     // formal title, define it here
-                    subtitle: "Living Document",
+                    //subtitle: "Living Document",
 
                     // if you wish the publication date to be other than the last modification, set this
-                    // publishDate:  "2009-08-06",
+                    publishDate:  "2013-11-05",
 
                     // if the specification's copyright date is a range of years, specify
                     // the start date here:
@@ -83,14 +85,14 @@ var respecConfig = {
                     wgURI: "http://www.w3.org/html/wg/",
 
                     // name (without the @w3c.org) of the public mailing to which comments are due
-                    wgPublicList: "public-html",
+                    wgPublicList: "public-respimg",
 
                     // URI of the patent status for this WG, for Rec-track documents
                     // !!!! IMPORTANT !!!!
                     // This is important for Rec-track documents, do not copy a patent URI from a random
                     // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
                     // Team Contact.
-                    wgPatentURI: "http://www.w3.org/community/respimg/spec/26/commitments",
+                    wgPatentURI: "http://www.w3.org/2004/01/pp-impl/40318/status",
                     // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
                     otherLinks: [{
                         key: "Version history",
@@ -108,8 +110,8 @@ var respecConfig = {
                             value: "Join the Responsive Images Community Group",
                             href: "http://w3c.responsiveimages.org"
                         }, {
-                            value: "http://list.responsiveimages.org",
-                            href: "Public mailing list"
+                            value: "Public mailing list",
+                            href: "http://list.responsiveimages.org"
                         }, {
                             value: "IRC: #respimg on W3C's IRC",
                             href: "irc://irc.w3.org:6665/#respimg"
@@ -129,8 +131,7 @@ var respecConfig = {
     <p>
       <a href="http://responsiveimages.org"><img style=
       "position: absolute; top: 1em; right: 1em;" src=
-      "https://raw.github.com/ResponsiveImagesCG/meta/master/logo/Web/RICG_logo_small.png"
-      alt="Responsive Images Community Group"></a>
+      "images/RICG_logo_small.png" alt="Responsive Images Community Group"></a>
     </p>
     <section id="abstract">
       <p>
@@ -234,11 +235,8 @@ var respecConfig = {
               source to display. Given a set of image resources, the user agent
               has the option of either following or overriding the author’s
               declarations to optimize the user experience based on criteria
-              such as <a href=
-              "http://usecases.responsiveimages.org/#resolution-switching">display
-              density</a>, connection type, <a href=
-              "http://usecases.responsiveimages.org/#user-control-over-sources">
-              user preferences</a>, and so on.
+              such as display density, connection type, user preferences, and
+              so on.
             </p>
           </dd>
           <dt>
@@ -341,9 +339,9 @@ var respecConfig = {
             HTMLPreloadScanner</a>). Unnecessarily bypassing things like the
             preload scanner can have measurable performance impact when loading
             documents. See, for example, "<a href=
-            "gent.ilcore.com/2011/01/webkit-preloadscanner.html">The WebKit
-            PreloadScanner</a>" by Tony Gentilcore for a small study that
-            demonstrates an up to 20% impact in load time when WebKit's
+            "http://gent.ilcore.com/2011/01/webkit-preloadscanner.html">The
+            WebKit PreloadScanner</a>" by Tony Gentilcore for a small study
+            that demonstrates an up to 20% impact in load time when WebKit's
             PreloadScanner is disabled. More recent <a href=
             "https://plus.google.com/+IlyaGrigorik/posts/8AwRUE7wqAE">performance
             tests</a> yield similar results.
@@ -410,7 +408,7 @@ var respecConfig = {
           dimensions (e.g., 2x or more times the size of the viewport) being
           sent to browsers with narrow viewports, which are then resized by the
           browser to fit the design (see, for example, <cite><a href=
-          "http://blog.netvlies.nl/design-interactie/retina-revolution/">Retina
+          "http://blog.netvlies.nl/design-interactie/retina-revolution">Retina
           Revolution</a></cite> by Daan Jobsis and the <cite><a href=
           "http://filamentgroup.com/lab/rwd_img_compression/">compressive
           images</a></cite> technique). Ideally, developers would like to serve
