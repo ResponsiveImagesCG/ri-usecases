@@ -23,7 +23,7 @@
                 }
     }
     </style>
-    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async=""
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async
     class='remove'>
 </script>
     <script class='remove'>
@@ -338,13 +338,17 @@ var respecConfig = {
             "https://github.com/WebKit/webkit/blob/master/Source/WebCore/html/parser/HTMLPreloadScanner.cpp">
             HTMLPreloadScanner</a>). Unnecessarily bypassing things like the
             preload scanner can have measurable performance impact when loading
-            documents. See, for example, "<a href=
+            documents. See, for example, <cite><a href=
             "http://gent.ilcore.com/2011/01/webkit-preloadscanner.html">The
-            WebKit PreloadScanner</a>" by Tony Gentilcore for a small study
-            that demonstrates an up to 20% impact in load time when WebKit's
-            PreloadScanner is disabled. More recent <a href=
+            WebKit PreloadScanner</a></cite> by Tony Gentilcore for a small
+            study that demonstrates an up to 20% impact in load time when
+            WebKit's PreloadScanner is disabled. More recent <a href=
             "https://plus.google.com/+IlyaGrigorik/posts/8AwRUE7wqAE">performance
-            tests</a> yield similar results.
+            tests</a> yield similar results. For more information, see
+            <cite><a href=
+            "http://andydavies.me/blog/2013/10/22/how-the-browser-pre-loader-makes-pages-load-faster/">
+            How the Browser Pre-loader Makes Pages Load Faster</a></cite> by
+            Andy Davies.
           </p>
         </dd>
         <dt>
@@ -526,7 +530,7 @@ var respecConfig = {
           the browser in the image.
         </p>
         <figure>
-          <video controls="" poster="videos/screenrmx1.jpg" class="stretchy"
+          <video controls poster="videos/screenrmx1.jpg" class="stretchy"
           style="max-width: 652px" onclick=
           "if(/Android/.test(navigator.userAgent))this.play();">
           <source src="videos/screenrmx1.m4v" type="video/mp4">
