@@ -23,7 +23,7 @@
                 }
     }
     </style>
-    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async=""
     class='remove'>
 </script>
     <script class='remove'>
@@ -530,7 +530,7 @@ var respecConfig = {
           the browser in the image.
         </p>
         <figure>
-          <video controls poster="videos/screenrmx1.jpg" class="stretchy"
+          <video controls="" poster="videos/screenrmx1.jpg" class="stretchy"
           style="max-width: 652px" onclick=
           "if(/Android/.test(navigator.userAgent))this.play();">
           <source src="videos/screenrmx1.m4v" type="video/mp4">
@@ -660,7 +660,12 @@ var respecConfig = {
           luminosity are impossible to distinguish on monochrome media. This
           problem is illustrated in the figure below, where it becomes nearly
           impossible to associate slices of a pie chart with corresponding
-          labels.
+          labels. This is a well-known accessibility problem, as described in
+          <a href=
+          "http://www.w3.org/TR/WCAG20/#visual-audio-contrast-without-color">WCAG
+          2.0</a>. A solution that affords developers the ability to
+          discriminate on media type could potentially increase the
+          accessibility of image content.
         </p>
         <figure>
           <img class="stretchy" src="images/color_and_bw_graph.png" style=
