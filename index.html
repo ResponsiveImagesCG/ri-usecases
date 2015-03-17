@@ -7,7 +7,7 @@
       Use Cases and Requirements for Standardizing Responsive Images
     </title>
     <style>
-.stretchy{width: 100%;}
+    .stretchy{width: 100%;}
     @media all and (max-width: 960px){
                 html{
                                                 margin-left: -2.5em;
@@ -23,11 +23,11 @@
                 }
     }
     </style>
-    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async=""
-    class='remove'>
-</script>
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async class=
+    'remove'>
+    </script>
     <script class='remove'>
-var respecConfig = {
+    var respecConfig = {
                     //additionalCopyrightHolders: "Copyright © the Contributors to this Specification, published by the <a href='http://www.w3.org/community/respimg/'>Responsive Images Community Group</a> under the <a href= 'https://www.w3.org/community/about/agreements/cla/'>W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href= 'http://www.w3.org/community/about/agreements/cla-deed/'>summary</a> is available.",
 
                                                                                 //license: "cc-by",
@@ -218,10 +218,10 @@ var respecConfig = {
         </h3>
         <p>
           To date, three such specifications are currently under development,
-          described below, one more has been abandoned. The three proposed, active solutions are not mutually
-          exclusive: together they address the set of <cite><a href=
-          "http://usecases.responsiveimages.org">Use Cases and Requirements for
-          Responsive Images</a></cite>.
+          described below, one more has been abandoned. The three proposed,
+          active solutions are not mutually exclusive: together they address
+          the set of <cite><a href="http://usecases.responsiveimages.org">Use
+          Cases and Requirements for Responsive Images</a></cite>.
         </p>
         <dl>
           <dt>
@@ -271,11 +271,14 @@ var respecConfig = {
             </p>
           </dd>
         </dl>
-        <h3>Abandoned Proposed Solutions:</h3>
+        <h3>
+          Abandoned Proposed Solutions:
+        </h3>
         <dl>
           <dt>
             <cite><a href=
-            "http://tabatkins.github.io/specs/respimg/Overview.html">The `src-N` approach</a></cite>
+            "http://tabatkins.github.io/specs/respimg/Overview.html">The
+            `src-N` approach</a></cite>
           </dt>
           <dd>
             <p>
@@ -534,13 +537,13 @@ var respecConfig = {
         <figure>
           <video controls="" poster="videos/screenrmx1.jpg" class="stretchy"
           style="max-width: 652px" onclick=
-          "if(/Android/.test(navigator.userAgent))this.play();">
-          <source src="videos/screenrmx1.m4v" type="video/mp4">
-          <source src="videos/screenrmx1.webm" type="video/webm">
-          <source src="videos/screenrmx1.ogv" type="video/ogg">
-          <source src="videos/screenrmx1.mp4"><object type=
-          "application/x-shockwave-flash" data="videos/flashfox.swf" width=
-          "652" height="389" style="position:relative;">
+          "if(/Android/.test(navigator.userAgent))this.play();"><source src=
+          "videos/screenrmx1.m4v" type="video/mp4"> <source src=
+          "videos/screenrmx1.webm" type="video/webm"> <source src=
+          "videos/screenrmx1.ogv" type="video/ogg"> <source src=
+          "videos/screenrmx1.mp4"><object type="application/x-shockwave-flash"
+          data="videos/flashfox.swf" width="652" height="389" style=
+          "position:relative;">
             <param name="movie" value="videos/flashfox.swf">
             <param name="allowFullScreen" value="true">
             <param name="flashVars" value=
@@ -785,6 +788,51 @@ var respecConfig = {
           "site preferences".
         </p>
       </section>
+      <section>
+        <h3>
+          “Nice to have” images
+        </h3>
+        <p>
+          Images are often content, but there are instances when an image is an
+          enhancement to the document, but not a necessary part of the core
+          content (a.k.a. “nice to have“). As such, Authors may choose to load
+          an image only above a certain breakpoint in order to
+          optimize the readbility of the core content at certain sizes by
+          reducing the visual clutter. This is a similar use case to <a href="#art-direction">Art direction</a>, but distinct enough to warrant separation.
+        </p>
+        <p>
+          Consider the following example:
+        </p>
+        <figure>
+          <img class="stretchy" style=
+          "max-width:754px" src="images/optional-images.png" alt=
+          "Two displays of the same content, a wider one with an image, a narrower one without.">
+          <figcaption>
+            <p>
+              Two versions of the same teaser content. The image is "nice to
+              have" but not required. That said, it is content, not design.
+            </p>
+          </figcaption>
+        </figure>
+        <p>
+          In situations like this, it would be nice to have a declarative way
+          of marking up this supplementary content and retricting its download
+          and presentation to scenarios where it would be useful. This content
+          does not belong in CSS as it is not presentational.
+        </p>
+        <p>
+          Currently, many sites with this need are using <code>display:
+          none</code> to hide supplementary content images from view when the
+          viewport is below a particular size. This approach penalizes the user
+          by downloading images that may never be shown. Other sites are
+          relying on JavaScript to take instruction from the markup (usually in
+          the form of <a href=
+          "http://www.w3.org/TR/2011/WD-html5-20110525/elements.html#attr-data">
+          <code>data-*</code>code&gt; attributes</a>) and load images in
+          specified scenarios. When JavaScript fails, this functionality is
+          lost.
+        </p>
+      </section>
     </section>
     <section>
       <h2>
@@ -885,6 +933,11 @@ var respecConfig = {
             faster page loads than the current <a href=
             "http://css-tricks.com/which-responsive-images-solution-should-you-use/">
             techniques</a> are providing.
+          </p>
+        </li>
+        <li>
+          <p>
+            The <a>solution</a> SHOULD allow developers to specify that no image be downloaded or shown at specified (or implied) breakpoints.
           </p>
         </li>
       </ol>
