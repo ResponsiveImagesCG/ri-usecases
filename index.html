@@ -785,6 +785,23 @@ var respecConfig = {
           "site preferences".
         </p>
       </section>
+      <section>
+        <h3>
+          Managing source swapping between breakpoints
+        </h3>
+        <p>
+          When a new image is loaded via &lt;source&gt; after hitting a new
+          breakpoint, there is a delay while the image is loaded. Any CSS which
+          matches the breakpoint applies itself. However, we're stuck with the
+          previous image while the new one loads. If we had a JavaScript event
+          fire when the new image is loaded, loadstart for example. The user
+          could listen for this and manage with CSS.
+        </p>
+        <p>
+          This could also be used on pages utilising a lazy-load on images,
+          effectively what I'm trying to achieve when swapping sources.
+        </p>
+      </section>
     </section>
     <section>
       <h2>
