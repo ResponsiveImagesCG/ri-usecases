@@ -1,5 +1,5 @@
 # Use Cases for Responsive Images 
-This is the home of the bleeding edege version of the [Use Cases and Requirements for Standardizing Responsive Images](http://usecases.responsiveimages.org/).
+This is the home of the bleeding edge version of the [Use Cases and Requirements for Standardizing Responsive Images](http://usecases.responsiveimages.org/).
 
 ## Found a bug? Want to contribute something? 
 If you found a problem with the document, no matter how small, 
