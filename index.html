@@ -785,6 +785,20 @@ var respecConfig = {
           "site preferences".
         </p>
       </section>
+      <section>
+        <h3>
+          Managing source swapping between breakpoints
+        </h3>
+        <p>
+          When a new image is loaded via &lt;source&gt; after hitting a new
+          breakpoint, there is a delay while the image is loaded. Any CSS which
+          matches the breakpoint applies itself. However, the previous image
+          still displays while the new one loads. This can result in blurry
+          imagery, or a larger image being scaled down in place of a smaller
+          one. Developers need means to control that flash of poor quality
+          imagery in these cases.
+        </p>
+      </section>
     </section>
     <section>
       <h2>
