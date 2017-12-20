@@ -23,7 +23,7 @@
                 }
     }
     </style>
-    <script src='//www.w3.org/Tools/respec/respec-w3c-common' async=""
+    <script src='https://www.w3.org/Tools/respec/respec-w3c-common' async=""
     class='remove'>
 </script>
     <script class='remove'>
@@ -156,7 +156,7 @@ var respecConfig = {
         Introduction
       </h2>
       <p>
-        In <a href="http://www.w3.org/TR/html5/">HTML</a>, a user agent's
+        In <a data-cite="HTML">HTML</a>, a user agent's
         <dfn>environmental conditions</dfn> are primarily expressed as CSS
         <dfn>media features</dfn> (e.g., pixel-density, orientation, max-width,
         etc.) and CSS media types (e.g., print, screen, etc.). A
@@ -224,7 +224,7 @@ var respecConfig = {
         </p>
         <dl>
           <dt>
-            <cite><a href="http://dev.w3.org/html5/srcset/">The `srcset`
+            <cite><a data-cite="HTML/embedded-content.html#dom-source-srcset">The `srcset`
             attribute</a></cite>
           </dt>
           <dd>
@@ -244,13 +244,13 @@ var respecConfig = {
           </dt>
           <dd>
             <p>
-              Building on <a href="http://dev.w3.org/html5/srcset/">srcset</a>,
+              Building on <a data-cite="HTML/embedded-content.html#dom-source-srcset">srcset</a>,
               this specification defines a declarative solution for grouping
               multiple versions of an image based on different characteristics
               (e.g., format, resolution, orientation, etc.). This allows the
               user agent to select the optimum image to present to an end-user
               based on the user agent's <a>environmental conditions</a>, while
-              also providing the ability to "<a title="art direction">art
+              also providing the ability to "<a data-lt="art direction">art
               direct</a>" images.
             </p>
           </dd>
@@ -321,7 +321,7 @@ var respecConfig = {
             "http://dev.w3.org/csswg/css-backgrounds/#background-image">CSS
             background images</a>, and JavaScript libraries. In other words,
             developers are being forced to willfully violate the authoring
-            requirements of <a href="http://www.w3.org/TR/html5/">HTML</a>.
+            requirements of <a data-cite="HTML">HTML</a>.
           </p>
         </dd>
         <dt>
@@ -489,7 +489,7 @@ var respecConfig = {
           relevance, usefulness, and legibility. Thus, by "art directing", a
           web developer can better control communication by explicitly
           dictating which image should be shown at which size (or when some
-          <a title="environmental conditions">environmental condition</a> is
+          <a data-lt="environmental conditions">environmental condition</a> is
           met).
           </li>
         </ul>
@@ -566,7 +566,7 @@ var respecConfig = {
           Design breakpoints
         </h3>
         <p>
-          In Web development, a <dfn>breakpoint</dfn> is one of a series of
+          In Web development, a <dfn data-lt="breakpoints">breakpoint</dfn> is one of a series of
           <a href="http://www.w3.org/TR/css3-mediaqueries/">CSS Media
           Queries</a>, which can update the styles of a page based on matching
           of <a>media features</a>. A single breakpoint represents a rule (or
@@ -587,7 +587,7 @@ var respecConfig = {
           are operating under the same rules that define the layout of a
           design. It also helps developers verify their approach by ensuring
           that the same viewport measurement tests are being used in both
-          <a href="http://www.w3.org/TR/html5/">HTML</a> and <a href=
+          <a data-cite="HTML">HTML</a> and <a href=
           "http://www.w3.org/Style/CSS/Overview.en.html">CSS</a>. If the
           developer cannot specify breakpoints for images in the same manner
           that they are defined for the design, developers will need to convert
@@ -706,7 +706,7 @@ var respecConfig = {
           "http://dev.w3.org/csswg/mediaqueries4/#luminosity">luminosity</a>.
           The lack of a declarative mechanism to associate image content with
           media features means that developers cannot use them without relying
-          on the aforementioned <a title="limitations">limited</a>
+          on the aforementioned <a data-lt="limitations">limited</a>
           <a>techniques</a>.
         </p>
       </section>
